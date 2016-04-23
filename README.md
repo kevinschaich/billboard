@@ -1,6 +1,6 @@
 # billboard-top-100-lyrics
 
-Lyrics/associated Natural Language Processing (NLP) data for Billboard's Top 100, 1950-2015.
+Lyrics/associated Natural Language Processing (NLP) data for Billboard"s Top 100, 1950-2015.
 
 ###Data
 
@@ -11,12 +11,12 @@ Lyrics/associated Natural Language Processing (NLP) data for Billboard's Top 100
   "year": [int],
   "pos": [int],
   "lyrics": [string],
-  "tags": [string list],
+  "tags": [string array],
   "sentiment": {
-    'neg': [float],
-    'neu': [float],
-    'pos': [float],
-    'compound': [float]
+    "neg": [float],
+    "neu": [float],
+    "pos": [float],
+    "compound": [float]
   },
   "f_k_grade": [float],
   "flesch_index": [float],
