@@ -4,6 +4,7 @@ Lyrics/associated Natural Language Processing (NLP) data for Billboard's Top 100
 
 ###Data
 
+```json
 {
   "title": [string],
   "artist": [string],
@@ -26,3 +27,4 @@ Lyrics/associated Natural Language Processing (NLP) data for Billboard's Top 100
   "num_lines": [int],
   "num_dupes": [int]
 }
+```
