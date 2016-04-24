@@ -3,6 +3,8 @@
 	<script src="http://d3js.org/topojson.v1.min.js"></script>
 	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 	<script src="http://d3js.org/d3.geo.projection.v0.min.js" charset="utf-8"></script>
+	<script src="underscore.js" charset="utf-8"></script>
+
 
 	<style>
 
@@ -33,9 +35,113 @@
 	<svg id="main" height="500", width="100%"></svg>
 
 <script>
+
+
+
+
 	var mainSvg = d3.select("#main");
 	var height = mainSvg.attr("height");
 	var width = mainSvg.attr("width");
+
+	var data;
+	d3.json("testAgg.json", function(error, json){
+		if (error) return console.warn(error);
+		data = json;
+	})
+
+
+
+//	function  averagePos (objs) {
+//		var avgObj= _.reduce( objs , function (first, next) {
+//			return first.sentiment.pos + next.sentiment.pos ;
+//
+//		} , 0 );
+//		return avgObj
+//	}
+//
+	function sumList (lst) {
+		return _.reduce(lst, function(fist, next){
+			return fist + next;
+		}, 0 ); };
+//get all sentiment positive/neu/neg score of listed songss
+	function getSentPos (obj) {
+		return _.map (obj, function(any) {
+			return any.sentiment.pos;
+		})
+	};
+
+	function getSentNeu (obj) {
+		return _.map (obj , function (any) {
+			return any.sentiment.neu;
+		})
+	};
+
+	function getSentNeg (obj) {
+		return _.map (obj , function (any) {
+			return any.sentiment.neg;
+		})
+	};
+
+	function avgSentPos (obj ){
+		var poslst = sumList(getSentPos(obj));
+		return poslst/obj.length;
+	};
+
+	function avgSentNeu (obj ){
+		var poslst = sumList(getSentNeu(obj));
+		return poslst/obj.length;
+	};
+
+	function avgSentNeg (obj ){
+		var poslst = sumList(getSentNeg(obj));
+		return poslst/obj.length;
+	};
+	// int year, string senti = "pos"/"neu"/"neg"
+	function getAverageByYear(year, senti) {
+		//TODO: figure out how to access a file of a directory
+		if (senti === "pos"){
+			return 0;
+		}
+		else if (senti === "neu") {
+			return 0;
+		}
+		else if (senti === "neg") {
+			return 0;
+		}
+		else
+			console.warn(error);
+	}
+
+	//return a list of object containing each years average pos/neu/neg
+	function loopYears ( minYear, maxYear) {
+		if (minYear <= maxYear) {
+			var posYears = [];
+			var neuYears = [];
+			var negYears = [];
+			for (var i = minYear; i <= maxYear; i++) {
+				posYears.push(getAverageByYear(i, "pos"));
+				neuYears.push(getAverageByYear(i, "neu"));
+				negYears.push(getAverageByYear(i, "neg"));
+//
+
+			}
+
+			return {
+				allPos: posYears,
+				allNeu: neuYears,
+				allNeg: negYears
+
+			}
+		}
+		else {
+			console.log("error");
+		}
+
+	}
+
+
+
+
 
 
 </script>
