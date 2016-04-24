@@ -7,13 +7,18 @@
 
 
 	<style>
-
-		svg { 
-			border: solid black 1px; 
+		p, div {
+			margin-top: 10px;
+			margin-bottom: 30px;
+			margin-right: 150px;
+			margin-left: 80px;
+		}
+		svg {
+			border: solid black 1px;
 			vertical-align: top;
 		}
 
-		font, text {
+		font, text, .text {
 			font-family: Avenir Next;
 			fill: black;
 		}
@@ -26,39 +31,129 @@
 			stroke: black;
 			stroke-width: 1px;
 		}
+		/*cited: https://jsfiddle.net/leaverou/BNm8j/*/
+		input[type=range] {
+			-webkit-appearance: none;
+			background-color: #Add8e6;
+			width: 80%;
+			height:20px;
+		}
+
+		input[type="range"]::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			background-color: #666;
+			opacity: 0.5;
+			width: 10px;
+			height: 26px;
+		}
+
+		select {
+			font-size: 16px;
+			position: relative;
+			display: inline-block;
+		}
+/*cite http://www.lugolabs.com/articles/72-style-select-html-element-with-css*/
+		select {
+			outline: none;
+			-webkit-appearance: none;
+			display: block;
+			padding: 0.5em 0.5em 0.5em 0.5em;
+			margin: 0;
+
+			transition: border-color 0.2s;
+			border: 5px  solid #666666;
+			border-radius: 5px;
+
+			background: #fff;
+			color: #555;
+			line-height: normal;
+			font-family: Avenir Next;
+			font-size: 30px;
+			line-height: inherit;
+		}
+
+		.button {
+			background-color: #Add8e6; /* light grey */
+			border: none;
+			color: white;
+			padding: 16px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			-webkit-transition-duration: 0.4s; /* Safari */
+			transition-duration: 0.4s;
+			cursor: pointer;
+		}
 	</style>
 </head>
 
 <body>
 	<font size="20" color="black" ><center>BILLBOARD TOP 100 LYRICS</center></font>
-	<svg id="main" height="500", width="100%"></svg>
-	<svg id="main" height="500", width="100%"></svg>
+	<p align="right">
+		<select>
+		<option value="Jazz">Jazz</option>
+		<option value="pop">pop</option>
+		<option value="r&b">R&B</option>
+		<option value="soft">Soft</option>
+		<option value="classic">Classic</option>
+		<option value="hip hop">Hip Hop</option>
+		<option value="TOD0">TODO</option>
+	</select>
+
+	</p>
+	<p align="center">
+	<svg id="main1" class="main" height="1000", width="100%"></svg>
+	<div align="center"> <input type="button" class = "button" value="Overview">
+	</div>
+		<div align="center">
+		<input id = "bar" type="range" align="center" max="2015" min="1950"
+			   step = 1 value=2015 onchange="slideOnChange()">
+		<div id="yearText" class = "text"></div>
+	</div>
+	</p>
+	<!--<svg id="main2" class = "main" cheight="500", width="100%"></svg>-->
 
 <script>
 
-
-
-
-	var mainSvg = d3.select("#main");
+	var mainSvg = d3.select(".main");
 	var height = mainSvg.attr("height");
 	var width = mainSvg.attr("width");
 
-	var data;
-	d3.json("testAgg.json", function(error, json){
-		if (error) return console.warn(error);
-		data = json;
-	})
 
-
-
-//	function  averagePos (objs) {
-//		var avgObj= _.reduce( objs , function (first, next) {
-//			return first.sentiment.pos + next.sentiment.pos ;
+	var dataArray = [];
 //
-//		} , 0 );
-//		return avgObj
+//	function loadJSON(callback) {
+//
+//		var xobj = new XMLHttpRequest();
+////		xobj.overrideMimeType("application/json");
+//		xobj.open('GET', '../data/years/2015.json', true);
+//		// Replace 'my_data' with the path to your file
+//		xobj.onreadystatechange = function () {
+//			if (xobj.readyState == 4 && xobj.status == "200") {
+//				// Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+//				callback(xobj.responseText);
+//			}
+//		};
+//		xobj.send(null);
 //	}
-//
+
+
+	for (var i = 1950; i<= 2015; i ++) {
+		var str = "../data/years/" + i + ".json";
+		d3.json(str, function(error, json){
+			if (error) return console.warn(error);
+			dataArray.push( json);
+		})
+
+	}
+
+	function  getYearObj(year) {
+		return dataArray[year - 1950];
+
+	};
+
 	function sumList (lst) {
 		return _.reduce(lst, function(fist, next){
 			return fist + next;
@@ -96,17 +191,20 @@
 		var poslst = sumList(getSentNeg(obj));
 		return poslst/obj.length;
 	};
-	// int year, string senti = "pos"/"neu"/"neg"
+
+	// int year, string senti = "pos"/"neu"/"neg" get average attribute of this year
+
 	function getAverageByYear(year, senti) {
 		//TODO: figure out how to access a file of a directory
+		var obj = getYearObj(year);
 		if (senti === "pos"){
-			return 0;
+			return avgSentPos(obj);
 		}
 		else if (senti === "neu") {
-			return 0;
+			return avgSentNeu(obj);
 		}
 		else if (senti === "neg") {
-			return 0;
+			return avgSentNeg(obj);
 		}
 		else
 			console.warn(error);
@@ -122,15 +220,12 @@
 				posYears.push(getAverageByYear(i, "pos"));
 				neuYears.push(getAverageByYear(i, "neu"));
 				negYears.push(getAverageByYear(i, "neg"));
-//
 
 			}
-
 			return {
 				allPos: posYears,
 				allNeu: neuYears,
 				allNeg: negYears
-
 			}
 		}
 		else {
@@ -138,11 +233,53 @@
 		}
 
 	}
+	//get a year's data frm json file
 
+	function loopYearsObjArray (minYear, maxYear) {
 
+		if (minYear <= maxYear) {
+			var final = [];
+			for (var i = minYear; i <= maxYear; i++) {
+				var posI = getAverageByYear(i, "pos");
+				var neuI = getAverageByYear(i, "neu");
+				var negI = getAverageByYear(i, "neg");
 
+				final.push( {
+					year:i,
+					pos: posI,
+					neu: neuI,
+					neg: negI
+				})
+			}
+			return final;
+		}
+		else {
+			console.log("error");
+		}
 
+	}
 
+//	let t = loopYearsObjArray(1950, 1951);
+
+//	var line = d3.svg.line()
+//			.x(function(d) { return x(d.year); })
+//			.y(function(d) { return y(d.pos); });
+
+//	var testYears = console.log( loopYearsObjArray(1950, 1959));
+
+	var svg1 = d3.select("#main1");
+
+	svg1.append("circle").attr("cx", 100).attr("cy",100).attr("r", 100);
+
+//	svg1.append("path")
+//			.datum(data)
+//			.attr("class", "line")
+//			.attr("d", line);
+
+	function slideOnChange () {
+		document.getElementById("yearText").innerText =
+				document.getElementById("bar").value;
+	}
 
 </script>
 
