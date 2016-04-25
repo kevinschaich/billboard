@@ -26,15 +26,6 @@
             fill: black;
         }
 
-        .court rect {
-            stroke-width: 2px;
-        }
-
-        .court path {
-            stroke: black;
-            stroke-width: 1px;
-        }
-
         /*cited: https://jsfiddle.net/leaverou/BNm8j/*/
         input[type=range] {
             -webkit-appearance: none;
@@ -145,8 +136,7 @@
     }
 
 
-    //return the average of a list's sentiment value
-
+    // return the average of a list's sentiment value
     function getAverage(obj, senti) {
 
         function sumList(lst) {
@@ -154,7 +144,7 @@
                 return fist + next;
             }, 0);
         };
-        //get all sentiment positive/neu/neg score of listed songss
+        // get all sentiment positive/neu/neg score of listed songss
         function getSentPos(obj) {
             return _.map(obj, function (any) {
                 return any.sentiment.pos;
