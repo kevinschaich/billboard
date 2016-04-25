@@ -1,147 +1,365 @@
 <title>Project 2</title>
 <head>
-	<script src="http://d3js.org/topojson.v1.min.js"></script>
-	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-	<script src="http://d3js.org/d3.geo.projection.v0.min.js" charset="utf-8"></script>
-	<script src="underscore.js" charset="utf-8"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="http://d3js.org/d3.geo.projection.v0.min.js"
+            charset="utf-8"></script>
+    <script src="underscore.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3-queue.v2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
 
-	<style>
+    <style>
+        p, div {
+            margin-top: 10px;
+            margin-bottom: 30px;
+            margin-right: 150px;
+            margin-left: 80px;
+        }
 
-		svg { 
-			border: solid black 1px; 
-			vertical-align: top;
-		}
+        svg {
+            border: solid black 1px;
+            vertical-align: top;
+        }
 
-		font, text {
-			font-family: Avenir Next;
-			fill: black;
-		}
+        font, text, .text {
+            font-family: Avenir Next;
+            fill: black;
+        }
 
-		.court rect {
-			stroke-width: 2px;
-		}
+        .court rect {
+            stroke-width: 2px;
+        }
 
-		.court path {
-			stroke: black;
-			stroke-width: 1px;
-		}
-	</style>
+        .court path {
+            stroke: black;
+            stroke-width: 1px;
+        }
+
+        /*cited: https://jsfiddle.net/leaverou/BNm8j/*/
+        input[type=range] {
+            -webkit-appearance: none;
+            background-color: #Add8e6;
+            width: 80%;
+            height: 20px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            background-color: #666;
+            opacity: 0.5;
+            width: 10px;
+            height: 26px;
+        }
+
+        select {
+            font-size: 16px;
+            position: relative;
+            display: inline-block;
+        }
+
+        /*cite http://www.lugolabs.com/articles/72-style-select-html-element-with-css*/
+        select {
+            outline: none;
+            -webkit-appearance: none;
+            display: block;
+            padding: 0.5em 0.5em 0.5em 0.5em;
+            margin: 0;
+
+            transition: border-color 0.2s;
+            border: 5px solid #666666;
+            border-radius: 5px;
+
+            background: #fff;
+            color: #555;
+            line-height: normal;
+            font-family: Avenir Next;
+            font-size: 30px;
+            line-height: inherit;
+        }
+
+        .button {
+            background-color: #Add8e6; /* light grey */
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        path.line {
+            stroke: #000;
+            fill: none;;
+        }
+    </style>
 </head>
 
 <body>
-	<font size="20" color="black" ><center>BILLBOARD TOP 100 LYRICS</center></font>
-	<svg id="main" height="500", width="100%"></svg>
-	<svg id="main" height="500", width="100%"></svg>
+<font size="20px" color="black"
+>
+    <center>BILLBOARD TOP 100 LYRICS</center>
+</font>
+<p align="right">
+    <select>
+        <option value="Jazz">Jazz</option>
+        <option value="pop">pop</option>
+        <option value="r&b">R&B</option>
+        <option value="soft">Soft</option>
+        <option value="classic">Classic</option>
+        <option value="hip hop">Hip Hop</option>
+        <option value="TOD0">TODO</option>
+    </select>
+
+</p>
+<p align="center">
+    <svg id="main1" class="main" height="500" , width="100%"></svg>
+<div align="center"><input type="button" class="button" value="Overview">
+</div>
+<div align="center">
+    <input id="bar" type="range" align="center" max="2015" min="1950"
+           step=1 value=2015 onchange="slideOnChange()">
+    <div id="yearText" class="text"></div>
+</div>
+</p>
+<!--<svg id="main2" class = "main" cheight="500", width="100%"></svg>-->
 
 <script>
 
+    var mainSvg = d3.select(".main");
+    var height = mainSvg.attr("height");
+    var width = $("#main1").width();
+    var margin = {top : 30 , right : 20, buttom : 30 , left : 50};
+
+    var dataArray = [];
+
+    function getJsonByYear(year) {
+        var str = "/years/" + year + ".json";
+        d3.json(str, function (error, json) {
+            if (error) return console.warn(error);
+            dataArray.push(json);
+        })
+    }
+
+
+    //return the average of a list's sentiment value
+
+    function getAverage(obj, senti) {
+
+        function sumList(lst) {
+            return _.reduce(lst, function (fist, next) {
+                return fist + next;
+            }, 0);
+        };
+        //get all sentiment positive/neu/neg score of listed songss
+        function getSentPos(obj) {
+            return _.map(obj, function (any) {
+                return any.sentiment.pos;
+            })
+        };
+
+        function getSentNeu(obj) {
+            return _.map(obj, function (any) {
+                return any.sentiment.neu;
+            })
+        };
+
+        function getSentNeg(obj) {
+            return _.map(obj, function (any) {
+                return any.sentiment.neg;
+            })
+        };
+
+        function avgSentPos(obj) {
+            var poslst = sumList(getSentPos(obj));
+            return poslst / obj.length;
+        };
+
+        function avgSentNeu(obj) {
+            var poslst = sumList(getSentNeu(obj));
+            return poslst / obj.length;
+        };
+
+        function avgSentNeg(obj) {
+            var poslst = sumList(getSentNeg(obj));
+            return poslst / obj.length;
+        };
+
+        if (senti === "pos") {
+            return avgSentPos(obj);
+        }
+        else if (senti === "neu") {
+            return avgSentNeu(obj);
+        }
+        else if (senti === "neg") {
+            return avgSentNeg(obj);
+        }
+        else
+            console.warn(error);
+
+    }
+    // int year, string senti = "pos"/"neu"/"neg" get average attribute of this year
 
 
 
-	var mainSvg = d3.select("#main");
-	var height = mainSvg.attr("height");
-	var width = mainSvg.attr("width");
-
-	var data;
-	d3.json("testAgg.json", function(error, json){
-		if (error) return console.warn(error);
-		data = json;
-	})
-
-
-
-//	function  averagePos (objs) {
-//		var avgObj= _.reduce( objs , function (first, next) {
-//			return first.sentiment.pos + next.sentiment.pos ;
+    //return a list of object containing each years average pos/neu/neg
+//    function loopYears(minYear, maxYear) {
+//        if (minYear <= maxYear) {
+//            var posYears = [];
+//            var neuYears = [];
+//            var negYears = [];
+//            for (var i = minYear; i <= maxYear; i++) {
+//                posYears.push(getAverageByYear(i, "pos"));
+//                neuYears.push(getAverageByYear(i, "neu"));
+//                negYears.push(getAverageByYear(i, "neg"));
 //
-//		} , 0 );
-//		return avgObj
-//	}
+//            }
+//            return {
+//                allPos: posYears,
+//                allNeu: neuYears,
+//                allNeg: negYears
+//            }
+//        }
+//        else {
+//            console.log("error");
+//        }
 //
-	function sumList (lst) {
-		return _.reduce(lst, function(fist, next){
-			return fist + next;
-		}, 0 ); };
-//get all sentiment positive/neu/neg score of listed songss
-	function getSentPos (obj) {
-		return _.map (obj, function(any) {
-			return any.sentiment.pos;
-		})
-	};
-
-	function getSentNeu (obj) {
-		return _.map (obj , function (any) {
-			return any.sentiment.neu;
-		})
-	};
-
-	function getSentNeg (obj) {
-		return _.map (obj , function (any) {
-			return any.sentiment.neg;
-		})
-	};
-
-	function avgSentPos (obj ){
-		var poslst = sumList(getSentPos(obj));
-		return poslst/obj.length;
-	};
-
-	function avgSentNeu (obj ){
-		var poslst = sumList(getSentNeu(obj));
-		return poslst/obj.length;
-	};
-
-	function avgSentNeg (obj ){
-		var poslst = sumList(getSentNeg(obj));
-		return poslst/obj.length;
-	};
-	// int year, string senti = "pos"/"neu"/"neg"
-	function getAverageByYear(year, senti) {
-		//TODO: figure out how to access a file of a directory
-		if (senti === "pos"){
-			return 0;
-		}
-		else if (senti === "neu") {
-			return 0;
-		}
-		else if (senti === "neg") {
-			return 0;
-		}
-		else
-			console.warn(error);
-	}
-
-	//return a list of object containing each years average pos/neu/neg
-	function loopYears ( minYear, maxYear) {
-		if (minYear <= maxYear) {
-			var posYears = [];
-			var neuYears = [];
-			var negYears = [];
-			for (var i = minYear; i <= maxYear; i++) {
-				posYears.push(getAverageByYear(i, "pos"));
-				neuYears.push(getAverageByYear(i, "neu"));
-				negYears.push(getAverageByYear(i, "neg"));
+//    }
+//    //get a year's data frm json file
 //
+//    function loopYearsObjArray(minYear, maxYear) {
+//
+//        if (minYear <= maxYear) {
+//            var final = [];
+//            for (var i = minYear; i <= maxYear; i++) {
+//                var posI = getAverageByYear(i, "pos");
+//                var neuI = getAverageByYear(i, "neu");
+//                var negI = getAverageByYear(i, "neg");
+//
+//                final.push({
+//                    year: i,
+//                    pos: posI,
+//                    neu: neuI,
+//                    neg: negI
+//                })
+//            }
+//            return final;
+//        }
+//        else {
+//            console.log("error");
+//        }
+//    }
 
-			}
+// return a year's average pos/neu/neg index
+//    in the format :
+//    {year : 1990;
+//    pos: 0.1, neu : 0.7 , neg : 0.2 };
 
-			return {
-				allPos: posYears,
-				allNeu: neuYears,
-				allNeg: negYears
+    function getYearSentiArray(year, callback) {
+        setTimeout(function () {
+            var filename = "/years/" + year + ".json";
+            d3.json(filename, function (error, response) {
 
-			}
-		}
-		else {
-			console.log("error");
-		}
+                if (error) {
+                    console.log(error);
+                }
 
-	}
+                var posAvg = getAverage(response, "pos");
+                var neuAvg = getAverage(response, "neu");
+                var negAvg = getAverage(response, "neg");
+                yearSenti[year] ={
+
+                    pos: posAvg,
+                    neu: neuAvg,
+                    neg: negAvg
+                };
+                callback (null);
+            });
+        }, 2);
+    }
+/*******yearly avg sentiment data************/
+
+    var yearSenti = {};
+    var q1 = d3_queue.queue();
+
+    for  (var i = 1950 ; i <=2015 ; i ++) {
+        q1.defer(getYearSentiArray,  i)
+    }
+
+    q1.awaitAll(function (error) {
+        if (error) throw error;
+
+        svg1.append("path").attr("class", "line")
+                .attr("d", posLine(yearSenti));
+
+             svg1.append("path").attr("class", "line")
+                .attr("d", negLine(yearSenti));
 
 
 
+        console.log(yearSenti);
+       console.log("Goodbye!");
 
+
+    })
+
+
+    var xScale = d3.scale.linear().domain([1950, 2015]).range([margin.left,
+        width - margin.left - margin.right]);
+
+    var
+            yScale =
+                    d3.scale.linear().domain([-0.1, 0.5]).range([height-margin.top -
+    margin.buttom,
+        0]);
+
+        var posLine =
+            d3.svg.line().x(function (d) {
+                return xScale(d.year)
+            }).y(function (d) {
+                return yScale(d.pos)
+            });
+
+    var negLine =
+            d3.svg.line().x(function (d) {
+                return xScale(d.year)
+            }).y(function (d) {
+                return yScale(d.neg)
+            });
+
+
+    //    var xAxis = d3.svg.axis().scale(x)
+//            .orient("bottom").ticks(5);
+//
+//    var yAxis = d3.svg.axis().scale(y)
+//            .orient("left").ticks(5);
+
+    var line = d3.svg.line()
+            .x(function (d) {
+                return x(d.year);
+            })
+            .y(function (d) {
+                return y(d.pos);
+            });
+
+
+    var testArr = dataArray[0];
+    var test1 = dataArray[1];
+    //	var testYears = console.log( loopYearsObjArray(1950, 1959));
+
+    var svg1 = d3.select("#main1");
+
+    svg1.append("circle").attr("cx", 100).attr("cy", 100).attr("r", 100);
+
+
+    function slideOnChange() {
+        document.getElementById("yearText").innerText =
+                document.getElementById("bar").value;
+    }
 
 
 </script>
