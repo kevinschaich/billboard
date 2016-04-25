@@ -201,63 +201,7 @@
             console.warn(error);
 
     }
-    // int year, string senti = "pos"/"neu"/"neg" get average attribute of this year
-
-
-
-    //return a list of object containing each years average pos/neu/neg
-//    function loopYears(minYear, maxYear) {
-//        if (minYear <= maxYear) {
-//            var posYears = [];
-//            var neuYears = [];
-//            var negYears = [];
-//            for (var i = minYear; i <= maxYear; i++) {
-//                posYears.push(getAverageByYear(i, "pos"));
-//                neuYears.push(getAverageByYear(i, "neu"));
-//                negYears.push(getAverageByYear(i, "neg"));
-//
-//            }
-//            return {
-//                allPos: posYears,
-//                allNeu: neuYears,
-//                allNeg: negYears
-//            }
-//        }
-//        else {
-//            console.log("error");
-//        }
-//
-//    }
-//    //get a year's data frm json file
-//
-//    function loopYearsObjArray(minYear, maxYear) {
-//
-//        if (minYear <= maxYear) {
-//            var final = [];
-//            for (var i = minYear; i <= maxYear; i++) {
-//                var posI = getAverageByYear(i, "pos");
-//                var neuI = getAverageByYear(i, "neu");
-//                var negI = getAverageByYear(i, "neg");
-//
-//                final.push({
-//                    year: i,
-//                    pos: posI,
-//                    neu: neuI,
-//                    neg: negI
-//                })
-//            }
-//            return final;
-//        }
-//        else {
-//            console.log("error");
-//        }
-//    }
-
-// return a year's average pos/neu/neg index
-//    in the format :
-//    {year : 1990;
-//    pos: 0.1, neu : 0.7 , neg : 0.2 };
-
+    
 
     function getYearSentiArray(year, callback) {
         setTimeout(function () {
@@ -418,7 +362,7 @@
 		}
 		else {
 			console.log("error");
-		}
+		}}
 
 
     var xScale = d3.scale.linear().domain([1950, 2015]).range([margin.left,
@@ -576,7 +520,11 @@
 	function slideOnChange () {
 		document.getElementById("yearText").innerText =
 				document.getElementById("bar").value;
-	}
+	};
+
+//        HAVE DONE: aggregate sentiment by year
+//
+//        TODO:
 
 </script>
 
