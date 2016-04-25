@@ -507,14 +507,78 @@
 			.attr("class", "line")
 			.attr("d", line);
 
+
 	function slideOnChange () {
 		document.getElementById("yearText").innerText =
 				document.getElementById("bar").value;
 	};
+//    TODO:
+//    global data, grabbed from json
 
 //        HAVE DONE: aggregate sentiment by year
-//
-//        TODO: 
+
+    function graphXAxis ( ) {
+//        TODO graph axis
+    }
+    function  graphYAxis (){
+//        TODO: append YAxis to graph
+    }
+
+    //return the Y axis to display for a variable (a "line" funtion (d3))
+    function makeYAxisByVar (variable ){
+//        TODO
+    }
+
+
+    function graphLine ( variable, genre) {
+//        TODO: plot a line, chosen genre, chosen variable (sentiment/ dups/...)
+
+    }
+
+
+//    return overall year data of certain genre
+    function filterByGenre(genre) {
+//        TODO
+
+    }
+
+//    return the song object selected of that year
+    function getMaxByYear(genre, year, variable) {
+        TODO
+    }
+    //    return the song object selected of that year
+    function getMinByYear(genre, year, variable) {
+        TODO
+    }
+
+
+    //VISUAL PART
+    function displayMaxMin() {
+        return 0;
+    }
+
+    //interactive: highlight the selected years for graph1
+    function highlightYearRange() {
+//        TODO
+    }
+
+//    return aggregate information of selected year range
+//    in an object from
+    function aggragateYearRange() {
+//        TODO
+
+    }
+
+    function  displayAggreYearRange() {
+        
+    }
+
+
+
+
+
+
+
 
 </script>
 
