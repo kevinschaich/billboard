@@ -8,7 +8,6 @@
     <script src="https://d3js.org/d3-queue.v2.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
-
     <style>
         p, div {
             margin-top: 10px;
@@ -293,6 +292,8 @@
     q1.awaitAll(function (error) {
         if (error) throw error;
 
+        d3.json()
+
         svg1.append("path").attr("class", "line")
                 .attr("d", posLine(yearSenti));
 
@@ -317,7 +318,9 @@
     margin.buttom,
         0]);
 
-        var posLine =
+
+
+    var posLine =
             d3.svg.line().x(function (d) {
                 return xScale(d.year)
             }).y(function (d) {
@@ -347,9 +350,103 @@
             });
 
 
-    var testArr = dataArray[0];
-    var test1 = dataArray[1];
-    //	var testYears = console.log( loopYearsObjArray(1950, 1959));
+    /************************************
+     *      Aggregating genre data      *
+     ************************************/
+    var genres = ['alternative',
+        'big band',
+        'blues',
+        'country',
+        'electro',
+        'dance',
+        'jazz',
+        'hip',
+        'pop',
+        'r&b',
+        'rnb',
+        'rock and roll',
+        'rock',
+        'swing',
+        'undefined'];
+    // counts the number of tags that contains the substring
+    // of the selected genres
+    // returns an object of {genre: count}
+    function countGenres(tags) {
+        var genreCount = _.countBy(tags, function(tag) {
+            var g = _.find(genres, function(genre) {
+                return tag.includes(genre);
+            });
+            return g;
+        });
+        return genreCount;
+    }
+    // aggregates genre data in genre_results object using d3.queue
+    // genre_results is an object in the form {year: {genre: count}}
+    var q = d3_queue.queue();
+    var genre_results = {};
+    for (var i = 1950; i < 2015; ++i) {
+        q.defer(parseTags,i);
+    }
+    q.awaitAll(function(error) {
+        if (error) throw error;
+        console.log(genre_results);
+        console.log("Goodbye!");
+    });
+    function parseTags(year, callback) {
+        setTimeout(function() {
+            var filename = "data/years/" + year + ".json";
+            d3.json(filename, function(error, response) {
+                if (error) { console.log(error); }
+                // fill genreCountObj
+                genreCountObj = [];
+                response.forEach(function(song) {
+                    var genreCount = countGenres(song['tags']);
+                    genreCountObj.push(genreCount);
+                });
+                // year_counts:
+                //	  key: genre
+                //	  value: count from that year
+                // ex) {alternative: 0, blues: 1, country: 6…}
+                var year_counts = {};
+                genres.forEach(function(genre) {
+                    year_counts[genre] = 0;
+                });
+                genreCountObj.forEach( function(obj) {
+                    _.each(obj, function(count,tag) {
+                        year_counts[tag]++;
+                    });
+                });
+                genre_results[year] = year_counts;
+                callback(null);
+            });
+        }, 250);
+
+    }
+    /************************************
+     *           Readability data       *
+     ************************************/
+    function parseReadability(year, field, callback) {
+        setTimeout(function() {
+            var filename = "./data/years/" + year + ".txt";
+            d3.json(filename, function(error, response) {
+                if (error) { console.log(error); }
+                var numSongs = response.length;
+                var totalPoints = 0;
+                response.forEach(function(song) {
+                    totalPoints += song[field];
+                });
+                var avgFogIndex = totalPoints/numSongs;
+                if (field == 'fog_index') {
+                    fogResults[year] = avgFogIndex;
+                }
+                else if (field == 'flesch_index') {
+                    fleschResults[year] = avgFogIndex;
+                }
+                callback(null);
+            });
+        }, 250);
+    }
+
 
     var svg1 = d3.select("#main1");
 
