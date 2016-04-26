@@ -49,6 +49,10 @@
             margin: 0px 10px 20px 10px;
         }
 
+        #filter-toggle {
+            margin-top: 20px;
+        }
+
         button.ui-btn.ui-btn-inline.ui-btn-active {
             color: white;
             background: #323232;
@@ -63,7 +67,7 @@
             border: none;
         }
         #year-slider {
-            margin: 20px;
+            margin: 0px 20px 20px 20px;
         }
         body, input, button {
             font-family: "bebas_neuebold";
@@ -145,14 +149,18 @@
     </div>
     <footer>
         <div class="container">
-            <button class="ui-btn ui-btn-inline ui-btn-active" id="filter-control">EXPAND FILTERS</button>
-            <form>
-                <div data-role="rangeslider" id="year-slider" data-mini="true">
-                    <input onchange="animStart(); visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));" type="range" name="year-min" id="year-min" min="1950" max="2015" value="1950">
-                    <input onchange="animStart(); visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));" type="range" name="year-max" id="year-max" min="1950" max="2015" value="2015">
-                </div>
-            </form>
-            <div class="genres"></div>
+            <button class="ui-btn ui-btn-inline ui-btn-active" id="filter-toggle">EXPAND FILTERS</button>
+            <div id="filter-controls" style="display: none;">
+                <form>
+                    <p>Year:</p>
+                    <div data-role="rangeslider" id="year-slider" data-mini="true">
+                        <input oninput="animStart(); visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));" type="range" name="year-min" id="year-min" min="1950" max="2015" value="1950">
+                        <input oninput="animStart(); visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));" type="range" name="year-max" id="year-max" min="1950" max="2015" value="2015">
+                    </div>
+                </form>
+                <p>Genres:</p>
+                <div class="genres"></div>
+            </div>
         </div>
     </footer>
 
@@ -167,10 +175,20 @@
         .attr("id", function(d){return d;})
         .text(function(d){return d;});
 
+        $("#filter-toggle").click(function() {
+            if ($("#filter-controls").is(":visible")) {
+                $(this).html("Expand Filters");
+            }
+            else {
+                $(this).html("Collapse Filters");
+            }
+            $("#filter-controls").fadeToggle();
+        });
+
         // Handle year slider events
         $( "#year-slider" ).on( "slidestop", function( event, ui ) {
-            console.log("changed");
             animStart();
+            console.log("changed");
             visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));
         } );
 
