@@ -1,6 +1,8 @@
 <title>Project 2</title>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <script src="http://hammerjs.github.io/dist/hammer-time.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
 
@@ -143,10 +145,11 @@
     </div>
     <footer>
         <div class="container">
+            <button class="ui-btn ui-btn-inline ui-btn-active" id="filter-control">EXPAND FILTERS</button>
             <form>
                 <div data-role="rangeslider" id="year-slider" data-mini="true">
-                    <input onchange="animStart();" type="range" name="year-min" id="year-min" min="1950" max="2016" value="1950">
-                    <input onchange="animStart();" type="range" name="year-max" id="year-max" min="1950" max="2016" value="2016">
+                    <input onchange="animStart(); visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));" type="range" name="year-min" id="year-min" min="1950" max="2015" value="1950">
+                    <input onchange="animStart(); visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));" type="range" name="year-max" id="year-max" min="1950" max="2015" value="2015">
                 </div>
             </form>
             <div class="genres"></div>
@@ -154,49 +157,50 @@
     </footer>
 
     <script>
-        $(document).ready(function() {
-            var agg_genres = ["all-genres", "rock", "alternative/indie", "electronic/dance", "soul", "classical/soundtrack", "pop", "hip-hop/rnb", "disco", "swing", "folk", "country", "jazz", "religious", "blues", "reggae"];
-            var genres = d3.select(".genres");
-            genres.selectAll("button")
-            .data(agg_genres)
-            .enter()
-            .append("button")
-            .attr("class", "ui-btn ui-btn-inline ui-btn-active")
-            .attr("id", function(d){return d;})
-            .text(function(d){return d;});
+        var agg_genres = ["all-genres", "rock", "alternative/indie", "electronic/dance", "soul", "classical/soundtrack", "pop", "hip-hop/rnb", "disco", "swing", "folk", "country", "jazz", "religious", "blues", "reggae"];
+        var genres = d3.select(".genres");
+        genres.selectAll("button")
+        .data(agg_genres)
+        .enter()
+        .append("button")
+        .attr("class", "ui-btn ui-btn-inline ui-btn-active")
+        .attr("id", function(d){return d;})
+        .text(function(d){return d;});
 
-            // Handle year slider events
-            $( "#year-slider" ).on( "slidestop", function( event, ui ) {
-                visualize(filter(data, getSliderMin(), getSliderMax()));
-            } );
+        // Handle year slider events
+        $( "#year-slider" ).on( "slidestop", function( event, ui ) {
+            console.log("changed");
+            animStart();
+            visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));
+        } );
 
-            $("input.ui-slider-input").on("keyup", function(event, ui) {
-                visualize(filter(data, getSliderMin(), getSliderMax()));
-            });
-
-            // Handle genre filter events
-            $("button.ui-btn.ui-btn-inline").click(function() {
-                if ($(this).attr('id') == 'all-genres') {
-                    if ($(this).hasClass("ui-btn-active")) {
-                        $("button.ui-btn.ui-btn-inline").removeClass("ui-btn-active");
-                        visualize(filter(data, getSliderMin(), getSliderMax(), []));
-                    }
-                    else {
-                        $("button.ui-btn.ui-btn-inline").addClass("ui-btn-active");
-                        visualize(filter(data, getSliderMin(), getSliderMax()));
-                    }
+        // Handle genre filter events
+        $(".genres  button.ui-btn.ui-btn-inline").click(function() {
+            animStart();
+            if ($(this).attr('id') == 'all-genres') {
+                if ($(this).hasClass("ui-btn-active")) {
+                    $(".genres  button.ui-btn.ui-btn-inline").removeClass("ui-btn-active");
+                    visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));
                 }
                 else {
-                    if ($("#all-genres").hasClass("ui-btn-active")) {
-                        $(this).toggleClass("ui-btn-active");
-                    }
-                    var activeGenres = [];
-                    $(".genres .ui-btn-active").each(function() {
-                        activeGenres.push($(this).attr('id'));
-                    });
-                    visualize(filter(data, getSliderMin(), getSliderMax(), activeGenres));
+                    $(".genres  button.ui-btn.ui-btn-inline").addClass("ui-btn-active");
+                    visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));
                 }
-            });
+            }
+            else {
+                if ($(this).hasClass("ui-btn-active")) {
+                    $(this).removeClass("ui-btn-active");
+                    $("#all-genres").removeClass("ui-btn-active");
+                }
+                else {
+                    $(this).addClass("ui-btn-active");
+                    var length = getActiveGenres().length;
+                    if (length == 15) {
+                        $("#all-genres").addClass("ui-btn-active");
+                    }
+                }
+                visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));
+            }
         });
 
         // Filter data according to year & genre
@@ -222,21 +226,36 @@
             document.getElementById("stats").innerText = data.length;
             document.getElementById("stats").innerText += JSON.stringify(_.pluck(data, "title"), null, 2);
             animStop();
-        }
+        };
 
         // Load data & visualize it
         d3.json("data.json", function(error, json) {
             if (error) return console.warn(error);
             data = json;
-            visualize(filter(data, getSliderMin(), getSliderMax()));
+            visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));
         });
 
-        // Slider Getter Functions
+        // Getter Functions
         function getSliderMin() {
             return d3.select("#year-min")[0][0].value;
         }
         function getSliderMax() {
             return d3.select("#year-max")[0][0].value;
+        }
+        function getActiveGenres() {
+            var activeGenres = [];
+            $(".genres .ui-btn-active").each(function() {
+                activeGenres.push($(this).attr('id'));
+            });
+            if (! activeGenres) {
+                return [];
+            }
+            else if (_.contains(activeGenres, "all-genres")) {
+                return undefined;
+            }
+            else {
+                return activeGenres;
+            }
         }
 
     </script>
