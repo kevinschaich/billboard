@@ -1,20 +1,116 @@
 <title>Project 2</title>
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" charset="utf-8"></script>
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script src="https://d3js.org/d3-queue.v2.min.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" charset="utf-8"></script>
 
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3-queue.v2.min.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="../bebas_neue/bebas_neue.css"/>
+
     <style>
+        input.ui-slider-input {
+            font-size: 20px;
+            line-height: 20px;
+            border: 2px solid #323232;
+            padding: 5px;
+            width: 50px;
+        }
+        .ui-rangeslider .ui-rangeslider-sliders {
+            margin: 0px 80px 0px 80px;
+        }
+
+        a.ui-slider-handle.ui-btn.ui-shadow.ui-btn-null{
+            background: #f3f3f3;
+            width: 12px;
+            height: 12px;
+            border-radius: 50px;
+            border: 2px solid #323232;
+        }
+        /* Unchecked Button*/
+        button.ui-btn.ui-btn-inline {
+            color: #323232;
+            border: 2px solid #323232;
+            text-transform: uppercase;
+            background: none;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 20px;
+            padding: 8px 8px 8px 8px;
+            margin: 0px 10px 20px 10px;
+        }
+
+        button.ui-btn.ui-btn-inline.ui-btn-active {
+            color: white;
+            background: #323232;
+        }
+        button.ui-btn.ui-btn-inline:hover {
+            opacity: .75;
+        }
+        div.ui-slider-bg.ui-btn-active {
+            background: #1D96E7;
+        }
+        .ui-slider-bg, .ui-slider-track {
+            border: none;
+        }
+        #year-slider {
+            margin: 20px;
+        }
+        body, input, button {
+            font-family: "bebas_neuebold";
+            fill: black;
+            line-height: 1.25;
+            min-height: 100%;
+            width: 100%;
+        }
+        body {
+            position: relative;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px;
+        }
+        header #title {
+            font-size: 30px;
+        }
+
+        .container {
+            padding: 0px 60px 0px 60px;
+        }
+        #wrap {
+            margin: 0px 0px 100px 0px;
+        }
+        #cover {
+            background: white;
+            z-index: 10;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: .7;
+        }
+
+        footer {
+            position:fixed;
+            left:0px;
+            bottom:0px;
+            width:100%;
+            background: white;
+            border-top: 2px solid #323232;
+        }
+
         svg {
             border: solid #323232 1px;
         }
-
-        font, text, .text {
-            font-family: Avenir Next;
-            fill: black;
-        }
-
         path.line {
             stroke: #323232;
             fill: none;;
@@ -23,458 +119,126 @@
 </head>
 
 <body>
-    <font size="20px" color="black">
-        <center>BILLBOARD TOP 100 LYRICS</center>
-    </font>
-    <p align="center">
-        <svg id="main1" class="main" height="500", width="100%"></svg>
-    </p>
+    <div id="cover"></div>
+    <script>
+        function animStart() {
+            $('#cover').fadeIn("fast");
+            NProgress.start();
+        }
+        function animStop() {
+            $('#cover').fadeOut("fast");
+            NProgress.done();
+        }
+        NProgress.start();
+    </script>
+    <div id="wrap">
+        <header>
+            <div class="container">
+                <h1 id="title">Billboard's Top 100 Songs</h1>
+                <h4>66 years of lyrical data, visualized</h4>
+            </div>
+        </header>
+
+        <div id="stats" class="container"></div>
+    </div>
+    <footer>
+        <div class="container">
+            <form>
+                <div data-role="rangeslider" id="year-slider" data-mini="true">
+                    <input onchange="animStart();" type="range" name="year-min" id="year-min" min="1950" max="2016" value="1950">
+                    <input onchange="animStart();" type="range" name="year-max" id="year-max" min="1950" max="2016" value="2016">
+                </div>
+            </form>
+            <div class="genres"></div>
+        </div>
+    </footer>
 
     <script>
+        $(document).ready(function() {
+            var agg_genres = ["all-genres", "rock", "alternative/indie", "electronic/dance", "soul", "classical/soundtrack", "pop", "hip-hop/rnb", "disco", "swing", "folk", "country", "jazz", "religious", "blues", "reggae"];
+            var genres = d3.select(".genres");
+            genres.selectAll("button")
+            .data(agg_genres)
+            .enter()
+            .append("button")
+            .attr("class", "ui-btn ui-btn-inline ui-btn-active")
+            .attr("id", function(d){return d;})
+            .text(function(d){return d;});
 
-        var mainSvg = d3.select(".main");
-        var height = mainSvg.attr("height");
-        var width = $("#main1").width();
-        var margin = {top : 30 , right : 20, buttom : 30 , left : 50};
+            // Handle year slider events
+            $( "#year-slider" ).on( "slidestop", function( event, ui ) {
+                visualize(filter(data, getSliderMin(), getSliderMax()));
+            } );
 
-        var dataArray = [];
+            $("input.ui-slider-input").on("keyup", function(event, ui) {
+                visualize(filter(data, getSliderMin(), getSliderMax()));
+            });
 
-        function getJsonByYear(year) {
-            var str = "/years/" + year + ".json";
-            d3.json(str, function (error, json) {
-                if (error) return console.warn(error);
-                dataArray.push(json);
-            })
-        }
-
-
-    // return the average of a list's sentiment value
-    function getAverage(obj, senti) {
-
-        function sumList(lst) {
-            return _.reduce(lst, function (fist, next) {
-                return fist + next;
-            }, 0);
-        };
-        // get all sentiment positive/neu/neg score of listed songss
-        function getSentPos(obj) {
-            return _.map(obj, function (any) {
-                return any.sentiment.pos;
-            })
-        };
-
-        function getSentNeu(obj) {
-            return _.map(obj, function (any) {
-                return any.sentiment.neu;
-            })
-        };
-
-        function getSentNeg(obj) {
-            return _.map(obj, function (any) {
-                return any.sentiment.neg;
-            })
-        };
-
-        function avgSentPos(obj) {
-            var poslst = sumList(getSentPos(obj));
-            return poslst / obj.length;
-        };
-
-        function avgSentNeu(obj) {
-            var poslst = sumList(getSentNeu(obj));
-            return poslst / obj.length;
-        };
-
-        function avgSentNeg(obj) {
-            var poslst = sumList(getSentNeg(obj));
-            return poslst / obj.length;
-        };
-
-        if (senti === "pos") {
-            return avgSentPos(obj);
-        }
-        else if (senti === "neu") {
-            return avgSentNeu(obj);
-        }
-        else if (senti === "neg") {
-            return avgSentNeg(obj);
-        }
-        else
-            console.warn(error);
-
-    }
-
-
-    function getYearSentiArray(year, callback) {
-        setTimeout(function () {
-            var filename = "/years/" + year + ".json";
-            d3.json(filename, function (error, response) {
-
-
-                if (error) {
-                    console.log(error);
+            // Handle genre filter events
+            $("button.ui-btn.ui-btn-inline").click(function() {
+                if ($(this).attr('id') == 'all-genres') {
+                    if ($(this).hasClass("ui-btn-active")) {
+                        $("button.ui-btn.ui-btn-inline").removeClass("ui-btn-active");
+                        visualize(filter(data, getSliderMin(), getSliderMax(), []));
+                    }
+                    else {
+                        $("button.ui-btn.ui-btn-inline").addClass("ui-btn-active");
+                        visualize(filter(data, getSliderMin(), getSliderMax()));
+                    }
                 }
-
-                var posAvg = getAverage(response, "pos");
-                var neuAvg = getAverage(response, "neu");
-                var negAvg = getAverage(response, "neg");
-                yearSenti[year] ={
-
-
-                    pos: posAvg,
-                    neu: neuAvg,
-                    neg: negAvg
-                };
-                callback (null);
-            });
-        }, 2);
-    }
-    /*******yearly avg sentiment data************/
-
-
-    var yearSenti = {};
-    var q1 = d3_queue.queue();
-
-
-    for  (var i = 1950 ; i <=2015 ; i ++) {
-        q1.defer(getYearSentiArray,  i)
-    };
-
-    q1.awaitAll(function (error) {
-        if (error) throw error;
-
-        d3.json()
-
-        svg1.append("path").attr("class", "line")
-        .attr("d", posLine(yearSenti));
-
-        svg1.append("path").attr("class", "line")
-        .attr("d", negLine(yearSenti)); });
-    var dataArray = [];
-
-
-
-    for (var i = 1950; i<= 2015; i ++) {
-      var str = "../data/years/" + i + ".json";
-      d3.json(str, function(error, json){
-         if (error) return console.warn(error);
-         dataArray.push( json);
-     })
-
-  }
-
-  function sumList (lst) {
-      return _.reduce(lst, function(fist, next){
-         return fist + next;
-     }, 0 ); };
-//get all sentiment positive/neu/neg score of listed songss
-function getSentPos (obj) {
-  return _.map (obj, function(any) {
-     return any.sentiment.pos;
- })
-};
-
-function getSentNeu (obj) {
-  return _.map (obj , function (any) {
-     return any.sentiment.neu;
- })
-};
-
-function getSentNeg (obj) {
-  return _.map (obj , function (any) {
-     return any.sentiment.neg;
- })
-};
-
-function avgSentPos (obj ){
-  var poslst = sumList(getSentPos(obj));
-  return poslst/obj.length;
-};
-
-function avgSentNeu (obj ){
-  var poslst = sumList(getSentNeu(obj));
-  return poslst/obj.length;
-};
-
-function avgSentNeg (obj ){
-  var poslst = sumList(getSentNeg(obj));
-  return poslst/obj.length;
-};
-
-	// int year, string senti = "pos"/"neu"/"neg" get average attribute of this year
-
-	function getAverageByYear(year, senti) {
-		//TODO: figure out how to access a file of a directory
-		var obj = getYearObj(year);
-		if (senti === "pos"){
-			return avgSentPos(obj);
-		}
-		else if (senti === "neu") {
-			return avgSentNeu(obj);
-		}
-		else if (senti === "neg") {
-			return avgSentNeg(obj);
-		}
-		else
-			console.warn(error);
-	}
-
-	//return a list of object containing each years average pos/neu/neg
-	function loopYears ( minYear, maxYear) {
-		if (minYear <= maxYear) {
-			var posYears = [];
-			var neuYears = [];
-			var negYears = [];
-			for (var i = minYear; i <= maxYear; i++) {
-				posYears.push(getAverageByYear(i, "pos"));
-				neuYears.push(getAverageByYear(i, "neu"));
-				negYears.push(getAverageByYear(i, "neg"));
-
-			}
-			return {
-				allPos: posYears,
-				allNeu: neuYears,
-				allNeg: negYears
-			}
-		}
-		else {
-			console.log("error");
-		}
-
-	}
-	//get a year's data frm json file
-
-	function loopYearsObjArray (minYear, maxYear) {
-
-		if (minYear <= maxYear) {
-			var final = [];
-			for (var i = minYear; i <= maxYear; i++) {
-				var posI = getAverageByYear(i, "pos");
-				var neuI = getAverageByYear(i, "neu");
-				var negI = getAverageByYear(i, "neg");
-
-				final.push( {
-					year:i,
-					pos: posI,
-					neu: neuI,
-					neg: negI
-				})
-			}
-			return final;
-		}
-		else {
-			console.log("error");
-		}}
-
-
-        var xScale = d3.scale.linear()
-        .domain([1950, 2015]).range([margin.left, width - margin.left - margin.right]);
-        var
-        yScale =
-        d3.scale.linear().domain([-0.1, 0.5]).range([height-margin.top -
-                                                    margin.buttom,
-                                                    0]);
-
-//	var testYears = console.log( loopYearsObjArray(1950, 1959));
-
-var svg1 = d3.select("#main1");
-
-
-var posLine =
-d3.svg.line().x(function (d) {
-    return xScale(d.year)
-}).y(function (d) {
-    return yScale(d.pos)
-});
-
-var negLine =
-d3.svg.line().x(function (d) {
-    return xScale(d.year)
-}).y(function (d) {
-    return yScale(d.neg)
-});
-
-
-    //    var xAxis = d3.svg.axis().scale(x)
-//            .orient("bottom").ticks(5);
-//
-//    var yAxis = d3.svg.axis().scale(y)
-//            .orient("left").ticks(5);
-
-
-
-
-    /************************************
-     *      Aggregating genre data      *
-     ************************************/
-     var genres = ['alternative',
-     'big band',
-     'blues',
-     'country',
-     'electro',
-     'dance',
-     'jazz',
-     'hip',
-     'pop',
-     'r&b',
-     'rnb',
-     'rock and roll',
-     'rock',
-     'swing',
-     'undefined'];
-    // counts the number of tags that contains the substring
-    // of the selected genres
-    // returns an object of {genre: count}
-    function countGenres(tags) {
-        var genreCount = _.countBy(tags, function(tag) {
-            var g = _.find(genres, function(genre) {
-                return tag.includes(genre);
-            });
-            return g;
-        });
-        return genreCount;
-    };
-    // aggregates genre data in genre_results object using d3.queue
-    // genre_results is an object in the form {year: {genre: count}}
-    var q = d3_queue.queue();
-    var genre_results = {};
-    for (var i = 1950; i < 2015; ++i) {
-        q.defer(parseTags,i);
-    }
-    q.awaitAll(function(error) {
-        if (error) throw error;
-        console.log(genre_results);
-        console.log("Goodbye!");
-    });
-
-
-    function parseTags(year, callback) {
-        setTimeout(function() {
-            var filename = "data/years/" + year + ".json";
-            d3.json(filename, function(error, response) {
-                if (error) { console.log(error); }
-                // fill genreCountObj
-                genreCountObj = [];
-                response.forEach(function(song) {
-                    var genreCount = countGenres(song['tags']);
-                    genreCountObj.push(genreCount);
-                });
-
-                var year_counts = {};
-                genres.forEach(function(genre) {
-                    year_counts[genre] = 0;
-                });
-                genreCountObj.forEach( function(obj) {
-                    _.each(obj, function(count,tag) {
-                        year_counts[tag]++;
+                else {
+                    if ($("#all-genres").hasClass("ui-btn-active")) {
+                        $(this).toggleClass("ui-btn-active");
+                    }
+                    var activeGenres = [];
+                    $(".genres .ui-btn-active").each(function() {
+                        activeGenres.push($(this).attr('id'));
                     });
-                });
-                genre_results[year] = year_counts;
-                callback(null);
-            });
-        }, 250);
-
-    };
-    /************************************
-     *           Readability data       *
-     ************************************/
-     function parseReadability(year, field, callback) {
-        setTimeout(function() {
-            var filename = "./data/years/" + year + ".txt";
-            d3.json(filename, function(error, response) {
-                if (error) { console.log(error); }
-                var numSongs = response.length;
-                var totalPoints = 0;
-                response.forEach(function(song) {
-                    totalPoints += song[field];
-                });
-                var avgFogIndex = totalPoints/numSongs;
-                if (field == 'fog_index') {
-                    fogResults[year] = avgFogIndex;
+                    visualize(filter(data, getSliderMin(), getSliderMax(), activeGenres));
                 }
-                else if (field == 'flesch_index') {
-                    fleschResults[year] = avgFogIndex;
-                }
-                callback(null);
             });
-        }, 250);
-    }
+        });
 
+        // Filter data according to year & genre
+        function filter(data, yearMin, yearMax, genres) {
+            var years =  _.filter(data, function(item) {
+                return item['year'] >= yearMin && item['year'] <= yearMax;
+            });
 
-    var svg1 = d3.select("#main1");
+            var allsongs = _.flatten(_.pluck(years, "songs"));
+            if (typeof genres === 'undefined') {
+                return allsongs;
+            }
+            else {
+                var songs = _.filter(allsongs,function(song) {
+                    return _.intersection(song['tags'], genres).length > 0;
+                });
+                return songs;
+            }
+        }
 
-    svg1.append("circle").attr("cx", 100).attr("cy", 100).attr("r", 100);
+        // Re-draw elements
+        function visualize(data) {
+            document.getElementById("stats").innerText = data.length;
+            document.getElementById("stats").innerText += JSON.stringify(_.pluck(data, "title"), null, 2);
+            animStop();
+        }
 
+        // Load data & visualize it
+        d3.json("data.json", function(error, json) {
+            if (error) return console.warn(error);
+            data = json;
+            visualize(filter(data, getSliderMin(), getSliderMax()));
+        });
 
-    function slideOnChange() {
-        document.getElementById("yearText").innerText =
-        document.getElementById("bar").value;
-    };
+        // Slider Getter Functions
+        function getSliderMin() {
+            return d3.select("#year-min")[0][0].value;
+        }
+        function getSliderMax() {
+            return d3.select("#year-max")[0][0].value;
+        }
 
-    svg1.append("circle").attr("cx", 100).attr("cy",100).attr("r", 100);
-
-
-    svg1.append("path")
-    .datum(data)
-    .attr("class", "line")
-    .attr("d", line);
-
-
-    function slideOnChange () {
-      document.getElementById("yearText").innerText =
-      document.getElementById("bar").value;
-  };
-//    TODO:
-//    global data, grabbed from json
-
-//        HAVE DONE: aggregate sentiment by year
-
-function graphXAxis ( ) {
-//        TODO graph axis
-}
-function  graphYAxis (){
-//        TODO: append YAxis to graph
-}
-
-    //return the Y axis to display for a variable (a "line" funtion (d3))
-    function makeYAxisByVar (variable ){
-//        TODO
-}
-
-
-function graphLine ( variable, genre) {
-//        TODO: plot a line, chosen genre, chosen variable (sentiment/ dups/...)
-
-}
-
-
-    //    return overall year data of certain genre
-    function filterByGenre(genre) {
-    // TODO
-
-}
-
-    // return the song object selected of that year
-    function getMaxByYear(genre, year, variable) {
-        // TODO
-    }
-    //    return the song object selected of that year
-    function getMinByYear(genre, year, variable) {
-        // TODO
-    }
-
-
-    //VISUAL PART
-    function displayMaxMin() {
-        return 0;
-    }
-
-    //interactive: highlight the selected years for graph1
-    function highlightYearRange() {
-        // TODO
-    }
-
-
-</script>
+    </script>
 
 </body>
