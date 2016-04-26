@@ -1,0 +1,140 @@
+<title>Project 2</title>
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" charset="utf-8"></script>
+
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3-queue.v2.min.js" charset="utf-8"></script>
+
+    <style>
+        body, input {
+            font-family: "Source Sans Pro";
+            fill: black;
+            line-height: 1.25;
+            min-height: 100%;
+            width: 100%;
+        }
+        body {
+            position: relative;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px;
+        }
+        header #title {
+            font-size: 30px;
+        }
+
+        .container {
+            padding: 0px 60px 0px 60px;
+        }
+        #wrap {
+            margin: 0px 0px 100px 0px;
+        }
+        #cover {
+            background: white;
+            z-index: 10;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: .7;
+        }
+
+        footer {
+            position:fixed;
+            left:0px;
+            bottom:0px;
+            width:100%;
+            background: #E6E6E6;
+        }
+
+        svg {
+            border: solid #323232 1px;
+        }
+        path.line {
+            stroke: #323232;
+            fill: none;;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cover"></div>
+    <script>
+        function animStart() {
+            $('#cover').fadeIn("fast");
+            NProgress.start();
+        }
+        function animStop() {
+            $('#cover').fadeOut("fast");
+            NProgress.done();
+        }
+        NProgress.start();
+    </script>
+    <div id="wrap">
+        <header>
+            <div class="container">
+                <h1 id="title">Billboard's Top 100 Songs</h1>
+                <h4>60 years of lyrical data, visualized</h4>
+            </div>
+        </header>
+
+        <div id="stats" class="container"></div>
+    </div>
+    <footer>
+        <div class="container">
+            <form>
+                <div data-role="rangeslider" id="year-slider" data-mini="true">
+                    <input onchange="animStart();" type="range" name="year-min" id="year-min" min="1950" max="2016" value="1950">
+                    <input onchange="animStart();" type="range" name="year-max" id="year-max" min="1950" max="2016" value="2016">
+                </div>
+            </form>
+        </div>
+    </footer>
+
+    <script>
+        function filter(data, yearMin, yearMax, genres) {
+            var years =  _.filter(data, function(item) {
+                return item['year'] >= yearMin && item['year'] <= yearMax;
+            });
+
+            var allsongs = _.flatten(_.pluck(years, "songs"));
+            if (typeof genres === 'undefined') {
+                return allsongs;
+            }
+            else {
+                var songs = _.filter(allsongs,function(song) {
+                    return _.intersection(song['tags'], genres).length > 0;
+                });
+                return songs;
+            }
+        }
+
+        function visualize(data) {
+            document.getElementById("stats").innerText = data.length;
+            document.getElementById("stats").innerText += JSON.stringify(_.pluck(data, "title"), null, 2);
+            animStop();
+        }
+
+        d3.json("data.json", function(error, json) {
+            if (error) return console.warn(error);
+            data = json;
+            visualize(filter(data, d3.select("#year-min")[0][0].value, d3.select("#year-max")[0][0].value));
+        });
+
+        $( "#year-slider" ).on( "slidestop", function( event, ui ) {
+            visualize(filter(data, d3.select("#year-min")[0][0].value, d3.select("#year-max")[0][0].value));
+        } );
+    </script>
+
+</body>
