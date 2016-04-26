@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
 
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
@@ -14,8 +14,53 @@
     <script src="https://d3js.org/d3-queue.v2.min.js" charset="utf-8"></script>
 
     <style>
-        body, input {
-            font-family: "Source Sans Pro";
+        input.ui-slider-input {
+            font-size: 20px;
+            line-height: 20px;
+            border: 2px solid #323232;
+            padding: 5px;
+            padding-top: 7px;
+            width: 50px;
+        }
+        .ui-rangeslider .ui-rangeslider-sliders {
+            margin: 0 80px;
+        }
+
+        a.ui-slider-handle.ui-btn.ui-shadow.ui-btn-null{
+            background: #f3f3f3;
+            width: 12px;
+            height: 12px;
+            border-radius: 50px;
+            border: 2px solid #323232;
+        }
+        button.ui-btn.ui-btn-inline,
+        button.ui-btn.ui-btn-inline:hover,
+        button.ui-btn.ui-btn-inline:active {
+            color: #323232;
+            border: 2px solid #323232;
+            text-transform: uppercase;
+            background: none;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 20px;
+            padding: 12px 8px 8px 8px;
+            margin: 0px 20px 20px 20px;
+        }
+        button.ui-btn.ui-btn-inline:hover, button.ui-btn.ui-btn-inline.ui-btn-active {
+            color: white;
+            background: #323232;
+        }
+        div.ui-slider-bg.ui-btn-active {
+            background: #1D96E7;
+        }
+        .ui-slider-bg, .ui-slider-track {
+            border: none;
+        }
+        #year-slider {
+            margin: 20px;
+        }
+        body, input, button {
+            font-family: "Bebas Neue";
             fill: black;
             line-height: 1.25;
             min-height: 100%;
@@ -55,7 +100,8 @@
             left:0px;
             bottom:0px;
             width:100%;
-            background: #E6E6E6;
+            background: white;
+            border-top: 2px solid #323232;
         }
 
         svg {
@@ -99,6 +145,11 @@
                     <input onchange="animStart();" type="range" name="year-max" id="year-max" min="1950" max="2016" value="2016">
                 </div>
             </form>
+            <button class="ui-btn ui-btn-inline">ALL GENRES</button>
+            <button class="ui-btn ui-btn-inline">GENRE 1</button>
+            <button class="ui-btn ui-btn-inline">GENRE 2</button>
+            <button class="ui-btn ui-btn-inline">GENRE 3</button>
+            <button class="ui-btn ui-btn-inline">GENRE 4</button>
         </div>
     </footer>
 
@@ -130,6 +181,10 @@
             if (error) return console.warn(error);
             data = json;
             visualize(filter(data, d3.select("#year-min")[0][0].value, d3.select("#year-max")[0][0].value));
+        });
+
+        $("button.ui-btn.ui-btn-inline").click(function() {
+            $(this).toggleClass("ui-btn-active");
         });
 
         $( "#year-slider" ).on( "slidestop", function( event, ui ) {
