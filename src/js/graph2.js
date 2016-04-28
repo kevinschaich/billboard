@@ -148,7 +148,7 @@ function updateGraph (data) {
         "," + padding / 5 + "," + height / 2 + ")");
 
   xTitle
-  .attr("x", width / 2)
+  .attr("x", (width-padding*2)/2)
   .attr("y", height - (padding / 4));
 
   var legend = d3.select(".legend");
