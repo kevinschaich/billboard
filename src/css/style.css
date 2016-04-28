@@ -143,3 +143,14 @@ path.domain {
 .show {
     display:block;
 }
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.focus circle {
+  fill: none;
+  stroke: steelblue;
+}
+

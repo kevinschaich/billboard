@@ -66,14 +66,23 @@
   })
 }
 
-function mouseOver() {
-  console.log("MOUSEOVER!");
-}
+// function mouseOver() {
+//   console.log("MOUSEOVER!");
+//   var coords = d3.mouse(this);
+//   var xScale = d3.scale.ordinal
+//     .domain(d3.range(0, innerWidth))
+//     .rangePoints([1950, 2016], 10);
+//   console.log(coords);
+// }
 
 function mousemove() {
-  var coords = d3.mouse(this);
-
-  // focus.attr("transform", "translate(" + xScaleTrend.invert(coords[0]) + "," + yScaleTrend.invert(coords[1]) + ")");
+  // var coords = d3.mouse(this);
+  // console.log(coords);
+  // var xScale = d3.scale.ordinal()
+  //   .domain(d3.range(0, innerWidth))
+  //   .rangePoints([1950, 2016],10);
+  // console.log(xScale(coords[0]));
+  // d3.select("#focus").attr("transform", "translate(" + xScaleTrend(coords[0]) + "," + yScaleTrend(coords[1]) + ")");
   // focus.select("text").text("TEST
   //   ");
 }
@@ -137,6 +146,7 @@ function graphTrend(data) {
 
   // var focus = innerSvg.append("g")
   //     .attr("class", "focus")
+  //     .attr("id", "focus")
   //     .style("display", "none");
 
   // focus.append("circle")
@@ -197,8 +207,7 @@ function graphTrend(data) {
       .attr("d", sentimentLine(songs[genre]['info']))
       .attr("fill", "none")
       .attr("stroke", songs[genre]['color'])
-      .attr("stroke-width", "2.5px")
-      .on("mouseover", function() {console.log("MOUSEOVER"); });
+      .attr("stroke-width", "2.5px");
 
     readabilityG.append("path")
     .attr("class", "trendline")
@@ -253,6 +262,9 @@ function graphTrend(data) {
     d3.select('#repetition_'+genreID).attr("visibility", "hidden");
   });
 
+  /*************************************
+   *          HOVER OVERLAY             *
+   /************************************/
 
  }
 
