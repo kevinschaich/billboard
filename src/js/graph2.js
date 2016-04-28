@@ -1,4 +1,5 @@
 var colors = ["#3366cc", "#dc3912", "#ff9900", "#109618", "#990099", "#0099c6", "#dd4477", "#66aa00", "#b82e2e", "#316395", "#994499", "#22aa99", "#aaaa11", "#6633cc", "#e67300"];
+var agg_genres = ["rock", "alternative/indie", "electronic/dance", "soul", "classical/soundtrack", "pop", "hip-hop/rnb", "disco", "swing", "folk", "country", "jazz", "religious", "blues", "reggae"];
 
 var graph;
 var curParam = "sentiment";
@@ -16,11 +17,11 @@ var line = {};
 var drawnPath = {};
 var agg_data;
 var padding;
-var margin;
+var margin = 60;
 var xTickFrequency;
 var yNumTicks;
-var height;
-var width;
+var height = window.innerHeight - 2 * margin;
+var width = window.innerWidth - 2 * margin;
 
 function graphInit(data) {
   graph = d3.select("#graph2").append("svg");
@@ -56,6 +57,29 @@ function graphInit(data) {
   .attr("alignment-baseline", "central")
   .text("Year");
 
+  /******************************
+   *          LEGEND            *
+  /******************************/
+  var legend = graph.append("g")
+    .attr("class", "legend")
+    .attr("transform", "translate("+(width-margin*3)+","  + margin+ ")");
+
+  // agg_genres.forEach(function(genre, i) {
+  //   var y = i*18
+  //   legend.append("rect")
+  //     .attr("x",0)
+  //     .attr("y",y)
+  //     .attr("width", 15)
+  //     .attr("height", 15)
+  //     .style("fill", colors[i]);
+
+  //   legend.append("text")
+  //     .attr("x",20)
+  //     .attr("y",y+13)
+  //     .text(genre)
+  //     .attr("fill", "black");
+  // });
+
   updateGraph(data);
 }
 
@@ -76,7 +100,7 @@ function updateGraph (data) {
   }
   height = window.innerHeight - 2 * margin;
   width = window.innerWidth - 2 * margin;
-  graph.attr("width", width)
+  graph.attr("width",width)
   .attr("height",height);
 
   agg_data = aggParamStats(curParam);
@@ -90,7 +114,7 @@ function updateGraph (data) {
   // document.getElementById("stats").innerText += JSON.stringify(, null, 2);
 
   xScale.domain(_.range(parseInt(getSliderMin()), parseInt(getSliderMax()) + 1))
-  .rangePoints([padding, width - padding / 4]);
+  .rangePoints([padding, width - padding*2]);
   yScale.domain([averages.min(), averages.max()]).range([height - padding, padding / 2]);
 
   // Axes
@@ -127,6 +151,10 @@ function updateGraph (data) {
   .attr("x", width / 2)
   .attr("y", height - (padding / 4));
 
+  var legend = d3.select(".legend");
+  legend.selectAll("rect").remove();
+  legend.selectAll("text").remove();
+
   graph.selectAll("path.line").remove();
 
   //filter agg_data to get rid of data points 
@@ -139,6 +167,21 @@ function updateGraph (data) {
   })
 
   _.each(filteredAggData, function(c, i) {
+
+    //update legend according to active genres
+    var y = i*18
+    legend.append("rect")
+      .attr("x",0)
+      .attr("y",y)
+      .attr("width", 15)
+      .attr("height", 15)
+      .style("fill", colors[i]);
+
+    legend.append("text")
+      .attr("x",20)
+      .attr("y",y+13)
+      .text(c['genre'])
+      .attr("fill", "black");
 
     // Create path of datapoint
     line[c['genre']] = d3.svg.line().interpolate("basis")
@@ -153,6 +196,8 @@ function updateGraph (data) {
       }
     });
 
+    //genre->color
+
     // Draw path of datapoint
     drawnPath[c['genre']] = graph.append("path")
     .attr("class", "line")
@@ -164,6 +209,10 @@ function updateGraph (data) {
     .attr("d", line[c['genre']](c['years']));
 
   });
+
+  graph.select(".legend")
+    .attr("transform", "translate("+(width-margin*3)+","  + margin+ ")");
+
 
   animStop();
 }
