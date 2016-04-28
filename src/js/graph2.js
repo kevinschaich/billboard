@@ -280,7 +280,7 @@ function updateGraph (data) {
   });
 
   graph.select(".legend")
-  .attr("transform", "translate("+(width-margin*3)+","  + margin+ ")");
+  .attr("transform", "translate("+(width-180)+","  + 60+ ")");
 
 
   animStop();
