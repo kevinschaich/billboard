@@ -39,7 +39,7 @@ var yAxisTrend;
 var globalData;
 var songs = {};
 var sentimentLine;
-var difficultyLine;
+var readabilityLine;
 var repetitionLine;
 var currVar = 'sentiment';
 
@@ -125,7 +125,7 @@ function graphTrend(data) {
     .x(function (d) { return xScaleTrend(d.year); })
     .y(function (d) { return yScaleTrend(d.pos - d.neg); })
     .interpolate("basis");
-  difficultyLine = d3.svg.line()
+  readabilityLine = d3.svg.line()
     .x(function (d) { return xScaleTrend(d.year); })
     .y(function (d) { return yScaleTrend(d.fl); })
     .interpolate("basis");
@@ -145,7 +145,7 @@ function graphTrend(data) {
   console.log(songs);
 
   var sentimentG = innerSvg.append("g").attr("id", "sentimentG");
-  var difficultyG = innerSvg.append("g").attr("id", "difficultyG");
+  var readabilityG = innerSvg.append("g").attr("id", "readabilityG");
   var repetitionG = innerSvg.append("g").attr("id", "repetitionG");
 
   genres.forEach(function(genre) {
@@ -162,10 +162,10 @@ function graphTrend(data) {
       .attr("stroke", songs[genre]['color'])
       .attr("stroke-width", "3px");
 
-    difficultyG.append("path")
+    readabilityG.append("path")
       .attr("class", "trendline")
-      .attr("id", "difficulty_"+genreID)
-      .attr("d", difficultyLine(songs[genre]['info']))
+      .attr("id", "readability_"+genreID)
+      .attr("d", readabilityLine(songs[genre]['info']))
       .attr("fill", "none")
       .attr("stroke", songs[genre]['color'])
       .attr("stroke-width", "3px");
@@ -186,7 +186,7 @@ function graphTrend(data) {
       genreID = genre.substr(0, genre.indexOf('/'))
     }
 
-    d3.select('#difficulty_'+genreID).attr("visibility", "hidden");
+    d3.select('#readability_'+genreID).attr("visibility", "hidden");
     d3.select('#repetition_'+genreID).attr("visibility", "hidden");
   });
 
@@ -214,7 +214,7 @@ function rescale(yVariable) {
     min = -0.2;
     max = 0.4;
   }
-  else if (yVariable == 'difficulty') {
+  else if (yVariable == 'readability') {
     min = 70;
     max = 110;
   }
@@ -252,8 +252,8 @@ function regraph(yVariable) {
     if (yVariable == 'sentiment') {
       line = sentimentLine;
     }
-    else if (yVariable == 'difficulty') {
-      line = difficultyLine;
+    else if (yVariable == 'readability') {
+      line = readabilityLine;
     }
     else if (yVariable == 'repetition') {
       line = repetitionLine;
