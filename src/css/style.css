@@ -1,0 +1,157 @@
+input.ui-slider-input {
+    font-size: 20px;
+    line-height: 20px;
+    border: 2px solid #323232;
+    padding: 5px;
+    width: 50px;
+}
+.ui-rangeslider .ui-rangeslider-sliders {
+    margin: 0px 80px 0px 80px;
+}
+a.ui-slider-handle.ui-btn.ui-shadow.ui-btn-null{
+    background: #f3f3f3;
+    width: 12px;
+    height: 12px;
+    border-radius: 50px;
+    border: 2px solid #323232;
+}
+/* Unchecked Button*/
+button.ui-btn.ui-btn-inline {
+    color: #323232;
+    border: 2px solid #323232;
+    text-transform: uppercase;
+    background: none;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 8px 8px 8px 8px;
+    margin: 0px 10px 20px 10px;
+}
+
+#filter-toggle {
+    margin-top: 20px;
+}
+
+button.ui-btn.ui-btn-inline.ui-btn-active {
+    color: white;
+    background: #323232;
+}
+button.ui-btn.ui-btn-inline:hover {
+    opacity: .75;
+}
+div.ui-slider-bg.ui-btn-active {
+    background: #1D96E7;
+}
+.ui-slider-bg, .ui-slider-track {
+    border: none;
+}
+#year-slider {
+    margin: 0px 20px 20px 20px;
+}
+body, input, button {
+    font-family: "bebas_neuebold";
+    fill: black;
+    line-height: 1.25;
+    min-height: 100%;
+    width: 100%;
+}
+body {
+    position: relative;
+}
+
+header {
+    text-align: center;
+    padding: 30px;
+}
+header #title {
+    font-size: 40px;
+}
+header #subtitle {
+    font-size: 20px;
+}
+
+div #trend {
+    padding-bottom: 30px;
+}
+
+.container {
+    padding: 0px 60px 0px 60px;
+}
+#wrap {
+    margin: 0px 0px 100px 0px;
+}
+#cover {
+    background: white;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .7;
+}
+
+footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    width:100%;
+    background: white;
+    border-top: 2px solid #323232;
+    opacity: .95;
+}
+
+svg {
+    border: solid #323232 1px;
+}
+
+path.domain {
+    fill: none;
+    stroke: #323232;
+}
+
+/*DROPDOWN BUTTON FOR TREND GRAPH CSS*/
+/* .dropbtn {
+    margin-left: 70px;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-size: 14px;
+    border: solid black;
+    cursor: pointer;
+    height: 50px;
+    width: 100px;
+    } */
+
+.dropbtn:hover, .dropbtn:focus {
+    border: solid #C0C0C0;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 70px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #f1f1f1;
+}
+
+.show {
+    display:block;
+}
