@@ -107,7 +107,16 @@ function updateGraph (data) {
 
   agg_data = aggParamStats(curParam);
 
-  var averages = _.chain(agg_data)
+  //filter agg_data to get rid of data points
+  //where that genre didn't exist in that year
+  var filteredAggData = agg_data;
+
+  filteredAggData.forEach(function(genreObj, i) {
+    genreObj.years = _.filter(genreObj.years, function(year) {
+      return year.max != -Infinity && year.min != Infinity });
+  })
+
+  var averages = _.chain(filteredAggData)
   .pluck("years")
   .flatten()
   .pluck("avg")
@@ -160,14 +169,6 @@ function updateGraph (data) {
 
   graph.selectAll("path.line").remove();
 
-  //filter agg_data to get rid of data points
-  //where that genre didn't exist in that year
-  var filteredAggData = agg_data;
-
-  filteredAggData.forEach(function(genreObj, i) {
-    genreObj.years = _.filter(genreObj.years, function(year) {
-      return year.max != -Infinity && year.min != Infinity });
-  })
 
   _.each(filteredAggData, function(c, i) {
 
