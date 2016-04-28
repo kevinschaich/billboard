@@ -33,7 +33,7 @@ function curAvgParam(param) {
       "years": _.map(_.range(parseInt(getSliderMin()), parseInt(getSliderMax()) + 1),
                      function(year) {
                       // console.log( avgParam(year, param, genre));
-                      return {"year" : year, "value": avgParam(year, param, genre)};
+                      return {"year" : year, "avg": avgParam(year, param, genre)};
                     })
     };
   });
