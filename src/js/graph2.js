@@ -23,6 +23,8 @@ var yNumTicks;
 var height = window.innerHeight - 2 * margin;
 var width = window.innerWidth - 2 * margin;
 
+var temp;
+
 function graphInit(data) {
   graph = d3.select("#graph2").append("svg");
 
@@ -59,10 +61,10 @@ function graphInit(data) {
 
   /******************************
    *          LEGEND            *
-  /******************************/
-  var legend = graph.append("g")
-    .attr("class", "legend")
-    .attr("transform", "translate("+(width-margin*3)+","  + margin+ ")");
+   /******************************/
+   var legend = graph.append("g")
+   .attr("class", "legend")
+   .attr("transform", "translate("+(width-margin*3)+","  + margin+ ")");
 
   // agg_genres.forEach(function(genre, i) {
   //   var y = i*18
@@ -84,7 +86,7 @@ function graphInit(data) {
 }
 
 function updateGraph (data) {
-  console.log(curParam);
+  // console.log(curParam);
 
   padding = 120;
   margin = 60;
@@ -105,7 +107,16 @@ function updateGraph (data) {
 
   agg_data = aggParamStats(curParam);
 
-  var averages = _.chain(agg_data)
+  //filter agg_data to get rid of data points
+  //where that genre didn't exist in that year
+  var filteredAggData = agg_data;
+
+  filteredAggData.forEach(function(genreObj, i) {
+    genreObj.years = _.filter(genreObj.years, function(year) {
+      return year.max != -Infinity && year.min != Infinity });
+  })
+
+  var averages = _.chain(filteredAggData)
   .pluck("years")
   .flatten()
   .pluck("avg")
@@ -116,6 +127,7 @@ function updateGraph (data) {
   xScale.domain(_.range(parseInt(getSliderMin()), parseInt(getSliderMax()) + 1))
   .rangePoints([padding, width - padding*2]);
   yScale.domain([averages.min(), averages.max()]).range([height - padding, padding / 2]);
+
 
   // Axes
   xAxis.scale(xScale)
@@ -157,36 +169,30 @@ function updateGraph (data) {
 
   graph.selectAll("path.line").remove();
 
-  //filter agg_data to get rid of data points 
-  //where that genre didn't exist in that year
-  var filteredAggData = agg_data;
-
-  filteredAggData.forEach(function(genreObj, i) {
-    genreObj.years = _.filter(genreObj.years, function(year) { 
-      return year.max != -Infinity && year.min != Infinity });
-  })
 
   _.each(filteredAggData, function(c, i) {
 
     //update legend according to active genres
     var y = i*18
     legend.append("rect")
-      .attr("x",0)
-      .attr("y",y)
-      .attr("width", 15)
-      .attr("height", 15)
-      .style("fill", colors[i]);
+    .attr("x",0)
+    .attr("y",y)
+    .attr("width", 15)
+    .attr("height", 15)
+    .style("fill", colors[i]);
 
     legend.append("text")
-      .attr("x",20)
-      .attr("y",y+13)
-      .text(c['genre'])
-      .attr("fill", "black");
+    .attr("x",20)
+    .attr("y",y+13)
+    .text(c['genre'])
+    .attr("fill", "black");
 
     // Create path of datapoint
-    line[c['genre']] = d3.svg.line().interpolate("basis")
+    line[c['genre']] = d3.svg.line()
+    .interpolate("basis")
     .x(function (d) { return xScale(d['year']); })
     .y(function (d) {
+      // console.log(d);
       var y = d['avg'];
       if (y == 0) {
         return yScale(0);
@@ -194,7 +200,8 @@ function updateGraph (data) {
       else {
         return yScale(d['avg']);
       }
-    });
+    })
+    .defined(function(d) { return d ['avg'] != 0; });
 
     //genre->color
 
@@ -204,14 +211,76 @@ function updateGraph (data) {
     .attr("fill", "none")
     .attr("stroke", colors[i])
     .attr("stroke-width", "2px")
+    .attr("opacity", "0.7")
     .transition()
     .duration(300)
     .attr("d", line[c['genre']](c['years']));
 
+
+  });
+
+  graph.on("mousemove", function() {
+    graph.selectAll("circle.mousedot").remove();
+    graph.selectAll("line.mouseline").remove();
+    graph.selectAll("rect.mouseback").remove();
+    graph.selectAll("text.mousetext").remove();
+
+    var ypos = yScale.invert(d3.mouse(this)[1]);
+    var xmouse = d3.mouse(this)[0];
+
+    var xRange = xScale.range();
+    var xDomain = xScale.domain();
+    var closest = xRange[0];
+    var minDist = Infinity;
+    _.each(xRange, function(n, i) {
+      var diff = Math.abs(n - xmouse);
+      if (diff < minDist) {
+        minDist = diff;
+        closest = xDomain[i];
+      }
+    });
+
+    var xpos = closest;
+    console.log({"xpos": xpos, "ypos": ypos});
+
+    var ymin = yScale.domain()[0];
+    var ymax = yScale.domain()[yScale.domain().length-1];
+    if (ypos >= ymin && ypos <= ymax) {
+      graph.append("circle")
+      .attr("cx", xScale(xpos))
+      .attr("cy", yScale(ypos))
+      .attr("r", 5)
+      .attr("class", "mousedot");
+
+      graph.append("line")
+      .attr("x1", xScale(xpos))
+      .attr("x2", xScale(xpos))
+      .attr("y1", yScale(ymin))
+      .attr("y2", yScale(ymax))
+      .attr("stroke", "black")
+      .attr("stroke-width", "2px")
+      .attr("class", "mouseline");
+
+      var fourdig = d3.format(".2r");
+
+      graph.append("rect")
+      .attr("x", xScale(xpos) + 15)
+      .attr("y", yScale(ypos) - 35)
+      .attr("width", 85)
+      .attr("height", 20)
+      .attr("fill", "white")
+      .attr("class", "mouseback");
+
+      graph.append("text")
+      .attr("x", xScale(xpos) + 20)
+      .attr("y", yScale(ypos) - 20)
+      .text("(" + xpos + ", " + fourdig(ypos) + ")")
+      .attr("class", "mousetext");
+    }
   });
 
   graph.select(".legend")
-    .attr("transform", "translate("+(width-margin*3)+","  + margin+ ")");
+  .attr("transform", "translate("+(width-margin*3)+","  + margin+ ")");
 
 
   animStop();
