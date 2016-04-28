@@ -319,6 +319,8 @@ function createDropdown() {
 }
 
 function graphScatter(data) {
+
+  //  assume we have year
   var padding = 70;
   var height = 400;
   var width = "100%";
@@ -401,6 +403,7 @@ function graphScatter(data) {
   })
 
   var testdata = filter(data, 1950 , 2010, ["swing"]);
+
 
 // //  TODO: make different xAxis by dropdown;
 //   console.log(testdata);
