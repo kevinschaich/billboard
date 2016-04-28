@@ -61,7 +61,7 @@ d3.json("data.json", function(error, json) {
     if (error) return console.warn(error);
     data = json;
     // graphTrend(json);
-    graphScatter(json);
+    scatterInit(json);
     graphInit(json);
     // document.getElementById("stats").innerText += JSON.stringify(curAvgParam("num_dupes"));
 });
