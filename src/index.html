@@ -70,59 +70,104 @@
             margin: 0px 20px 20px 20px;
         }
         body, input, button {
+
             font-family: "bebas_neuebold";
-            fill: black;
-            line-height: 1.25;
-            min-height: 100%;
-            width: 100%;
-        }
-        body {
-            position: relative;
-        }
+/*    font-family: "Copperplate Gothic Bold";
+*/    fill: black;
+line-height: 1.25;
+min-height: 100%;
+width: 100%;
+}
+body {
+    position: relative;
+}
 
-        header {
-            text-align: center;
-            padding: 30px;
-        }
-        header #title {
-            font-size: 30px;
-        }
+header {
+    text-align: center;
+    padding: 30px;
+}
+header #title {
+    font-size: 30px;
+}
 
-        .container {
-            padding: 0px 60px 0px 60px;
-        }
-        #wrap {
-            margin: 0px 0px 100px 0px;
-        }
-        #cover {
-            background: white;
-            z-index: 10;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: .7;
-        }
+.container {
+    padding: 0px 60px 0px 60px;
+}
+#wrap {
+    margin: 0px 0px 100px 0px;
+}
+#cover {
+    background: white;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .7;
+}
 
-        footer {
-            position:fixed;
-            left:0px;
-            bottom:0px;
-            width:100%;
-            background: white;
-            border-top: 2px solid #323232;
-            opacity: .95;
-        }
+footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    width:100%;
+    background: white;
+    border-top: 2px solid #323232;
+    opacity: .95;
+}
 
-        svg {
-            border: solid #323232 1px;
-        }
-        path.line {
-            stroke: #323232;
-            fill: none;;
-        }
-    </style>
+svg {
+    border: solid #323232 1px;
+}
+path.line {
+    stroke: #323232;
+    fill: none;;
+}
+
+/*DROPDOWN BUTTON FOR TREND GRAPH CSS*/
+.dropbtn {
+    margin-left: 70px;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-size: 14px;
+    border: solid white;
+    cursor: pointer;
+    height: 50px;
+    width: 100px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    border: solid black
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    margin-left: 70px;
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 70px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+</style>
 </head>
 
 <body>
@@ -145,46 +190,54 @@
                 <h4>66 years of lyrical data, visualized</h4>
             </div>
         </header>
-        <div id="trend" class="container"></div>
-        <div id="stats" class="container"></div>
-    </div>
-    <footer>
-        <div class="container">
-            <button class="ui-btn ui-btn-inline ui-btn-active" id="filter-toggle">EXPAND FILTERS</button>
-            <div id="filter-controls" style="display: none;">
-                <form>
-                    <p>Year:</p>
-                    <div data-role="rangeslider" id="year-slider" data-mini="true">
-                        <input oninput="animStart(); visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));" type="range" name="year-min" id="year-min" min="1950" max="2015" value="1950">
-                        <input oninput="animStart(); visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));" type="range" name="year-max" id="year-max" min="1950" max="2015" value="2015">
-                    </div>
-                </form>
-                <p>Genres:</p>
-                <div class="genres"></div>
-            </div>
+        <div class="dropdown">
+          <button id="button" onclick="myFunction()" class="dropbtn">Sentiment</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="javascript:updateGraph('Sentiment')">Sentiment</a>
+            <a href="javascript:updateGraph('Readability')">Readability</a>
+            <a href="javascript:updateGraph('Repetition')">Repetition</a>
         </div>
-    </footer>
+    </div>
+    <div id="trend" class="container"></div>
+    <div id="stats" class="container"></div>
+</div>
+<footer>
+    <div class="container">
+        <button class="ui-btn ui-btn-inline ui-btn-active" id="filter-toggle">EXPAND FILTERS</button>
+        <div id="filter-controls" style="display: none;">
+            <form>
+                <p>Year:</p>
+                <div data-role="rangeslider" id="year-slider" data-mini="true">
+                    <input oninput="animStart(); visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));" type="range" name="year-min" id="year-min" min="1950" max="2015" value="1950">
+                    <input oninput="animStart(); visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));" type="range" name="year-max" id="year-max" min="1950" max="2015" value="2015">
+                </div>
+            </form>
+            <p>Genres:</p>
+            <div class="genres"></div>
+        </div>
+    </div>
+</footer>
 
-    <script>
-        var agg_genres = ["all-genres", "rock", "alternative/indie", "electronic/dance", "soul", "classical/soundtrack", "pop", "hip-hop/rnb", "disco", "swing", "folk", "country", "jazz", "religious", "blues", "reggae"];
-        var genres = d3.select(".genres");
-        genres.selectAll("button")
-        .data(agg_genres)
-        .enter()
-        .append("button")
-        .attr("class", "ui-btn ui-btn-inline ui-btn-active")
-        .attr("id", function(d){return d;})
-        .text(function(d){return d;});
+<script>
+    var agg_genres = ["all-genres", "rock", "alternative/indie", "electronic/dance", "soul", "classical/soundtrack", "pop", "hip-hop/rnb", "disco", "swing", "folk", "country", "jazz", "religious", "blues", "reggae"];
+    var genres = d3.select(".genres");
+    genres.selectAll("button")
+    .data(agg_genres)
+    .enter()
+    .append("button")
+    .attr("class", "ui-btn ui-btn-inline ui-btn-active")
+    .attr("id", function(d){return d;})
+    .text(function(d){return d;});
 
-        $("#filter-toggle").click(function() {
-            if ($("#filter-controls").is(":visible")) {
-                $(this).html("Expand Filters");
-            }
-            else {
-                $(this).html("Collapse Filters");
-            }
-            $("#filter-controls").fadeToggle();
-        });
+    $("#filter-toggle").click(function() {
+        if ($("#filter-controls").is(":visible")) {
+            $(this).html("Expand Filters");
+        }
+        else {
+            $(this).html("Collapse Filters");
+        }
+        $("#filter-controls").fadeToggle();
+    });
 
         // Handle year slider events
         $( "#year-slider" ).on( "slidestop", function( event, ui ) {
