@@ -1,3 +1,9 @@
+
+
+select option {
+    background: green;
+}
+
 input.ui-slider-input {
     font-size: 20px;
     line-height: 20px;
@@ -16,7 +22,7 @@ a.ui-slider-handle.ui-btn.ui-shadow.ui-btn-null{
     border: 2px solid #323232;
 }
 /* Unchecked Button*/
-button.ui-btn.ui-btn-inline {
+button.ui-btn.ui-btn-inline, div #param-select-button, option {
     color: #323232;
     border: 2px solid #323232;
     text-transform: uppercase;
@@ -32,7 +38,7 @@ button.ui-btn.ui-btn-inline {
     margin-top: 20px;
 }
 
-button.ui-btn.ui-btn-inline.ui-btn-active {
+button.ui-btn.ui-btn-inline.ui-btn-active, div #param-select-button {
     color: white;
     background: #323232;
 }
@@ -48,7 +54,7 @@ div.ui-slider-bg.ui-btn-active {
 #year-slider {
     margin: 0px 20px 20px 20px;
 }
-body, input, button {
+body, input, button, option {
     font-family: "bebas_neuebold";
     fill: black;
     line-height: 1.25;
@@ -77,6 +83,7 @@ div #trend {
 .container {
     padding: 0px 60px 0px 60px;
 }
+
 #wrap {
     margin: 0px 0px 100px 0px;
 }
@@ -130,6 +137,7 @@ path.domain {
 }
 
 .dropdown-content a {
+    font-size: 20px;
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -144,13 +152,8 @@ path.domain {
     display:block;
 }
 
-.overlay {
-  fill: none;
-  pointer-events: all;
+@media (max-device-width: 768px) {
+    .container {
+        padding: 0px 5px 0px 5px;
+    }
 }
-
-.focus circle {
-  fill: none;
-  stroke: steelblue;
-}
-
