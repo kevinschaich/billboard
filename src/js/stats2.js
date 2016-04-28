@@ -41,3 +41,50 @@ function aggParamStats(param) {
     };
   });
 }
+
+function curParamStats(param) {
+  var agg_genres = ["rock", "alternative/indie", "electronic/dance", "soul", "classical/soundtrack", "pop", "hip-hop/rnb", "disco", "swing", "folk", "country", "jazz", "religious", "blues", "reggae"];
+
+  var genres = getActiveGenres();
+  if (typeof genres === 'undefined') {
+    genres = agg_genres;
+  }
+
+  var list;
+  var val_list;
+  var list = _.chain(filter(data, parseInt(getSliderMin()), parseInt(getSliderMin()), genres));
+  if (param == "sentiment") {
+    val_list = list
+    .pluck("sentiment")
+    .map(function(d) { return d['pos'] - d['neg'];})
+    .value();
+  }
+  else {
+    val_list = list
+    .pluck(param)
+    .value();
+  }
+  var min = _.min(val_list);
+  var max = _.max(val_list)
+  return {
+    "avg": avg(val_list),
+    "min": min,
+    "max": max,
+    "min_obj": function() {
+      if (param == "sentiment") {
+        return list.find(function(d) {return d[param]['pos'] - d[param]['neg'] == min}).value()
+      }
+      else {
+        return list.find(function(d) {return d[param] == min}).value()
+      }
+    }(),
+    "max_obj": function() {
+      if (param == "sentiment") {
+        return list.find(function(d) {return d[param]['pos'] - d[param]['neg'] == max}).value()
+      }
+      else {
+        return list.find(function(d) {return d[param] == max}).value()
+      }
+    }(),
+  };
+}

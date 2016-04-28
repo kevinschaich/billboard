@@ -10,15 +10,15 @@ genres.selectAll("button")
 .text(function(d){return d;});
 
 var metric_list = [
-{"metric": "num_lines", "title": "Avg. Number of Lines", "description": "Shows the average number of lines in a song."},
-{"metric": "sentiment", "title": "Avg. Sentiment", "description": ""},
-{"metric": "f_k_grade", "title": "Avg. Flesch-Kincaid Grade", "description": ""},
-{"metric": "num_syllables", "title": "Avg. # of Syllables", "description": ""},
-{"metric": "difficult_words", "title": "Avg. # Difficult Words", "description": ""},
-{"metric": "fog_index", "title": "Avg. Fog Index", "description": ""},
-{"metric": "num_dupes", "title": "Avg. # Duplicate Lines", "description": ""},
-{"metric": "flesch_index", "title": "Avg. Flesch Index", "description": ""},
-{"metric": "num_words", "title": "Avg. # Words", "description": ""},
+{"metric": "num_lines", "title": "Number of Lines", "description": "Shows the average number of lines in a song."},
+{"metric": "sentiment", "title": "Sentiment", "description": ""},
+{"metric": "f_k_grade", "title": "Flesch-Kincaid Grade", "description": ""},
+{"metric": "num_syllables", "title": "# of Syllables", "description": ""},
+{"metric": "difficult_words", "title": "# Difficult Words", "description": ""},
+{"metric": "fog_index", "title": "Fog Index", "description": ""},
+{"metric": "num_dupes", "title": "# Duplicate Lines", "description": ""},
+{"metric": "flesch_index", "title": "Flesch Index", "description": ""},
+{"metric": "num_words", "title": "# Words", "description": ""},
 ]
 
 // <a onclick='animStart(); curParam = "sentiment"; updateGraph(data);'>Sentiment</a>
@@ -32,9 +32,11 @@ metrics.selectAll("a")
 .attr("id", function(d){return d['metric'];})
 .attr("title", function(d){return d['description'];})
 .attr("onclick", function(d){
-    return 'animStart(); curParam = "' + d['metric'] + '"; curTitle = "' + d['title'] + '"; updateGraph(data);';
+    return 'animStart(); curParam = "' + d['metric'] + '"; curTitle = "Avg. ' + d['title'] + '"; updateGraph(data);';
 })
-.text(function(d){return d['title'];});
+.text(function(d){return "Avg. " + d['title'];});
+
+
 
 // Filter data according to year & genre
 function filter(data, yearMin, yearMax, genres) {
