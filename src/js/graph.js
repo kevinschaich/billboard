@@ -66,6 +66,18 @@ function setVisible(activeGenres) {
   })
 }
 
+function mouseOver() {
+  console.log("MOUSEOVER!");
+}
+
+function mousemove() {
+  var coords = d3.mouse(this);
+
+  // focus.attr("transform", "translate(" + xScaleTrend.invert(coords[0]) + "," + yScaleTrend.invert(coords[1]) + ")");
+  // focus.select("text").text("TEST
+  //   ");
+}
+
 function graphTrend(data) {  
   globalData = data;
   var padding = 70;
@@ -119,7 +131,32 @@ function graphTrend(data) {
     .attr("transform", "translate(0,0)")
     .call(yAxisTrend);
 
-  // for each yvar, we must have n lines where n is the number of genres
+  /*******************************
+   *        GRAPH OVERLAY        *
+  /******************************/
+
+  var focus = innerSvg.append("g")
+      .attr("class", "focus")
+      .style("display", "none");
+
+  focus.append("circle")
+      .attr("r", 4.5);
+
+  focus.append("text")
+      .attr("x", 9)
+      .attr("dy", ".35em");
+
+  innerSvg.append("rect")
+      .attr("class", "overlay")
+      .attr("width", innerWidth)
+      .attr("height", innerHeight)
+      .on("mouseover", function() { focus.style("display", null); })
+      .on("mouseout", function() { focus.style("display", "none"); })
+      .on("mousemove", mousemove);
+
+  /*******************************
+   *         LINE & PATH         *
+  /******************************/
 
   sentimentLine = d3.svg.line()
     .x(function (d) { return xScaleTrend(d.year); })
@@ -160,7 +197,8 @@ function graphTrend(data) {
       .attr("d", sentimentLine(songs[genre]['info']))
       .attr("fill", "none")
       .attr("stroke", songs[genre]['color'])
-      .attr("stroke-width", "2.5px");
+      .attr("stroke-width", "2.5px")
+      .on("mouseover", function() {console.log("MOUSEOVER"); });
 
     readabilityG.append("path")
       .attr("class", "trendline")
