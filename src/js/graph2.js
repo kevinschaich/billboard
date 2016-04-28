@@ -1,6 +1,9 @@
 var colors = ["#3366cc", "#dc3912", "#ff9900", "#109618", "#990099", "#0099c6", "#dd4477", "#66aa00", "#b82e2e", "#316395", "#994499", "#22aa99", "#aaaa11", "#6633cc", "#e67300"];
 
 var graph;
+var title;
+var xTitle;
+var yTitle;
 var xScale;
 var yScale;
 var xAxis;
@@ -10,15 +13,15 @@ var yAxisLine;
 var line = {};
 var drawnPath = {};
 var agg_data;
-var padding = 120;
-var margin = 60;
-var height = window.innerHeight - 2 * margin;
-var width = window.innerWidth - 2 * margin;
+var padding;
+var margin;
+var xTickFrequency;
+var yNumTicks;
+var height;
+var width;
 
 function graphInit(data) {
-  graph = d3.select("#graph2").append("svg")
-  .attr("width", width)
-  .attr("height",height);
+  graph = d3.select("#graph2").append("svg");
 
   // Scales
   xScale = d3.scale.ordinal();
@@ -33,28 +36,20 @@ function graphInit(data) {
   yAxisLine = graph.append("g");
 
   // Labels
-  graph.append("text")
+  title = graph.append("text")
   .attr("class", "axis")
-  .attr("x", width / 2)
-  .attr("y", padding / 2)
   .attr("text-anchor", "middle")
   .attr("alignment-baseline", "central")
   .text("Year");
 
-  graph.append("text")
+  yTitle = graph.append("text")
   .attr("class", "axis")
-  .attr("x", padding / 5)
-  .attr("y", height / 2)
   .attr("text-anchor", "middle")
   .attr("alignment-baseline", "central")
-  .attr("transform", "rotate(-" + 90 +
-        "," + padding / 5 + "," + height / 2 + ")")
   .text("Number of Duplicates");
 
-  graph.append("text")
+  xTitle = graph.append("text")
   .attr("class", "axis")
-  .attr("x", width / 2)
-  .attr("y", height - (padding / 4))
   .attr("text-anchor", "middle")
   .attr("alignment-baseline", "central")
   .text("Year");
@@ -66,6 +61,24 @@ function graphInit(data) {
 }
 
 function updateGraph (data) {
+
+  padding = 120;
+  margin = 60;
+  xTickFrequency = 5;
+  yNumTicks = 20;
+
+  if( window.innerWidth < 768 ) {
+    margin = 5;
+    xTickFrequency = 10;
+  }
+  if (window.innerHeight < 700) {
+    yNumTicks = 5;
+  }
+  height = window.innerHeight - 2 * margin;
+  width = window.innerWidth - 2 * margin;
+  graph.attr("width", width)
+  .attr("height",height);
+
   agg_data = aggParamStats("sentiment");
   var averages = _.chain(agg_data)
   .pluck("years")
@@ -76,13 +89,13 @@ function updateGraph (data) {
   // document.getElementById("stats").innerText += JSON.stringify(, null, 2);
 
   xScale.domain(_.range(parseInt(getSliderMin()), parseInt(getSliderMax()) + 1))
-  .rangePoints([padding, width - padding]);
-  yScale.domain([averages.min(), averages.max()]).range([height - padding, padding]);
+  .rangePoints([padding, width - padding / 4]);
+  yScale.domain([averages.min(), averages.max()]).range([height - padding, padding / 2]);
 
   // Axes
   xAxis.scale(xScale)
-  .tickValues(xScale.domain().filter(function(d,i) { return !(d%5); }));
-  yAxis.scale(yScale).ticks(20);
+  .tickValues(xScale.domain().filter(function(d,i) { return !(d % xTickFrequency); }));
+  yAxis.scale(yScale).ticks(yNumTicks);
 
   xAxisLine
   .attr("transform", "translate(0," + (height - padding / 1.5) + ")")
@@ -97,6 +110,20 @@ function updateGraph (data) {
   .transition()
   .duration(300)
   .call(yAxis);
+
+  title
+  .attr("x", width / 2)
+  .attr("y", padding / 4);
+
+  yTitle
+  .attr("x", padding / 5)
+  .attr("y", height / 2)
+  .attr("transform", "rotate(-" + 90 +
+        "," + padding / 5 + "," + height / 2 + ")");
+
+  xTitle
+  .attr("x", width / 2)
+  .attr("y", height - (padding / 4));
 
   graph.selectAll("path.line").remove();
   _.each(agg_data, function(c, i) {
