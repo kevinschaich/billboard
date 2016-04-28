@@ -38,12 +38,14 @@ $("#filter-toggle").click(function() {
     }
     $("#filter-controls").fadeToggle();
     updateGraph(data);
+    updateScatter(data);
 });
 
 // Handle year slider events
 $( "#year-slider" ).on( "slidestop", function( event, ui ) {
     animStart();
     updateGraph(data);
+    updateScatter(data);
 } );
 
 // Handle genre filter events
@@ -71,11 +73,13 @@ $(".genres  button.ui-btn.ui-btn-inline").click(function() {
         }
     }
     updateGraph(data);
+    updateScatter(data);
 });
 
 window.onresize = function(event) {
     console.log("resized");
     updateGraph(data);
+    updateScatter(data);
 };
 
 /* When the user clicks on the button,

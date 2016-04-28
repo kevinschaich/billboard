@@ -4,10 +4,10 @@
 var colors = ["#3366cc", "#dc3912", "#ff9900", "#109618", "#990099", "#0099c6", "#dd4477", "#66aa00", "#b82e2e", "#316395", "#994499", "#22aa99", "#aaaa11", "#6633cc", "#e67300"];
 var agg_genres = ["rock", "alternative/indie", "electronic/dance", "soul", "classical/soundtrack", "pop", "hip-hop/rnb", "disco", "swing", "folk", "country", "jazz", "religious", "blues", "reggae"];
 
-var scatter_scatter_graph;
-var scatter_curParam = "sentiment";
-var scatter_curTitle = "Sentiment";
-var scatter_title;
+var scatter_graph;
+var scatter_curParam = "Rank";
+var scatter_curTitle = "Rank";
+var title;
 var scatter_xTitle;
 var scatter_yTitle;
 var scatter_xScale;
@@ -23,43 +23,34 @@ var scatter_padding;
 var scatter_margin = 60;
 var scatter_xTickFrequency;
 var scatter_yNumTicks;
-var scatter_height = window.innerHeight - 2 * margin;
-var scatter_width = window.innerWidth - 2 * margin;
+var scatter_height = window.innerHeight - 2 * scatter_margin;
+var scatter_width = window.innerWidth - 2 * scatter_margin;
 
-var temp;
-
-function initScatter(data) {
+function scatterInit(data) {
     scatter_graph = d3.select("#scatter").append("svg");
 
     // Scales
-    xScale = d3.scale.ordinal();
-    yScale = d3.scale.linear();
+    scatter_xScale = d3.scale.ordinal();
+    scatter_yScale = d3.scale.linear();
 
     // Axes
-    xAxis = d3.svg.axis().orient("bottom");
-    yAxis = d3.svg.axis().orient("left").ticks(20);
+    scatter_xAxis = d3.svg.axis().orient("bottom");
+    scatter_yAxis = d3.svg.axis().orient("left").ticks(20);
 
-    xAxisLine = scatter_graph.append("g");
+    scatter_xAxisLine = scatter_graph.append("g");
+    scatter_yAxisLine = scatter_graph.append("g");
 
-    yAxisLine = scatter_graph.append("g");
-
-    // Labels
-    // title = scatter_graph.append("text")
-    // .attr("class", "axis")
-    // .attr("text-anchor", "middle")
-    // .attr("alignment-baseline", "central")
-    // .text("Year");
-
-    yTitle = scatter_graph.append("text")
+    scatter_yTitle = scatter_graph.append("text")
+        .attr("id", "rank")
         .attr("class", "axis")
         .attr("text-anchor", "middle")
-        .attr("alignment-baseline", "central")
-        .text(curTitle);
+        .attr("alignment-basescatter_line", "central")
+        .text("Rank");
 
-    xTitle = scatter_graph.append("text")
+    scatter_xTitle = scatter_graph.append("text")
         .attr("class", "axis")
         .attr("text-anchor", "middle")
-        .attr("alignment-baseline", "central")
+        .attr("alignment-basescatter_line", "central")
         .text("Year");
 
     /******************************
@@ -67,15 +58,15 @@ function initScatter(data) {
      /******************************/
     var legend = scatter_graph.append("g")
         .attr("class", "legend")
-        .attr("transform", "translate("+(width-margin*3)+","  + margin+ ")");
+        .attr("transform", "translate("+(scatter_width-scatter_margin*3)+","  + scatter_margin+ ")");
 
     // agg_genres.forEach(function(genre, i) {
     //   var y = i*18
     //   legend.append("rect")
     //     .attr("x",0)
     //     .attr("y",y)
-    //     .attr("width", 15)
-    //     .attr("height", 15)
+    //     .attr("scatter_width", 15)
+    //     .attr("scatter_height", 15)
     //     .style("fill", colors[i]);
 
     //   legend.append("text")
@@ -85,34 +76,37 @@ function initScatter(data) {
     //     .attr("fill", "black");
     // });
 
-    updatescatter_graph(data);
+    updateScatter(data);
 }
 
-function updataScatter (data) {
+function updateScatter (data) {
     // console.log(curParam);
 
-    padding = 120;
-    margin = 60;
-    xTickFrequency = 5;
-    yNumTicks = 20;
+    scatter_padding = 120;
+    scatter_margin = 60;
+    scatter_xTickFrequency = 5;
+    scatter_yNumTicks = 20;
 
     if( window.innerWidth < 768 ) {
-        margin = 5;
-        xTickFrequency = 10;
+        scatter_margin = 5;
+        scatter_xTickFrequency = 10;
     }
     if (window.innerHeight < 700) {
-        yNumTicks = 5;
+        scatter_yNumTicks = 5;
     }
-    height = window.innerHeight - 2 * margin;
-    width = window.innerWidth - 2 * margin;
-    scatter_graph.attr("width",width)
-        .attr("height",height);
+    scatter_height = window.innerHeight - 2 * scatter_margin;
+    scatter_width = window.innerWidth - 2 * scatter_margin;
+    if (window.innerHeight < 550) {
+        scatter_height = 550;
+    }
+    scatter_graph.attr("width",scatter_width)
+        .attr("height",scatter_height);
 
-    agg_data = aggParamStats(curParam);
+    scatter_agg_data = aggParamStats(curParam);
 
-    //filter agg_data to get rid of data points
+    //filter scatter_agg_data to get rid of data points
     //where that genre didn't exist in that year
-    var filteredAggData = agg_data;
+    var filteredAggData = scatter_agg_data;
 
     filteredAggData.forEach(function(genreObj, i) {
         genreObj.years = _.filter(genreObj.years, function(year) {
@@ -127,50 +121,50 @@ function updataScatter (data) {
 
     // document.getElementById("stats").innerText += JSON.stringify(, null, 2);
 
-    xScale.domain(_.range(parseInt(getSliderMin()), parseInt(getSliderMax()) + 1))
-        .rangePoints([padding, width - padding*2]);
-    yScale.domain([averages.min(), averages.max()]).range([height - padding, padding / 2]);
+    scatter_xScale.domain(_.range(parseInt(getSliderMin()), parseInt(getSliderMax()) + 1))
+        .rangePoints([scatter_padding, scatter_width - scatter_padding*2]);
+    scatter_yScale.domain([averages.min(), averages.max()]).range([scatter_height - scatter_padding, scatter_padding / 2]);
 
 
     // Axes
-    xAxis.scale(xScale)
-        .tickValues(xScale.domain().filter(function(d,i) { return !(d % xTickFrequency); }));
-    yAxis.scale(yScale).ticks(yNumTicks);
+    scatter_xAxis.scale(scatter_xScale)
+        .tickValues(scatter_xScale.domain().filter(function(d,i) { return !(d % scatter_xTickFrequency); }));
+    scatter_yAxis.scale(scatter_yScale).ticks(scatter_yNumTicks);
 
-    xAxisLine
-        .attr("transform", "translate(0," + (height - padding / 1.5) + ")")
+    scatter_xAxisLine
+        .attr("transform", "translate(0," + (scatter_height - scatter_padding / 1.5) + ")")
         .attr("class", "axis")
         .transition()
         .duration(300)
-        .call(xAxis);
+        .call(scatter_xAxis);
 
-    yAxisLine
-        .attr("transform", "translate(" + padding / 1.5 + ",0)")
+    scatter_yAxisLine
+        .attr("transform", "translate(" + scatter_padding / 1.5 + ",0)")
         .attr("class", "axis")
         .transition()
         .duration(300)
-        .call(yAxis);
+        .call(scatter_yAxis);
 
     // title
-    // .attr("x", width / 2)
-    // .attr("y", padding / 4);
+    // .attr("x", scatter_width / 2)
+    // .attr("y", scatter_padding / 4);
 
-    yTitle
+    scatter_yTitle
         .text(curTitle)
-        .attr("x", padding / 5)
-        .attr("y", height / 2)
+        .attr("x", scatter_padding / 5)
+        .attr("y", scatter_height / 2)
         .attr("transform", "rotate(-" + 90 +
-            "," + padding / 5 + "," + height / 2 + ")");
+            "," + scatter_padding / 5 + "," + scatter_height / 2 + ")");
 
-    xTitle
-        .attr("x", (width-padding*2)/2+padding/2)
-        .attr("y", height - (padding / 4));
+    scatter_xTitle
+        .attr("x", (scatter_width-scatter_padding*2)/2+scatter_padding/2)
+        .attr("y", scatter_height - (scatter_padding / 4));
 
     var legend = d3.select(".legend");
     legend.selectAll("rect").remove();
     legend.selectAll("text").remove();
 
-    scatter_graph.selectAll("path.line").remove();
+    scatter_graph.selectAll("path.scatter_line").remove();
 
 
     _.each(filteredAggData, function(c, i) {
@@ -190,100 +184,70 @@ function updataScatter (data) {
             .text(c['genre'])
             .attr("fill", "black");
 
-        // Create path of datapoint
-        line[c['genre']] = d3.svg.line()
-            .interpolate("basis")
-            .x(function (d) { return xScale(d['year']); })
-            .y(function (d) {
-                // console.log(d);
-                var y = d['avg'];
-                if (y == 0) {
-                    return yScale(0);
-                }
-                else {
-                    return yScale(d['avg']);
-                }
-            })
-            .defined(function(d) { return d ['avg'] != 0; });
-
-        //genre->color
-
-        // Draw path of datapoint
-        drawnPath[c['genre']] = scatter_graph.append("path")
-            .attr("class", "line")
-            .attr("fill", "none")
-            .attr("stroke", colors[i])
-            .attr("stroke-width", "2px")
-            .attr("opacity", "0.7")
-            .transition()
-            .duration(300)
-            .attr("d", line[c['genre']](c['years']));
-
-
     });
 
-    scatter_graph.on("mousemove", function() {
-        scatter_graph.selectAll("circle.mousedot").remove();
-        scatter_graph.selectAll("line.mouseline").remove();
-        scatter_graph.selectAll("rect.mouseback").remove();
-        scatter_graph.selectAll("text.mousetext").remove();
+    // scatter_graph.on("mousemove", function() {
+    //     scatter_graph.selectAll("circle.mousedot").remove();
+    //     scatter_graph.selectAll("scatter_line.mousescatter_line").remove();
+    //     scatter_graph.selectAll("rect.mouseback").remove();
+    //     scatter_graph.selectAll("text.mousetext").remove();
 
-        var ypos = yScale.invert(d3.mouse(this)[1]);
-        var xmouse = d3.mouse(this)[0];
+    //     var ypos = scatter_yScale.invert(d3.mouse(this)[1]);
+    //     var xmouse = d3.mouse(this)[0];
 
-        var xRange = xScale.range();
-        var xDomain = xScale.domain();
-        var closest = xRange[0];
-        var minDist = Infinity;
-        _.each(xRange, function(n, i) {
-            var diff = Math.abs(n - xmouse);
-            if (diff < minDist) {
-                minDist = diff;
-                closest = xDomain[i];
-            }
-        });
+    //     var xRange = scatter_xScale.range();
+    //     var xDomain = scatter_xScale.domain();
+    //     var closest = xRange[0];
+    //     var minDist = Infinity;
+    //     _.each(xRange, function(n, i) {
+    //         var diff = Math.abs(n - xmouse);
+    //         if (diff < minDist) {
+    //             minDist = diff;
+    //             closest = xDomain[i];
+    //         }
+    //     });
 
-        var xpos = closest;
-        console.log({"xpos": xpos, "ypos": ypos});
+    //     var xpos = closest;
+    //     console.log({"xpos": xpos, "ypos": ypos});
 
-        var ymin = yScale.domain()[0];
-        var ymax = yScale.domain()[yScale.domain().length-1];
-        if (ypos >= ymin && ypos <= ymax) {
-            scatter_graph.append("circle")
-                .attr("cx", xScale(xpos))
-                .attr("cy", yScale(ypos))
-                .attr("r", 5)
-                .attr("class", "mousedot");
+    //     var ymin = scatter_yScale.domain()[0];
+    //     var ymax = scatter_yScale.domain()[scatter_yScale.domain().length-1];
+    //     if (ypos >= ymin && ypos <= ymax) {
+    //         scatter_graph.append("circle")
+    //             .attr("cx", scatter_xScale(xpos))
+    //             .attr("cy", scatter_yScale(ypos))
+    //             .attr("r", 5)
+    //             .attr("class", "mousedot");
 
-            scatter_graph.append("line")
-                .attr("x1", xScale(xpos))
-                .attr("x2", xScale(xpos))
-                .attr("y1", yScale(ymin))
-                .attr("y2", yScale(ymax))
-                .attr("stroke", "black")
-                .attr("stroke-width", "2px")
-                .attr("class", "mouseline");
+    //         scatter_graph.append("scatter_line")
+    //             .attr("x1", scatter_xScale(xpos))
+    //             .attr("x2", scatter_xScale(xpos))
+    //             .attr("y1", scatter_yScale(ymin))
+    //             .attr("y2", scatter_yScale(ymax))
+    //             .attr("stroke", "black")
+    //             .attr("stroke-width", "2px")
+    //             .attr("class", "mousescatter_line");
 
-            var fourdig = d3.format(".2r");
+    //         var fourdig = d3.format(".2r");
 
-            scatter_graph.append("rect")
-                .attr("x", xScale(xpos) + 15)
-                .attr("y", yScale(ypos) - 35)
-                .attr("width", 85)
-                .attr("height", 20)
-                .attr("fill", "white")
-                .attr("class", "mouseback");
+    //         scatter_graph.append("rect")
+    //             .attr("x", scatter_xScale(xpos) + 15)
+    //             .attr("y", scatter_yScale(ypos) - 35)
+    //             .attr("width", 85)
+    //             .attr("height", 20)
+    //             .attr("fill", "white")
+    //             .attr("class", "mouseback");
 
-            scatter_graph.append("text")
-                .attr("x", xScale(xpos) + 20)
-                .attr("y", yScale(ypos) - 20)
-                .text("(" + xpos + ", " + fourdig(ypos) + ")")
-                .attr("class", "mousetext");
-        }
-    });
+    //         scatter_graph.append("text")
+    //             .attr("x", scatter_xScale(xpos) + 20)
+    //             .attr("y", scatter_yScale(ypos) - 20)
+    //             .text("(" + xpos + ", " + fourdig(ypos) + ")")
+    //             .attr("class", "mousetext");
+    //     }
+    // });
 
     scatter_graph.select(".legend")
-        .attr("transform", "translate("+(width-180)+","  + 60+ ")");
+        .attr("transform", "translate("+(scatter_width-180)+","  + 60+ ")");
 
 
     animStop();
