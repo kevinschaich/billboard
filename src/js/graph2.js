@@ -249,7 +249,7 @@ function updateGraph (data) {
       graph.append("circle")
       .attr("cx", xScale(xpos))
       .attr("cy", yScale(ypos))
-      .attr("r", 5)
+      .attr("r", 2)
       .attr("class", "mousedot");
 
       graph.append("line")
@@ -259,6 +259,7 @@ function updateGraph (data) {
       .attr("y2", yScale(ymax))
       .attr("stroke", "black")
       .attr("stroke-width", "2px")
+      .style("opacity", 0.25)
       .attr("class", "mouseline");
 
       var fourdig = d3.format(".2r");
