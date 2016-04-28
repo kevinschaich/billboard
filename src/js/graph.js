@@ -324,7 +324,7 @@ function graphScatter(data) {
   var width = "100%";
   var widthpx = $("#scatter").width();
   var innerHeight = height-padding*2;
-  var innerWidth = widthpx-padding*2;
+  var innerWidth = widthpx-padding*3.5;
 
   var svg = d3.select('#scatter').append("svg")
       .attr("height", height)
@@ -378,6 +378,28 @@ function graphScatter(data) {
       .attr("transform", "translate(0,0)")
       .call(yAxis);
 
+  /******************************
+   *          LEGEND            *
+  /******************************/
+  var legend = svg.append("g")
+      .attr("transform", "translate("+(widthpx-padding*2.3)+"," + padding + ")");
+
+  genres.forEach(function(genre, i) {
+    var y = i*18
+    legend.append("rect")
+      .attr("x",0)
+      .attr("y",y)
+      .attr("width", 15)
+      .attr("height", 15)
+      .style("fill", songs[genre]['color']);
+
+    legend.append("text")
+      .attr("x",20)
+      .attr("y",y+13)
+      .text(genre)
+      .attr("fill", "black");
+  })
+
   var testdata = filter(data, 1950 , 2010, ["swing"]);
 
 // //  TODO: make different xAxis by dropdown;
@@ -388,7 +410,7 @@ function graphScatter(data) {
         .attr("class", "dot")
         .attr("cx", xScale(d.year))
         .attr("cy",yScale(d.pos))
-        .style("opacity", 0.5)
+        .style("opacity", 0.3)
         .attr("r",3);
   })
 }
