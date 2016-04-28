@@ -2,6 +2,7 @@ var colors = ["#3366cc", "#dc3912", "#ff9900", "#109618", "#990099", "#0099c6", 
 
 var graph;
 var curParam = "sentiment";
+var curTitle = "Avg. Sentiment";
 var title;
 var xTitle;
 var yTitle;
@@ -47,7 +48,7 @@ function graphInit(data) {
   .attr("class", "axis")
   .attr("text-anchor", "middle")
   .attr("alignment-baseline", "central")
-  .text("Number of Duplicates");
+  .text(curTitle);
 
   xTitle = graph.append("text")
   .attr("class", "axis")
@@ -115,6 +116,7 @@ function updateGraph (data) {
   .attr("y", padding / 4);
 
   yTitle
+  .text(curTitle)
   .attr("x", padding / 5)
   .attr("y", height / 2)
   .attr("transform", "rotate(-" + 90 +

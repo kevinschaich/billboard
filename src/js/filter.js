@@ -30,8 +30,9 @@ metrics.selectAll("a")
 .enter()
 .append("a")
 .attr("id", function(d){return d['metric'];})
+.attr("title", function(d){return d['description'];})
 .attr("onclick", function(d){
-    return 'animStart(); curParam = "' + d['metric'] + '"; updateGraph(data);';
+    return 'animStart(); curParam = "' + d['metric'] + '"; curTitle = "' + d['title'] + '"; updateGraph(data);';
 })
 .text(function(d){return d['title'];});
 
