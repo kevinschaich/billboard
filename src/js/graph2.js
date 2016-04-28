@@ -38,11 +38,11 @@ function graphInit(data) {
   yAxisLine = graph.append("g");
 
   // Labels
-  title = graph.append("text")
-  .attr("class", "axis")
-  .attr("text-anchor", "middle")
-  .attr("alignment-baseline", "central")
-  .text("Year");
+  // title = graph.append("text")
+  // .attr("class", "axis")
+  // .attr("text-anchor", "middle")
+  // .attr("alignment-baseline", "central")
+  // .text("Year");
 
   yTitle = graph.append("text")
   .attr("class", "axis")
@@ -80,6 +80,7 @@ function updateGraph (data) {
   .attr("height",height);
 
   agg_data = aggParamStats(curParam);
+
   var averages = _.chain(agg_data)
   .pluck("years")
   .flatten()
@@ -111,9 +112,9 @@ function updateGraph (data) {
   .duration(300)
   .call(yAxis);
 
-  title
-  .attr("x", width / 2)
-  .attr("y", padding / 4);
+  // title
+  // .attr("x", width / 2)
+  // .attr("y", padding / 4);
 
   yTitle
   .text(curTitle)
@@ -127,7 +128,17 @@ function updateGraph (data) {
   .attr("y", height - (padding / 4));
 
   graph.selectAll("path.line").remove();
-  _.each(agg_data, function(c, i) {
+
+  //filter agg_data to get rid of data points 
+  //where that genre didn't exist in that year
+  var filteredAggData = agg_data;
+
+  filteredAggData.forEach(function(genreObj, i) {
+    genreObj.years = _.filter(genreObj.years, function(year) { 
+      return year.max != -Infinity && year.min != Infinity });
+  })
+
+  _.each(filteredAggData, function(c, i) {
 
     // Create path of datapoint
     line[c['genre']] = d3.svg.line().interpolate("basis")
@@ -151,7 +162,6 @@ function updateGraph (data) {
     .transition()
     .duration(300)
     .attr("d", line[c['genre']](c['years']));
-
 
   });
 
