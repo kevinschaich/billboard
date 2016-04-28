@@ -87,9 +87,11 @@ header {
     padding: 30px;
 }
 header #title {
-    font-size: 30px;
+    font-size: 40px;
 }
-
+header #subtitle {
+    font-size: 20px;
+}
 .container {
     padding: 0px 60px 0px 60px;
 }
@@ -132,14 +134,14 @@ path.line {
     color: black;
     padding: 10px;
     font-size: 14px;
-    border: solid white;
+    border: solid black;
     cursor: pointer;
     height: 50px;
     width: 100px;
 }
 
 .dropbtn:hover, .dropbtn:focus {
-    border: solid black
+    border: solid #C0C0C0;
 }
 
 .dropdown {
@@ -187,7 +189,7 @@ path.line {
         <header>
             <div class="container">
                 <h1 id="title">Billboard's Top 100 Songs</h1>
-                <h4>66 years of lyrical data, visualized</h4>
+                <h4 id="subtitle">66 years of lyrical data, visualized</h4>
             </div>
         </header>
         <div class="dropdown">
@@ -199,6 +201,7 @@ path.line {
         </div>
     </div>
     <div id="trend" class="container"></div>
+    <div id="scatter" class="container"></div>
     <div id="stats" class="container"></div>
 </div>
 <footer>
@@ -306,6 +309,7 @@ path.line {
             data = json;
             visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));
             graphTrend(json);
+            graphScatter(json);
         });
 
         // Getter Functions

@@ -152,5 +152,79 @@ function createDropdown() {
   }
 }
 
+function graphScatter(data) {
+  var padding = 70;
+  var height = 400;
+  var width = "100%";
+  var widthpx = $("#scatter").width();
+  var innerHeight = height-padding*2;
+  var innerWidth = widthpx-padding*2;
+
+  var svg = d3.select('#scatter').append("svg")
+      .attr("height", height)
+      .attr("width", widthpx);
+
+
+  var innerSvg = svg.append("g")
+      .attr("transform", "translate(" +
+          padding + "," + padding + ")");
+  //.attr("style","stroke: #000066; fill: #3333ff;");
+
+  //innerSvg.append("circle").attr("cx",0).attr("cy",0).attr("r",100);
+
+  var yScale = d3.scale.ordinal()
+      .domain(d3.range(1, 100))
+      .rangePoints([0, innerHeight],10);
+
+  var xScale = d3.scale.ordinal()
+      .domain(d3.range(1950, 2016))
+      .rangePoints([0, innerWidth], 10);
+
+  var yAxis = d3.svg.axis()
+      .scale(yScale)
+      .tickValues(yScale.domain().filter(function(d) { return (!(d%10)) || d===1 ; }))
+      .orient("left");
+
+  var xAxis = d3.svg.axis()
+      .scale(xScale)
+      .tickValues(xScale.domain().filter(function(d,i) { return !(d%5); }))
+      .orient("buttom");
+
+  svg.append("text")
+      .attr("x", widthpx/2)
+      .attr("y", height - padding/4)
+      .style("text-anchor", "middle")
+      .text("YEARS");
+
+  svg.append("text")
+      .attr("x", padding/2.5)
+      .attr("y", height/2)
+      .style("text-anchor", "middle")
+      .attr("transform", "rotate(-90,"+padding/2.5+","+height/2+")")
+      .text("RANK")
+      .attr("id", "yLabel");
+
+  innerSvg.append("g")
+      .attr("transform", "translate(0," + innerHeight +")")
+      .call(xAxis);
+
+  innerSvg.append("g")
+      .attr("transform", "translate(0,0)")
+      .call(yAxis);
+
+  var testdata = filter(data, 1950 , 2010, ["swing"]);
+
+//  TODO: make different xAxis by dropdown;
+  console.log(testdata);
+
+  testdata.forEach( function(d) {
+    innerSvg.append("circle")
+        .attr("class", "dot")
+        .attr("cx", xScale(d.year))
+        .attr("cy",yScale(d.pos))
+        .attr("r",1);
+  })
+}
+
 createDropdown();
 // graphTrend();
