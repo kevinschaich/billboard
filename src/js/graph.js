@@ -41,6 +41,30 @@ var songs = {};
 var sentimentLine;
 var difficultyLine;
 var repetitionLine;
+var currVar = 'sentiment';
+
+function setVisible(activeGenres) {
+  var currVarG = d3.select("#"+currVar+"G");
+  //hide everything first
+  d3.selectAll(".trendline").attr("visibility", "hidden");
+
+  if (activeGenres == undefined) {
+    currVarG.selectAll(".trendline").attr("visibility", "visible");
+    return;
+  }
+  else if (activeGenres.length == 0) {
+    currVarG.selectAll(".trendline").attr("visibility", "hidden");
+    return;
+  }
+
+  _.each(activeGenres, function(g) {
+    var genreID = g;
+    if (g.includes('/')) {
+      genreID = g.substr(0, g.indexOf('/'))
+    }
+    d3.select('#'+currVar+"_"+genreID).attr("visibility", "visible");
+  })
+}
 
 function graphTrend(data) {  
   globalData = data;
@@ -112,7 +136,6 @@ function graphTrend(data) {
 
   // var genres = ["alternative/indie","blues"];
 
-  // songs = {};
   genres.forEach(function(genre, i) {
     var songsOfGenre = filter(data, 1950, 2015, [genre]);
     songs[genre] = {};
@@ -121,13 +144,17 @@ function graphTrend(data) {
   })
   console.log(songs);
 
+  var sentimentG = innerSvg.append("g").attr("id", "sentimentG");
+  var difficultyG = innerSvg.append("g").attr("id", "difficultyG");
+  var repetitionG = innerSvg.append("g").attr("id", "repetitionG");
+
   genres.forEach(function(genre) {
     var genreID = genre;
     if (genre.includes('/')) {
       genreID = genre.substr(0, genre.indexOf('/'))
     }
     //append path to the arrays for each type of YVAR
-    innerSvg.append("path")
+    sentimentG.append("path")
       .attr("class", "trendline")
       .attr("id", "sentiment_"+genreID)
       .attr("d", sentimentLine(songs[genre]['info']))
@@ -135,7 +162,7 @@ function graphTrend(data) {
       .attr("stroke", songs[genre]['color'])
       .attr("stroke-width", "3px");
 
-    innerSvg.append("path")
+    difficultyG.append("path")
       .attr("class", "trendline")
       .attr("id", "difficulty_"+genreID)
       .attr("d", difficultyLine(songs[genre]['info']))
@@ -143,7 +170,7 @@ function graphTrend(data) {
       .attr("stroke", songs[genre]['color'])
       .attr("stroke-width", "3px");
 
-    innerSvg.append("path")
+    repetitionG.append("path")
       .attr("class", "trendline")
       .attr("id", "repetition_"+genreID)
       .attr("d", repetitionLine(songs[genre]['info']))
@@ -167,10 +194,13 @@ function graphTrend(data) {
 }
 
 function updateGraph(yVariable) {
+  currVar = yVariable;
+  console.log("currVar: " + currVar);
+
   document.getElementById("button").innerHTML = yVariable;
   d3.select("#yLabel").text(yVariable);
 
-  // TODO: update graph with the new yVar
+  setVisible(getActiveGenres());
   rescale(yVariable);
   regraph(yVariable);
 }
@@ -180,15 +210,15 @@ function rescale(yVariable) {
 
   var min;
   var max;
-  if (yVariable == 'Sentiment') {
+  if (yVariable == 'sentiment') {
     min = -0.2;
     max = 0.4;
   }
-  else if (yVariable == 'Difficulty') {
+  else if (yVariable == 'difficulty') {
     min = 70;
     max = 110;
   }
-  else if (yVariable == 'Repetition') {
+  else if (yVariable == 'repetition') {
     min = 0;
     max = 70;
   }
@@ -206,7 +236,6 @@ function rescale(yVariable) {
 
 function regraph(yVariable) {
   console.log('regraphing!');
-  d3.selectAll(".trendline").attr("visibility", "hidden");
 
   // Make the changes
   var svg = d3.select("#trend").transition();
@@ -220,16 +249,13 @@ function regraph(yVariable) {
     }
 
     var line;
-    if (yVariable == 'Sentiment') {
-      d3.select('#sentiment_'+genreID).attr("visibility", "visible");
+    if (yVariable == 'sentiment') {
       line = sentimentLine;
     }
-    else if (yVariable == 'Difficulty') {
-      d3.select('#difficulty_'+genreID).attr("visibility", "visible");
+    else if (yVariable == 'difficulty') {
       line = difficultyLine;
     }
-    else if (yVariable == 'Repetition') {
-      d3.select('#repetition_'+genreID).attr("visibility", "visible");
+    else if (yVariable == 'repetition') {
       line = repetitionLine;
     }
 
