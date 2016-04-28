@@ -1,6 +1,7 @@
 var colors = ["#3366cc", "#dc3912", "#ff9900", "#109618", "#990099", "#0099c6", "#dd4477", "#66aa00", "#b82e2e", "#316395", "#994499", "#22aa99", "#aaaa11", "#6633cc", "#e67300"];
 
 var graph;
+var curParam = "sentiment";
 var title;
 var xTitle;
 var yTitle;
@@ -54,13 +55,11 @@ function graphInit(data) {
   .attr("alignment-baseline", "central")
   .text("Year");
 
-  // document.getElementById("stats").innerText += JSON.stringify(year, null, 2);
-  agg_data = aggParamStats("sentiment");
-
   updateGraph(data);
 }
 
 function updateGraph (data) {
+  console.log(curParam);
 
   padding = 120;
   margin = 60;
@@ -79,7 +78,7 @@ function updateGraph (data) {
   graph.attr("width", width)
   .attr("height",height);
 
-  agg_data = aggParamStats("sentiment");
+  agg_data = aggParamStats(curParam);
   var averages = _.chain(agg_data)
   .pluck("years")
   .flatten()
@@ -155,25 +154,4 @@ function updateGraph (data) {
   });
 
   animStop();
-}
-
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function changeParam() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
 }
