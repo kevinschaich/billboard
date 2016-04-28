@@ -11,18 +11,25 @@ genres.selectAll("button")
 $("#filter-toggle").click(function() {
     if ($("#filter-controls").is(":visible")) {
         $(this).html("Expand Filters");
+        $("#wrap").css("margin", "0px 0px 100px 0px")
+        var scroll = $(window).scrollTop();
+        $(window).scrollTop(scroll - 300);
     }
     else {
         $(this).html("Collapse Filters");
+        $("#wrap").css("margin", "0px 0px 400px 0px")
+        var scroll = $(window).scrollTop();
+        $(window).scrollTop(scroll + 300);
     }
     $("#filter-controls").fadeToggle();
+    updateGraph(data);
 });
 
 // Handle year slider events
 $( "#year-slider" ).on( "slidestop", function( event, ui ) {
     animStart();
     console.log("changed");
-    visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));
+    updateGraph(data);
 } );
 
 // Handle genre filter events
@@ -31,11 +38,9 @@ $(".genres  button.ui-btn.ui-btn-inline").click(function() {
     if ($(this).attr('id') == 'all-genres') {
         if ($(this).hasClass("ui-btn-active")) {
             $(".genres  button.ui-btn.ui-btn-inline").removeClass("ui-btn-active");
-            visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));
         }
         else {
             $(".genres  button.ui-btn.ui-btn-inline").addClass("ui-btn-active");
-            visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));
         }
     }
     else {
@@ -50,8 +55,8 @@ $(".genres  button.ui-btn.ui-btn-inline").click(function() {
                 $("#all-genres").addClass("ui-btn-active");
             }
         }
-        visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));
     }
+    updateGraph(data);
 });
 
 // Filter data according to year & genre
@@ -72,22 +77,13 @@ function filter(data, yearMin, yearMax, genres) {
     }
 }
 
-// Re-draw elements
-function visualize(data) {
-    console.log("inside visualize");
-    setVisible(getActiveGenres());
-    // document.getElementById("stats").innerText = data.length;
-    // document.getElementById("stats").innerText += JSON.stringify(_.pluck(data, "title"), null, 2);
-    animStop();
-};
-
 // Load data & visualize it
 d3.json("data.json", function(error, json) {
     if (error) return console.warn(error);
     data = json;
-    visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));
-    graphTrend(json);
-    graphScatter(json);
+    // graphTrend(json);
+    // graphScatter(json);
+    graphInit(json);
     // document.getElementById("stats").innerText += JSON.stringify(curAvgParam("num_dupes"));
 });
 
