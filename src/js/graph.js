@@ -73,7 +73,7 @@ function graphTrend(data) {
   var width = "100%";
   var widthpx = $("#trend").width();
   var innerHeight = height-padding*2;
-  var innerWidth = widthpx-padding*2;
+  var innerWidth = widthpx-padding*3.5;
 
   var svg = d3.select('#trend').append("svg")
               .attr("height", height)
@@ -97,7 +97,7 @@ function graphTrend(data) {
   var yAxisTrend = d3.svg.axis().scale(yScaleTrend).orient("left");
 
   svg.append("text")
-    .attr("x", widthpx/2)
+    .attr("x", widthpx/2-70)
     .attr("y", height - padding/4)
     .style("text-anchor", "middle")
     .text("YEARS");
@@ -160,7 +160,7 @@ function graphTrend(data) {
       .attr("d", sentimentLine(songs[genre]['info']))
       .attr("fill", "none")
       .attr("stroke", songs[genre]['color'])
-      .attr("stroke-width", "3px");
+      .attr("stroke-width", "2.5px");
 
     readabilityG.append("path")
       .attr("class", "trendline")
@@ -168,7 +168,7 @@ function graphTrend(data) {
       .attr("d", readabilityLine(songs[genre]['info']))
       .attr("fill", "none")
       .attr("stroke", songs[genre]['color'])
-      .attr("stroke-width", "3px");
+      .attr("stroke-width", "2.5px");
 
     repetitionG.append("path")
       .attr("class", "trendline")
@@ -176,10 +176,35 @@ function graphTrend(data) {
       .attr("d", repetitionLine(songs[genre]['info']))
       .attr("fill", "none")
       .attr("stroke", songs[genre]['color'])
-      .attr("stroke-width", "3px");
+      .attr("stroke-width", "2.5px");
   });
 
-  //initialize to hide everything except sentiment
+  /******************************
+   *          LEGEND            *
+  /******************************/
+  var legend = svg.append("g")
+      .attr("transform", "translate("+(widthpx-padding*2.3)+"," + padding + ")");
+
+  genres.forEach(function(genre, i) {
+    var y = i*18
+    legend.append("rect")
+      .attr("x",0)
+      .attr("y",y)
+      .attr("width", 15)
+      .attr("height", 15)
+      .style("fill", songs[genre]['color']);
+
+    legend.append("text")
+      .attr("x",20)
+      .attr("y",y+13)
+      .text(genre)
+      .attr("fill", "black");
+  })
+
+  /*************************************
+   *    DEFAULT: SENSTIMENT GRAPH      *
+  /*************************************/
+
   genres.forEach(function(genre) {
     var genreID = genre;
     if (genre.includes('/')) {
