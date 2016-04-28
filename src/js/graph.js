@@ -78,7 +78,7 @@ function mousemove() {
   //   ");
 }
 
-function graphTrend(data) {  
+function graphTrend(data) {
   globalData = data;
   var padding = 70;
   var height = 400;
@@ -133,7 +133,7 @@ function graphTrend(data) {
 
   /*******************************
    *        GRAPH OVERLAY        *
-  /******************************/
+   /******************************/
 
   // var focus = innerSvg.append("g")
   //     .attr("class", "focus")
@@ -156,20 +156,20 @@ function graphTrend(data) {
 
   /*******************************
    *         LINE & PATH         *
-  /******************************/
+   /******************************/
 
-  sentimentLine = d3.svg.line()
-  .x(function (d) { return xScaleTrend(d.year); })
-  .y(function (d) { return yScaleTrend(d.pos - d.neg); })
-  .interpolate("basis");
-  readabilityLine = d3.svg.line()
-  .x(function (d) { return xScaleTrend(d.year); })
-  .y(function (d) { return yScaleTrend(d.fl); })
-  .interpolate("basis");
-  repetitionLine = d3.svg.line()
-  .x(function (d) { return xScaleTrend(d.year); })
-  .y(function (d) { return yScaleTrend(d.rep); })
-  .interpolate("basis");
+   sentimentLine = d3.svg.line()
+   .x(function (d) { return xScaleTrend(d.year); })
+   .y(function (d) { return yScaleTrend(d.pos - d.neg); })
+   .interpolate("basis");
+   readabilityLine = d3.svg.line()
+   .x(function (d) { return xScaleTrend(d.year); })
+   .y(function (d) { return yScaleTrend(d.fl); })
+   .interpolate("basis");
+   repetitionLine = d3.svg.line()
+   .x(function (d) { return xScaleTrend(d.year); })
+   .y(function (d) { return yScaleTrend(d.rep); })
+   .interpolate("basis");
 
   // var genres = ["alternative/indie","blues"];
 
@@ -192,13 +192,13 @@ function graphTrend(data) {
     }
     //append path to the arrays for each type of YVAR
     sentimentG.append("path")
-      .attr("class", "trendline")
-      .attr("id", "sentiment_"+genreID)
-      .attr("d", sentimentLine(songs[genre]['info']))
-      .attr("fill", "none")
-      .attr("stroke", songs[genre]['color'])
-      .attr("stroke-width", "2.5px")
-      .on("mouseover", function() {console.log("MOUSEOVER"); });
+    .attr("class", "trendline")
+    .attr("id", "sentiment_"+genreID)
+    .attr("d", sentimentLine(songs[genre]['info']))
+    .attr("fill", "none")
+    .attr("stroke", songs[genre]['color'])
+    .attr("stroke-width", "2.5px")
+    .on("mouseover", function() {console.log("MOUSEOVER"); });
 
     readabilityG.append("path")
     .attr("class", "trendline")

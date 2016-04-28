@@ -88,6 +88,7 @@ d3.json("data.json", function(error, json) {
     visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));
     graphTrend(json);
     graphScatter(json);
+    // document.getElementById("stats").innerText += JSON.stringify(curAvgParam("num_dupes"));
 });
 
 // Getter Functions
