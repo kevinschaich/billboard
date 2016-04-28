@@ -222,7 +222,8 @@ function graphScatter(data) {
         .attr("class", "dot")
         .attr("cx", xScale(d.year))
         .attr("cy",yScale(d.pos))
-        .attr("r",1);
+        .style("opacity", 0.5)
+        .attr("r",3);
   })
 }
 
