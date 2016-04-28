@@ -241,7 +241,7 @@ function updateGraph (data) {
     });
 
     var xpos = closest;
-    console.log({"xpos": xpos, "ypos": ypos});
+    // console.log({"xpos": xpos, "ypos": ypos});
 
     var ymin = yScale.domain()[0];
     var ymax = yScale.domain()[yScale.domain().length-1];

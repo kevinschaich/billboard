@@ -54,22 +54,22 @@ function scatterInit(data) {
         .text("Year");
 
     /******************************
-     *          LEGEND            *
+     *          scatter_legend            *
      /******************************/
-    var legend = scatter_graph.append("g")
-        .attr("class", "legend")
+    var scatter_legend = scatter_graph.append("g")
+        .attr("class", "scatter_legend")
         .attr("transform", "translate("+(scatter_width-scatter_margin*3)+","  + scatter_margin+ ")");
 
     // agg_genres.forEach(function(genre, i) {
     //   var y = i*18
-    //   legend.append("rect")
+    //   scatter_legend.append("rect")
     //     .attr("x",0)
     //     .attr("y",y)
     //     .attr("scatter_width", 15)
     //     .attr("scatter_height", 15)
     //     .style("fill", colors[i]);
 
-    //   legend.append("text")
+    //   scatter_legend.append("text")
     //     .attr("x",20)
     //     .attr("y",y+13)
     //     .text(genre)
@@ -103,6 +103,7 @@ function updateScatter (data) {
         .attr("height",scatter_height);
 
     scatter_agg_data = aggParamStats(curParam);
+    console.log(scatter_agg_data);
 
     //filter scatter_agg_data to get rid of data points
     //where that genre didn't exist in that year
@@ -160,25 +161,22 @@ function updateScatter (data) {
         .attr("x", (scatter_width-scatter_padding*2)/2+scatter_padding/2)
         .attr("y", scatter_height - (scatter_padding / 4));
 
-    var legend = d3.select(".legend");
-    legend.selectAll("rect").remove();
-    legend.selectAll("text").remove();
-
-    scatter_graph.selectAll("path.scatter_line").remove();
-
+    var scatter_legend = d3.select(".scatter_legend");
+    scatter_legend.selectAll("rect").remove();
+    scatter_legend.selectAll("text").remove();
 
     _.each(filteredAggData, function(c, i) {
 
-        //update legend according to active genres
+        //update scatter_legend according to active genres
         var y = i*18
-        legend.append("rect")
+        scatter_legend.append("rect")
             .attr("x",0)
             .attr("y",y)
             .attr("width", 15)
             .attr("height", 15)
             .style("fill", colors[i]);
 
-        legend.append("text")
+        scatter_legend.append("text")
             .attr("x",20)
             .attr("y",y+13)
             .text(c['genre'])
@@ -246,7 +244,7 @@ function updateScatter (data) {
     //     }
     // });
 
-    scatter_graph.select(".legend")
+    scatter_graph.select(".scatter_legend")
         .attr("transform", "translate("+(scatter_width-180)+","  + 60+ ")");
 
 
