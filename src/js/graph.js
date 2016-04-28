@@ -1,10 +1,79 @@
+/**************************
+ *       global vars      *
+/**************************/
+
+var genres = ["rock", 
+              "alternative/indie", 
+              "electronic/dance", 
+              "soul", 
+              "classical/soundtrack", 
+              "pop", 
+              "hip-hop/rnb", 
+              "disco", 
+              "swing", 
+              "folk", 
+              "country", 
+              "jazz", 
+              "religious", 
+              "blues", 
+              "reggae"];
+var colors = ["#3366cc", 
+              "#dc3912", 
+              "#ff9900", 
+              "#109618", 
+              "#990099", 
+              "#0099c6", 
+              "#dd4477", 
+              "#66aa00", 
+              "#b82e2e", 
+              "#316395", 
+              "#994499", 
+              "#22aa99", 
+              "#aaaa11", 
+              "#6633cc", 
+              "#e67300"];
+var xScaleTrend;
+var yScaleTrend;
+var xAxisTrend;
+var yAxisTrend;
+var globalData;
+var songs = {};
+var sentimentLine;
+var readabilityLine;
+var repetitionLine;
+var currVar = 'sentiment';
+
+function setVisible(activeGenres) {
+  var currVarG = d3.select("#"+currVar+"G");
+  //hide everything first
+  d3.selectAll(".trendline").attr("visibility", "hidden");
+
+  if (activeGenres == undefined) {
+    currVarG.selectAll(".trendline").attr("visibility", "visible");
+    return;
+  }
+  else if (activeGenres.length == 0) {
+    currVarG.selectAll(".trendline").attr("visibility", "hidden");
+    return;
+  }
+
+  _.each(activeGenres, function(g) {
+    var genreID = g;
+    if (g.includes('/')) {
+      genreID = g.substr(0, g.indexOf('/'))
+    }
+    d3.select('#'+currVar+"_"+genreID).attr("visibility", "visible");
+  })
+}
+
 function graphTrend(data) {  
+  globalData = data;
   var padding = 70;
   var height = 400;
   var width = "100%";
   var widthpx = $("#trend").width();
   var innerHeight = height-padding*2;
-  var innerWidth = widthpx-padding*2;
+  var innerWidth = widthpx-padding*3.5;
 
   var svg = d3.select('#trend').append("svg")
               .attr("height", height)
@@ -13,22 +82,22 @@ function graphTrend(data) {
               .attr("transform", "translate(" + 
                   padding + "," + padding + ")");
 
-  var xScale = d3.scale.ordinal()
+  xScaleTrend = d3.scale.ordinal()
           .domain(d3.range(1950, 2016))
           .rangePoints([0, innerWidth], 10);
 
-  var yScale = d3.scale.linear()
-          .domain([0,1])
+  yScaleTrend = d3.scale.linear()
+          .domain([-0.2,0.4])
           .range([innerHeight,0]);
 
-  var xAxis = d3.svg.axis()
-          .scale(xScale)
-          .tickValues(xScale.domain().filter(function(d,i) { return !(d%5); }))
+  var xAxisTrend = d3.svg.axis()
+          .scale(xScaleTrend)
+          .tickValues(xScaleTrend.domain().filter(function(d,i) { return !(d%5); }))
           .orient("bottom");
-  var yAxis = d3.svg.axis().scale(yScale).orient("left");
+  var yAxisTrend = d3.svg.axis().scale(yScaleTrend).orient("left");
 
   svg.append("text")
-    .attr("x", widthpx/2)
+    .attr("x", widthpx/2-70)
     .attr("y", height - padding/4)
     .style("text-anchor", "middle")
     .text("YEARS");
@@ -43,90 +112,187 @@ function graphTrend(data) {
 
   innerSvg.append("g")
     .attr("transform", "translate(0," + innerHeight +")")
-    .call(xAxis);
+    .call(xAxisTrend);
 
   innerSvg.append("g")
+    .attr("class", "yaxis")
     .attr("transform", "translate(0,0)")
-    .call(yAxis);
+    .call(yAxisTrend);
 
   // for each yvar, we must have n lines where n is the number of genres
 
-  var sentimentLine = d3.svg.line()
-    .x(function (d) { return xScale(d.year); })
-    .y(function (d) { return yScale(d.pos); })
+  sentimentLine = d3.svg.line()
+    .x(function (d) { return xScaleTrend(d.year); })
+    .y(function (d) { return yScaleTrend(d.pos - d.neg); })
     .interpolate("basis");
-  var difficultyLine = d3.svg.line()
-    .x(function (d) { return xScale(d.year); })
-    .y(function (d) { return yScale(d.fl); })
+  readabilityLine = d3.svg.line()
+    .x(function (d) { return xScaleTrend(d.year); })
+    .y(function (d) { return yScaleTrend(d.fl); })
     .interpolate("basis");
-  var repetitionLine = d3.svg.line()
-    .x(function (d) { return xScale(d.year); })
-    .y(function (d) { return yScale(d.rep); })
+  repetitionLine = d3.svg.line()
+    .x(function (d) { return xScaleTrend(d.year); })
+    .y(function (d) { return yScaleTrend(d.rep); })
     .interpolate("basis");
 
-  var genres = ["rock", 
-                "alternative/indie", 
-                "electronic/dance", 
-                "soul", 
-                "classical/soundtrack", 
-                "pop", 
-                "hip-hop/rnb", 
-                "disco", 
-                "swing", 
-                "folk", 
-                "country", 
-                "jazz", 
-                "religious", 
-                "blues", 
-                "reggae"];
+  // var genres = ["alternative/indie","blues"];
 
-  songs = {};
-  genres.forEach(function(genre) {
+  genres.forEach(function(genre, i) {
     var songsOfGenre = filter(data, 1950, 2015, [genre]);
-    songs[genre] = averageSentiAllYears(songsOfGenre);
+    songs[genre] = {};
+    songs[genre]['info'] = averageSentiAllYears(songsOfGenre);
+    songs[genre]['color'] = colors[i];
   })
   console.log(songs);
 
+  var sentimentG = innerSvg.append("g").attr("id", "sentimentG");
+  var readabilityG = innerSvg.append("g").attr("id", "readabilityG");
+  var repetitionG = innerSvg.append("g").attr("id", "repetitionG");
+
   genres.forEach(function(genre) {
+    var genreID = genre;
+    if (genre.includes('/')) {
+      genreID = genre.substr(0, genre.indexOf('/'))
+    }
     //append path to the arrays for each type of YVAR
-    innerSvg.append("path")
-      .attr("id", "sentiment_"+genre)
-      .attr("d", sentimentLine(songs[genre]))
+    sentimentG.append("path")
+      .attr("class", "trendline")
+      .attr("id", "sentiment_"+genreID)
+      .attr("d", sentimentLine(songs[genre]['info']))
       .attr("fill", "none")
-      .attr("stroke", "red")
-      .attr("stroke-width", "3px");
+      .attr("stroke", songs[genre]['color'])
+      .attr("stroke-width", "2.5px");
 
-    innerSvg.append("path")
-      .attr("id", "difficulty_"+genre)
-      .attr("d", difficultyLine(songs[genre]))
+    readabilityG.append("path")
+      .attr("class", "trendline")
+      .attr("id", "readability_"+genreID)
+      .attr("d", readabilityLine(songs[genre]['info']))
       .attr("fill", "none")
-      .attr("stroke", "blue")
-      .attr("stroke-width", "3px");
+      .attr("stroke", songs[genre]['color'])
+      .attr("stroke-width", "2.5px");
 
-    innerSvg.append("path")
-      .attr("id", "repetition_"+genre)
-      .attr("d", repetitionLine(songs[genre]))
+    repetitionG.append("path")
+      .attr("class", "trendline")
+      .attr("id", "repetition_"+genreID)
+      .attr("d", repetitionLine(songs[genre]['info']))
       .attr("fill", "none")
-      .attr("stroke", "black")
-      .attr("stroke-width", "3px");
+      .attr("stroke", songs[genre]['color'])
+      .attr("stroke-width", "2.5px");
   });
 
-  // //initialize to hide everything except sentiment
-  // genres.forEach(function(genre) {
-  //   d3.select('#difficulty_'+genre).attr("visibility", "hidden");
-  //   d3.select('#repetition_'+genre).attr("visibility", "hidden");
-  // });
+  /******************************
+   *          LEGEND            *
+  /******************************/
+  var legend = svg.append("g")
+      .attr("transform", "translate("+(widthpx-padding*2.3)+"," + padding + ")");
+
+  genres.forEach(function(genre, i) {
+    var y = i*18
+    legend.append("rect")
+      .attr("x",0)
+      .attr("y",y)
+      .attr("width", 15)
+      .attr("height", 15)
+      .style("fill", songs[genre]['color']);
+
+    legend.append("text")
+      .attr("x",20)
+      .attr("y",y+13)
+      .text(genre)
+      .attr("fill", "black");
+  })
+
+  /*************************************
+   *    DEFAULT: SENSTIMENT GRAPH      *
+  /*************************************/
+
+  genres.forEach(function(genre) {
+    var genreID = genre;
+    if (genre.includes('/')) {
+      genreID = genre.substr(0, genre.indexOf('/'))
+    }
+
+    d3.select('#readability_'+genreID).attr("visibility", "hidden");
+    d3.select('#repetition_'+genreID).attr("visibility", "hidden");
+  });
 
 
 }
 
-function updateGraph(yVar) {
-  document.getElementById("button").innerHTML = yVar;
-  d3.select("#yLabel").text(yVar);
-  // TODO: update graph with the new yVar
+function updateGraph(yVariable) {
+  currVar = yVariable;
+  console.log("currVar: " + currVar);
 
+  document.getElementById("button").innerHTML = yVariable;
+  d3.select("#yLabel").text(yVariable);
+
+  setVisible(getActiveGenres());
+  rescale(yVariable);
+  regraph(yVariable);
+}
+
+function rescale(yVariable) {
+  console.log("rescaling!");
+
+  var min;
+  var max;
+  if (yVariable == 'sentiment') {
+    min = -0.2;
+    max = 0.4;
+  }
+  else if (yVariable == 'readability') {
+    min = 70;
+    max = 110;
+  }
+  else if (yVariable == 'repetition') {
+    min = 0;
+    max = 70;
+  }
+
+  yScaleTrend.domain([min, max]);
+  yAxisTrend = d3.svg.axis().scale(yScaleTrend).orient("left");
+  
+  var svg = d3.select("#trend").transition();
+
+  svg.select(".yaxis")
+    .duration(750)
+    .call(yAxisTrend);  
 
 }
+
+function regraph(yVariable) {
+  console.log('regraphing!');
+
+  // Make the changes
+  var svg = d3.select("#trend").transition();
+
+  var d;
+  genres.forEach(function (genre) {
+
+    var genreID = genre;
+    if (genre.includes('/')) {
+      genreID = genre.substr(0, genre.indexOf('/'))
+    }
+
+    var line;
+    if (yVariable == 'sentiment') {
+      line = sentimentLine;
+    }
+    else if (yVariable == 'readability') {
+      line = readabilityLine;
+    }
+    else if (yVariable == 'repetition') {
+      line = repetitionLine;
+    }
+
+    var id = "#" + yVariable.toLowerCase() + "_" + genreID;
+    svg.select(id)
+      .duration(750)
+      .attr("d", line(songs[genre]['info']));
+
+  });
+
+}
+
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {
@@ -216,8 +382,8 @@ function graphScatter(data) {
 
   var testdata = filter(data, 1950 , 2015, ["disco"]);
 
-//  TODO: make different xAxis by dropdown;
-  console.log(testdata);
+// //  TODO: make different xAxis by dropdown;
+//   console.log(testdata);
 
   testdata.forEach( function(d) {
     innerSvg.append("circle")

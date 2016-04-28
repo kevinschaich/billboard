@@ -193,16 +193,16 @@ path.line {
     <div id="wrap">
         <header>
             <div class="container">
-                <h1 id="title">Billboard's Top 100 Songs</h1>
+                <h1 id="title">Billboard Top 100 Songs</h1>
                 <h4 id="subtitle">66 years of lyrical data, visualized</h4>
             </div>
         </header>
         <div class="dropdown">
           <button id="button" onclick="myFunction()" class="dropbtn">Sentiment</button>
           <div id="myDropdown" class="dropdown-content">
-            <a href="javascript:updateGraph('Sentiment')">Sentiment</a>
-            <a href="javascript:updateGraph('Readability')">Readability</a>
-            <a href="javascript:updateGraph('Repetition')">Repetition</a>
+            <a href="javascript:updateGraph('sentiment')">Sentiment</a>
+            <a href="javascript:updateGraph('readability')">Readability</a>
+            <a href="javascript:updateGraph('repetition')">Repetition</a>
         </div>
     </div>
     <div id="trend" class="container"></div>
@@ -303,6 +303,8 @@ path.line {
 
         // Re-draw elements
         function visualize(data) {
+            console.log("inside visualize");
+            setVisible(getActiveGenres());
             document.getElementById("stats").innerText = data.length;
             document.getElementById("stats").innerText += JSON.stringify(_.pluck(data, "title"), null, 2);
             animStop();
