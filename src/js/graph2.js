@@ -102,6 +102,9 @@ function updateGraph (data) {
   }
   height = window.innerHeight - 2 * margin;
   width = window.innerWidth - 2 * margin;
+  if (window.innerHeight < 600) {
+    height = 600;
+  }
   graph.attr("width",width)
   .attr("height",height);
 
