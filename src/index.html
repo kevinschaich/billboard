@@ -13,7 +13,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" charset="utf-8"></script>
 
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script src="https://d3js.org/d3-queue.v2.min.js" charset="utf-8"></script>
 
     <link rel="stylesheet" href="bebas_neue/bebas_neue.css"/>
     <link rel="stylesheet" href="css/style.css"/>
@@ -34,158 +33,42 @@
         NProgress.start();
     </script>
     <div id="wrap">
-        <header>
-            <div class="container">
+        <div class="container">
+            <header>
                 <h1 id="title">Billboard Top 100 Songs</h1>
                 <h4 id="subtitle">66 years of lyrical data, visualized</h4>
-            </div>
-        </header>
-        <div class="dropdown">
-          <button id="button" onclick="myFunction()" class="dropbtn">&#9662; Sentiment</button>
-          <div id="myDropdown" class="dropdown-content">
-            <a href="javascript:updateGraph('sentiment')">Sentiment</a>
-            <a href="javascript:updateGraph('readability')">Readability</a>
-            <a href="javascript:updateGraph('repetition')">Repetition</a>
-        </div>
-    </div>
-    <div id="trend" class="container"></div>
-    <div id="scatter" class="container"></div>
-    <div id="stats" class="container"></div>
-</div>
-<footer>
-    <div class="container">
-        <button class="ui-btn ui-btn-inline ui-btn-active" id="filter-toggle">EXPAND FILTERS</button>
-        <div id="filter-controls" style="display: none;">
-            <form>
-                <p>Year:</p>
-                <div data-role="rangeslider" id="year-slider" data-mini="true">
-                    <input oninput="animStart(); visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));" type="range" name="year-min" id="year-min" min="1950" max="2015" value="1950">
-                    <input oninput="animStart(); visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));" type="range" name="year-max" id="year-max" min="1950" max="2015" value="2015">
+            </header>
+            <div class="dropdown">
+                <button id="button" onclick="myFunction();" class="dropbtn ui-btn ui-btn-inline ui-btn-active">&#9662; Sentiment</button>
+                <div id="myDropdown" class="dropdown-content ui-btn ui-btn-inline ui-btn-active">
+                    <a onmouseup="animStart();" href="javascript:updateGraph('sentiment')">Sentiment</a>
+                    <a onmouseup="animStart();" href="javascript:updateGraph('readability')">Readability</a>
+                    <a onmouseup="animStart();" href="javascript:updateGraph('repetition')">Repetition</a>
                 </div>
-            </form>
-            <p>Genres:</p>
-            <div class="genres"></div>
+            </div>
+            <div id="trend"></div>
+            <div id="scatter"></div>
+            <div id="stats"></div>
         </div>
     </div>
-</footer>
+    <footer>
+        <div class="container">
+            <button class="ui-btn ui-btn-inline ui-btn-active" id="filter-toggle">EXPAND FILTERS</button>
+            <div id="filter-controls" style="display: none;">
+                <form>
+                    <p>Year:</p>
+                    <div data-role="rangeslider" id="year-slider" data-mini="true">
+                        <input oninput="animStart(); visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));" type="range" name="year-min" id="year-min" min="1950" max="2015" value="1950">
+                        <input oninput="animStart(); visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));" type="range" name="year-max" id="year-max" min="1950" max="2015" value="2015">
+                    </div>
+                </form>
+                <p>Genres:</p>
+                <div class="genres"></div>
+            </div>
+        </div>
+    </footer>
 
-<script>
-    var agg_genres = ["all-genres", "rock", "alternative/indie", "electronic/dance", "soul", "classical/soundtrack", "pop", "hip-hop/rnb", "disco", "swing", "folk", "country", "jazz", "religious", "blues", "reggae"];
-    var genres = d3.select(".genres");
-    genres.selectAll("button")
-    .data(agg_genres)
-    .enter()
-    .append("button")
-    .attr("class", "ui-btn ui-btn-inline ui-btn-active")
-    .attr("id", function(d){return d;})
-    .text(function(d){return d;});
-
-    $("#filter-toggle").click(function() {
-        if ($("#filter-controls").is(":visible")) {
-            $(this).html("Expand Filters");
-        }
-        else {
-            $(this).html("Collapse Filters");
-        }
-        $("#filter-controls").fadeToggle();
-    });
-
-        // Handle year slider events
-        $( "#year-slider" ).on( "slidestop", function( event, ui ) {
-            animStart();
-            console.log("changed");
-            visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));
-        } );
-
-        // Handle genre filter events
-        $(".genres  button.ui-btn.ui-btn-inline").click(function() {
-            animStart();
-            if ($(this).attr('id') == 'all-genres') {
-                if ($(this).hasClass("ui-btn-active")) {
-                    $(".genres  button.ui-btn.ui-btn-inline").removeClass("ui-btn-active");
-                    visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));
-                }
-                else {
-                    $(".genres  button.ui-btn.ui-btn-inline").addClass("ui-btn-active");
-                    visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));
-                }
-            }
-            else {
-                if ($(this).hasClass("ui-btn-active")) {
-                    $(this).removeClass("ui-btn-active");
-                    $("#all-genres").removeClass("ui-btn-active");
-                }
-                else {
-                    $(this).addClass("ui-btn-active");
-                    var length = getActiveGenres().length;
-                    if (length == 15) {
-                        $("#all-genres").addClass("ui-btn-active");
-                    }
-                }
-                visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));
-            }
-        });
-
-        // Filter data according to year & genre
-        function filter(data, yearMin, yearMax, genres) {
-            var years =  _.filter(data, function(item) {
-                return item['year'] >= yearMin && item['year'] <= yearMax;
-            });
-
-            var allsongs = _.flatten(_.pluck(years, "songs"));
-            if (typeof genres === 'undefined') {
-                return allsongs;
-            }
-            else {
-                var songs = _.filter(allsongs,function(song) {
-                    return _.intersection(song['tags'], genres).length > 0;
-                });
-                return songs;
-            }
-        }
-
-        // Re-draw elements
-        function visualize(data) {
-            console.log("inside visualize");
-            setVisible(getActiveGenres());
-            // document.getElementById("stats").innerText = data.length;
-            // document.getElementById("stats").innerText += JSON.stringify(_.pluck(data, "title"), null, 2);
-            animStop();
-        };
-
-        // Load data & visualize it
-        d3.json("data.json", function(error, json) {
-            if (error) return console.warn(error);
-            data = json;
-            visualize(filter(data, getSliderMin(), getSliderMax(), getActiveGenres()));
-            graphTrend(json);
-            graphScatter(json);
-        });
-
-        // Getter Functions
-        function getSliderMin() {
-            return d3.select("#year-min")[0][0].value;
-        }
-        function getSliderMax() {
-            return d3.select("#year-max")[0][0].value;
-        }
-        function getActiveGenres() {
-            var activeGenres = [];
-            $(".genres .ui-btn-active").each(function() {
-                activeGenres.push($(this).attr('id'));
-            });
-            if (! activeGenres) {
-                return [];
-            }
-            else if (_.contains(activeGenres, "all-genres")) {
-                return undefined;
-            }
-            else {
-                return activeGenres;
-            }
-        }
-
-    </script>
+    <script src="js/filter.js"></script>
     <script src="js/graph.js"></script>
     <script src="js/stats.js"></script>
 

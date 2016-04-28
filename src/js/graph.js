@@ -222,12 +222,13 @@ function graphTrend(data) {
   currVar = yVariable;
   console.log("currVar: " + currVar);
 
-  document.getElementById("button").innerHTML = yVariable;
+  document.getElementById("button").innerHTML = "&#9662;  " + yVariable;
   d3.select("#yLabel").text(yVariable);
 
   setVisible(getActiveGenres());
   rescale(yVariable);
   regraph(yVariable);
+  animStop();
 }
 
 function rescale(yVariable) {

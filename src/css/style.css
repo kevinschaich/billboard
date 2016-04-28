@@ -104,13 +104,14 @@ footer {
 svg {
     border: solid #323232 1px;
 }
-path.line {
+
+path.domain {
+    fill: none;
     stroke: #323232;
-    fill: none;;
 }
 
 /*DROPDOWN BUTTON FOR TREND GRAPH CSS*/
-.dropbtn {
+/* .dropbtn {
     margin-left: 70px;
     background-color: white;
     color: black;
@@ -120,7 +121,7 @@ path.line {
     cursor: pointer;
     height: 50px;
     width: 100px;
-}
+    } */
 
 .dropbtn:hover, .dropbtn:focus {
     border: solid #C0C0C0;
