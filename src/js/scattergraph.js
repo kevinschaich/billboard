@@ -4,7 +4,7 @@
 var colors = ["#3366cc", "#dc3912", "#ff9900", "#109618", "#990099", "#0099c6", "#dd4477", "#66aa00", "#b82e2e", "#316395", "#994499", "#22aa99", "#aaaa11", "#6633cc", "#e67300"];
 var agg_genres = ["rock", "alternative/indie", "electronic/dance", "soul", "classical/soundtrack", "pop", "hip-hop/rnb", "disco", "swing", "folk", "country", "jazz", "religious", "blues", "reggae"];
 
-var scatter_scatter_graph;
+var scatter_graph;
 var scatter_curParam = "sentiment";
 var scatter_curTitle = "Sentiment";
 var scatter_title;
@@ -29,7 +29,7 @@ var scatter_width = window.innerWidth - 2 * margin;
 var temp;
 
 function initScatter(data) {
-    scatter_graph = d3.select("#scatter").append("svg");
+    graph = d3.select("#scatter").append("svg");
 
     // Scales
     xScale = d3.scale.ordinal();
