@@ -111,18 +111,6 @@ path.domain {
 }
 
 /*DROPDOWN BUTTON FOR TREND GRAPH CSS*/
-/* .dropbtn {
-    margin-left: 70px;
-    background-color: white;
-    color: black;
-    padding: 10px;
-    font-size: 14px;
-    border: solid black;
-    cursor: pointer;
-    height: 50px;
-    width: 100px;
-    } */
-
 .dropbtn:hover, .dropbtn:focus {
     border: solid #C0C0C0;
 }
