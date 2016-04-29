@@ -1,39 +1,39 @@
 /**
  * Created by CandiceW on 4/28/16.
  */
-var colors = ["#3366cc", "#dc3912", "#ff9900", "#109618", "#990099", "#0099c6", "#dd4477", "#66aa00", "#b82e2e", "#316395", "#994499", "#22aa99", "#aaaa11", "#6633cc", "#e67300"];
-var agg_genres = ["rock", "alternative/indie", "electronic/dance", "soul", "classical/soundtrack", "pop", "hip-hop/rnb", "disco", "swing", "folk", "country", "jazz", "religious", "blues", "reggae"];
+ var colors = ["#3366cc", "#dc3912", "#ff9900", "#109618", "#990099", "#0099c6", "#dd4477", "#66aa00", "#b82e2e", "#316395", "#994499", "#22aa99", "#aaaa11", "#6633cc", "#e67300"];
+ var agg_genres = ["rock", "alternative/indie", "electronic/dance", "soul", "classical/soundtrack", "pop", "hip-hop/rnb", "disco", "swing", "folk", "country", "jazz", "religious", "blues", "reggae"];
 
-var scatter_graph;
-var scatter_curParam = "Rank";
-var scatter_curTitle = "Rank";
-var title;
-var scatter_xTitle;
-var scatter_yTitle;
-var scatter_xScale;
-var scatter_yScale;
-var scatter_xAxis;
-var scatter_yAxis;
-var scatter_xAxisLine;
-var scatter_yAxisLine;
-var scatter_line = {};
-var scatter_drawnPath = {};
-var scatter_agg_data;
-var scatter_padding = 120;
-var scatter_margin = 60;
-var scatter_xTickFrequency;
-var scatter_yNumTicks;
-var scatter_height = 500;
-var scatter_width = window.innerWidth - 2 * scatter_margin;
+ var scatter_graph;
+ var scatter_curParam = "Rank";
+ var scatter_curTitle = "Rank";
+ var title;
+ var scatter_xTitle;
+ var scatter_yTitle;
+ var scatter_xScale;
+ var scatter_yScale;
+ var scatter_xAxis;
+ var scatter_yAxis;
+ var scatter_xAxisLine;
+ var scatter_yAxisLine;
+ var scatter_line = {};
+ var scatter_drawnPath = {};
+ var scatter_agg_data;
+ var scatter_padding = 120;
+ var scatter_margin = 60;
+ var scatter_xTickFrequency;
+ var scatter_yNumTicks;
+ var scatter_height = 500;
+ var scatter_width = window.innerWidth - 2 * scatter_margin;
 
-function scatterInit(data) {
+ function scatterInit(data) {
     scatter_graph = d3.select("#scatter").append("svg");
 
     // Scales
     scatter_xScale = d3.scale.ordinal();
     scatter_yScale = d3.scale.linear()
-      .domain([100,0])
-      .range([(scatter_height - scatter_padding), (scatter_padding / 2)]);
+    .domain([100,0])
+    .range([(scatter_height - scatter_padding), (scatter_padding / 2)]);
 
     // Axes
     scatter_xAxis = d3.svg.axis().orient("bottom");
@@ -50,29 +50,29 @@ function scatterInit(data) {
     //     .call(scatter_yAxis);
 
     scatter_yTitle = scatter_graph.append("text")
-        .attr("id", "rank")
-        .attr("class", "axis")
-        .attr("text-anchor", "middle")
-        .attr("alignment-basescatter_line", "central")
-        .text("Rank");
+    .attr("id", "rank")
+    .attr("class", "axis")
+    .attr("text-anchor", "middle")
+    .attr("alignment-basescatter_line", "central")
+    .text("Rank");
 
     scatter_xTitle = scatter_graph.append("text")
-        .attr("class", "axis")
-        .attr("text-anchor", "middle")
-        .attr("alignment-basescatter_line", "central")
-        .text("Year");
+    .attr("class", "axis")
+    .attr("text-anchor", "middle")
+    .attr("alignment-basescatter_line", "central")
+    .text("Year");
 
     /******************************
      *          scatter_legend            *
      /******************************/
-    var scatter_legend = scatter_graph.append("g")
-        .attr("class", "scatter_legend")
-        .attr("transform", "translate("+(scatter_width-scatter_margin*3)+","  + scatter_margin+ ")");
+     var scatter_legend = scatter_graph.append("g")
+     .attr("class", "scatter_legend")
+     .attr("transform", "translate("+(scatter_width-scatter_margin*3)+","  + scatter_margin+ ")");
 
-    updateScatter(data);
-}
+     updateScatter(data);
+ }
 
-function updateScatter (data) {
+ function updateScatter (data) {
     // console.log(curParam);
     d3.selectAll("circle").remove();
 
@@ -89,13 +89,13 @@ function updateScatter (data) {
         scatter_yNumTicks = 5;
     }
     // scatter_height = window.innerHeight - 2 * scatter_margin;
-    // scatter_height = 
+    // scatter_height =
     scatter_width = window.innerWidth - 2 * scatter_margin;
     if (window.innerHeight < 550) {
         scatter_height = 550;
     }
     scatter_graph.attr("width",scatter_width)
-        .attr("height",scatter_height);
+    .attr("height",scatter_height);
 
     scatter_agg_data = aggParamStats(curParam);
 
@@ -109,51 +109,50 @@ function updateScatter (data) {
     })
 
     var averages = _.chain(filteredAggData)
-        .pluck("years")
-        .flatten()
-        .pluck("avg")
-        .values();
+    .pluck("years")
+    .flatten()
+    .pluck("avg")
+    .values();
 
     // document.getElementById("stats").innerText += JSON.stringify(, null, 2);
 
     scatter_xScale.domain(_.range(parseInt(getSliderMin()), parseInt(getSliderMax()) + 1))
-        .rangePoints([scatter_padding, scatter_width - scatter_padding*2]);
+    .rangePoints([scatter_padding, scatter_width - scatter_padding*2]);
     // scatter_yScale.domain([, averages.max()]).range([scatter_height - scatter_padding, scatter_padding / 2]);
 
 
     // Axes
     scatter_xAxis.scale(scatter_xScale)
-        .tickValues(scatter_xScale.domain().filter(function(d,i) { return !(d % scatter_xTickFrequency); }));
+    .tickValues(scatter_xScale.domain().filter(function(d,i) { return !(d % scatter_xTickFrequency); }));
     scatter_yAxis.scale(scatter_yScale).ticks(scatter_yNumTicks);
 
     scatter_xAxisLine
-        .attr("transform", "translate(0," + (scatter_height - scatter_padding / 1.5) + ")")
-        .attr("class", "axis")
-        .transition()
-        .duration(300)
-        .call(scatter_xAxis);
+    .attr("transform", "translate(0," + (scatter_height - scatter_padding / 1.5) + ")")
+    .attr("class", "axis")
+    .transition()
+    .duration(300)
+    .call(scatter_xAxis);
 
     scatter_yAxisLine
-        .attr("transform", "translate(" + scatter_padding / 1.5 + ",0)")
-        .attr("class", "axis")
-        .transition()
-        .duration(300)
-        .call(scatter_yAxis);
+    .attr("transform", "translate(" + scatter_padding / 1.5 + ",0)")
+    .attr("class", "axis")
+    .transition()
+    .duration(300)
+    .call(scatter_yAxis);
 
     // title
     // .attr("x", scatter_width / 2)
     // .attr("y", scatter_padding / 4);
 
     scatter_yTitle
-        .text(curTitle)
-        .attr("x", scatter_padding / 5)
-        .attr("y", scatter_height / 2)
-        .attr("transform", "rotate(-" + 90 +
-            "," + scatter_padding / 5 + "," + scatter_height / 2 + ")");
+    .attr("x", scatter_padding / 5)
+    .attr("y", scatter_height / 2)
+    .attr("transform", "rotate(-" + 90 +
+          "," + scatter_padding / 5 + "," + scatter_height / 2 + ")");
 
     scatter_xTitle
-        .attr("x", (scatter_width-scatter_padding*2)/2+scatter_padding/2)
-        .attr("y", scatter_height - (scatter_padding / 4));
+    .attr("x", (scatter_width-scatter_padding*2)/2+scatter_padding/2)
+    .attr("y", scatter_height - (scatter_padding / 4));
 
     var scatter_legend = d3.select(".scatter_legend");
     scatter_legend.selectAll("rect").remove();
@@ -170,26 +169,26 @@ function updateScatter (data) {
         //update scatter_legend according to active genres
         var y = i*18
         scatter_legend.append("rect")
-            .attr("x",0)
-            .attr("y",y)
-            .attr("width", 15)
-            .attr("height", 15)
-            .style("fill", colors[i]);
+        .attr("x",0)
+        .attr("y",y)
+        .attr("width", 15)
+        .attr("height", 15)
+        .style("fill", colors[i]);
 
         scatter_legend.append("text")
-            .attr("x",20)
-            .attr("y",y+13)
-            .text(c['genre'])
-            .attr("fill", "black");
+        .attr("x",20)
+        .attr("y",y+13)
+        .text(c['genre'])
+        .attr("fill", "black");
 
         var genreID = c['genre'];
         if (genreID.includes('/')) {
           genreID = genreID.substr(0, genreID.indexOf('/'))
-        }
-        var innerClass = ".circle" + genreID;
-        d3.selectAll(innerClass)
-            .attr("visibility", "visible")
-            .style("fill", colors[i]);
+      }
+      var innerClass = ".circle" + genreID;
+      d3.selectAll(innerClass)
+      .attr("visibility", "visible")
+      .style("fill", colors[i]);
 
         // toggle colors of datapoints for active genres
     });
@@ -256,7 +255,7 @@ function updateScatter (data) {
     // });
 
     scatter_graph.select(".scatter_legend")
-        .attr("transform", "translate("+(scatter_width-180)+","  + 60+ ")");
+    .attr("transform", "translate("+(scatter_width-180)+","  + 60+ ")");
 
 
     animStop();
@@ -273,16 +272,16 @@ function plotAllDot(currSongs) {
       var genreID = tag;
       if (tag.includes('/')) {
         genreID = tag.substr(0, tag.indexOf('/'))
-      }
-      var classname = "circle" + genreID;
+    }
+    var classname = "circle" + genreID;
       //create dot for each tag
       scatter_graph.append("circle")
-        .attr("class", classname)
-        .attr("cx", scatter_xScale(d.year))
-        .attr("cy", scatter_yScale(d.pos))
-        .attr("r", 2)
-        .style("fill", "black")
-        .attr("visibility", "hidden");
-    });
+      .attr("class", classname)
+      .attr("cx", scatter_xScale(d.year))
+      .attr("cy", scatter_yScale(d.pos))
+      .attr("r", 2)
+      .style("fill", "black")
+      .attr("visibility", "hidden");
   });
+});
 }
