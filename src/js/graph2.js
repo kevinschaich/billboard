@@ -244,11 +244,17 @@ function updateGraph (data) {
     });
 
     var xpos = closest;
+    var raw_xpos = d3.mouse(this)[0];
+    var xDomain = xScale.domain();
+    var xmin = xScale(xDomain[0]);
+    var xmax = xScale(xDomain[xDomain.length-1]);
     // console.log({"xpos": xpos, "ypos": ypos});
 
     var ymin = yScale.domain()[0];
     var ymax = yScale.domain()[yScale.domain().length-1];
-    if (ypos >= ymin && ypos <= ymax) {
+    if (ypos >= ymin && ypos <= ymax && 
+        raw_xpos >= xmin && raw_xpos <= xmax) 
+    {
       graph.append("circle")
       .attr("cx", xScale(xpos))
       .attr("cy", yScale(ypos))
