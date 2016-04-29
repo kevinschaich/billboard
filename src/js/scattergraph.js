@@ -199,65 +199,64 @@
     });
 
 
-    // scatter_graph.on("mousemove", function() {
-    //     scatter_graph.selectAll("circle.mousedot").remove();
-    //     scatter_graph.selectAll("scatter_line.mousescatter_line").remove();
-    //     scatter_graph.selectAll("rect.mouseback").remove();
-    //     scatter_graph.selectAll("text.mousetext").remove();
+    scatter_graph.on("mousemove", function() {
+        scatter_graph.selectAll("circle.mousedot").remove();
+        scatter_graph.selectAll("scatter_line.mousescatter_line").remove();
+        scatter_graph.selectAll("rect.mouseback").remove();
+        scatter_graph.selectAll("text.mousetext").remove();
 
-    //     var ypos = scatter_yScale.invert(d3.mouse(this)[1]);
-    //     var xmouse = d3.mouse(this)[0];
+        var ypos = scatter_yScale.invert(d3.mouse(this)[1]);
+        var xmouse = d3.mouse(this)[0];
 
-    //     var xRange = scatter_xScale.range();
-    //     var xDomain = scatter_xScale.domain();
-    //     var closest = xRange[0];
-    //     var minDist = Infinity;
-    //     _.each(xRange, function(n, i) {
-    //         var diff = Math.abs(n - xmouse);
-    //         if (diff < minDist) {
-    //             minDist = diff;
-    //             closest = xDomain[i];
-    //         }
-    //     });
+        var xRange = scatter_xScale.range();
+        var xDomain = scatter_xScale.domain();
+        var closest = xRange[0];
+        var minDist = Infinity;
+        _.each(xRange, function(n, i) {
+            var diff = Math.abs(n - xmouse);
+            if (diff < minDist) {
+                minDist = diff;
+                closest = xDomain[i];
+            }
+        });
 
-    //     var xpos = closest;
-    //     console.log({"xpos": xpos, "ypos": ypos});
+        var xpos = closest;
 
-    //     var ymin = scatter_yScale.domain()[0];
-    //     var ymax = scatter_yScale.domain()[scatter_yScale.domain().length-1];
-    //     if (ypos >= ymin && ypos <= ymax) {
-    //         scatter_graph.append("circle")
-    //             .attr("cx", scatter_xScale(xpos))
-    //             .attr("cy", scatter_yScale(ypos))
-    //             .attr("r", 5)
-    //             .attr("class", "mousedot");
+        var ymin = scatter_yScale.domain()[0];
+        var ymax = scatter_yScale.domain()[scatter_yScale.domain().length-1];
+        if (ypos >= ymin && ypos <= ymax) {
+            scatter_graph.append("circle")
+            .attr("cx", scatter_xScale(xpos))
+            .attr("cy", scatter_yScale(ypos))
+            .attr("r", 5)
+            .attr("class", "mousedot");
 
-    //         scatter_graph.append("scatter_line")
-    //             .attr("x1", scatter_xScale(xpos))
-    //             .attr("x2", scatter_xScale(xpos))
-    //             .attr("y1", scatter_yScale(ymin))
-    //             .attr("y2", scatter_yScale(ymax))
-    //             .attr("stroke", "black")
-    //             .attr("stroke-width", "2px")
-    //             .attr("class", "mousescatter_line");
+            scatter_graph.append("scatter_line")
+            .attr("x1", scatter_xScale(xpos))
+            .attr("x2", scatter_xScale(xpos))
+            .attr("y1", scatter_yScale(ymin))
+            .attr("y2", scatter_yScale(ymax))
+            .attr("stroke", "black")
+            .attr("stroke-width", "2px")
+            .attr("class", "mousescatter_line");
 
-    //         var fourdig = d3.format(".2r");
+            var fourdig = d3.format(".2r");
 
-    //         scatter_graph.append("rect")
-    //             .attr("x", scatter_xScale(xpos) + 15)
-    //             .attr("y", scatter_yScale(ypos) - 35)
-    //             .attr("width", 85)
-    //             .attr("height", 20)
-    //             .attr("fill", "white")
-    //             .attr("class", "mouseback");
+            scatter_graph.append("rect")
+            .attr("x", scatter_xScale(xpos) + 15)
+            .attr("y", scatter_yScale(ypos) - 35)
+            .attr("width", 85)
+            .attr("height", 20)
+            .attr("fill", "white")
+            .attr("class", "mouseback");
 
-    //         scatter_graph.append("text")
-    //             .attr("x", scatter_xScale(xpos) + 20)
-    //             .attr("y", scatter_yScale(ypos) - 20)
-    //             .text("(" + xpos + ", " + fourdig(ypos) + ")")
-    //             .attr("class", "mousetext");
-    //     }
-    // });
+            scatter_graph.append("text")
+            .attr("x", scatter_xScale(xpos) + 20)
+            .attr("y", scatter_yScale(ypos) - 20)
+            .text("(" + xpos + ", " + fourdig(ypos) + ")")
+            .attr("class", "mousetext");
+        }
+    });
 
     scatter_graph.select(".scatter_legend")
     .attr("transform", "translate("+(scatter_width-180)+","  + 60+ ")");

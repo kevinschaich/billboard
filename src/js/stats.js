@@ -1,102 +1,89 @@
-// return the average of a list's sentiment value
-function getAverage(obj, senti) {
-
-    // get all sentiment positive/neu/neg score of listed songss
-    function getSentPos(obj) {
-        return _.map(obj, function (any) {
-            return any.sentiment.pos;
-        })
-    };
-
-    function getSentNeu(obj) {
-        return _.map(obj, function (any) {
-            return any.sentiment.neu;
-        })
-    };
-
-    function getSentNeg(obj) {
-        return _.map(obj, function (any) {
-            return any.sentiment.neg;
-        })
-    };
-
-    function avgSentPos(obj) {
-        var poslst = sumList(getSentPos(obj));
-        return poslst / obj.length;
-    };
-
-    function avgSentNeu(obj) {
-        var poslst = sumList(getSentNeu(obj));
-        return poslst / obj.length;
-    };
-
-    function avgSentNeg(obj) {
-        var poslst = sumList(getSentNeg(obj));
-        return poslst / obj.length;
-    };
-
-    if (senti === "pos") {
-        return avgSentPos(obj);
-    }
-    else if (senti === "neu") {
-        return avgSentNeu(obj);
-    }
-    else if (senti === "neg") {
-        return avgSentNeg(obj);
-    }
-    else
-        console.warn(error);
-
-}
-//return an average value of the array
-function average (arr) {
-    return _.reduce(arr, function (memo, num){
-        return memo + num ;
-    }, 0)/arr.length;
+function avg (arr) {
+  return _.reduce(arr, function(memo, num) {
+    return memo + num;
+  }, 0) / (arr.length === 0 ? 1 : arr.length);
 }
 
+function paramStats(year, param, genre) {
+  var list;
+  if (param == "sentiment") {
+    list = _.chain(filter(data, year, year, [genre]))
+    .pluck("sentiment")
+    .map(function(d) { return d['pos'] - d['neg'];})
+    .value();
+  }
+  else {
+    list = _.chain(filter(data, year, year, [genre]))
+    .pluck(param)
+    .value();
+  }
+  return {"avg": avg(list), "min": _.min(list), "max": _.max(list)};
+}
 
+function aggParamStats(param) {
 
-function averageSentiAllYears (songsOfGenre) {
+  var agg_genres = ["rock", "alternative/indie", "electronic/dance", "soul", "classical/soundtrack", "pop", "hip-hop/rnb", "disco", "swing", "folk", "country", "jazz", "religious", "blues", "reggae"];
 
-    function averageValues(songs) {
+  var genres = getActiveGenres();
+  if (typeof genres === 'undefined') {
+    genres = agg_genres;
+  }
 
-        var year = songs[0].year;
-        var getAllPos = _.map(songs, function (s) {
-            return s.sentiment.pos
-        });
-        var getAllNeg = _.map(songs, function (s) {
-            return s.sentiment.neg
-        });
-        var getAllFl = _.map(songs, function (s) {
-            return s.flesch_index;
+  return _.map(genres, function(genre) {
+    return {
+      "genre" : genre,
+      "years": _.map(_.range(parseInt(getSliderMin()), parseInt(getSliderMax()) + 1),
+                     function(year) {
+                      var stats = paramStats(year, param, genre);
+                      return {"year" : year, "avg": stats['avg'], "min": stats['min'], "max": stats['max']};
+                    })
+    };
+  });
+}
 
-        });
-        var getAllRep = _.map(songs, function (s) {
-            return s.num_dupes;
+function curParamStats(param) {
+  var agg_genres = ["rock", "alternative/indie", "electronic/dance", "soul", "classical/soundtrack", "pop", "hip-hop/rnb", "disco", "swing", "folk", "country", "jazz", "religious", "blues", "reggae"];
 
-        });
+  var genres = getActiveGenres();
+  if (typeof genres === 'undefined') {
+    genres = agg_genres;
+  }
 
-        return {
-            year: year,
-            pos: average(getAllPos),
-            neg: average(getAllNeg),
-            fl: average(getAllFl),
-            rep: average(getAllRep),
-
-        }
-    }
-
-
-    var songsByYear = _.groupBy(songsOfGenre , function (y){
-        return y.year;
-    });
-    var result = [];
-
-    Object.keys(songsByYear).forEach( function(key) {
-        result.push(averageValues(songsByYear[key] ) );
-
-    });
-    return result;
-
+  var list;
+  var val_list;
+  var list = _.chain(filter(data, parseInt(getSliderMin()), parseInt(getSliderMin()), genres));
+  if (param == "sentiment") {
+    val_list = list
+    .pluck("sentiment")
+    .map(function(d) { return d['pos'] - d['neg'];})
+    .value();
+  }
+  else {
+    val_list = list
+    .pluck(param)
+    .value();
+  }
+  var min = _.min(val_list);
+  var max = _.max(val_list)
+  return {
+    "avg": avg(val_list),
+    "min": min,
+    "max": max,
+    "min_obj": function() {
+      if (param == "sentiment") {
+        return list.find(function(d) {return d[param]['pos'] - d[param]['neg'] == min}).value()
+      }
+      else {
+        return list.find(function(d) {return d[param] == min}).value()
+      }
+    }(),
+    "max_obj": function() {
+      if (param == "sentiment") {
+        return list.find(function(d) {return d[param]['pos'] - d[param]['neg'] == max}).value()
+      }
+      else {
+        return list.find(function(d) {return d[param] == max}).value()
+      }
+    }(),
+  };
 }
