@@ -3,7 +3,7 @@
  */
  var colors = ["#3366cc", "#dc3912", "#ff9900", "#109618", "#990099", "#0099c6", "#dd4477", "#66aa00", "#b82e2e", "#316395", "#994499", "#22aa99", "#aaaa11", "#6633cc", "#e67300"];
  var agg_genres = ["rock", "alternative/indie", "electronic/dance", "soul", "classical/soundtrack", "pop", "hip-hop/rnb", "disco", "swing", "folk", "country", "jazz", "religious", "blues", "reggae"];
-
+ var circle_count = 0;
  var scatter_graph;
  var scatter_curParam = "Rank";
  var scatter_curTitle = "Rank";
@@ -48,6 +48,12 @@
     //     .transition()
     //     .duration(300)
     //     .call(scatter_yAxis);
+    title = scatter_graph.append("text")
+      .attr("id", "maintitle")
+      .attr("class", "axis")
+      .attr("text-anchor", "middle")
+      .attr("alignment-baseline", "central")
+      .text("");
 
     scatter_yTitle = scatter_graph.append("text")
     .attr("id", "rank")
@@ -73,7 +79,6 @@
  }
 
  function updateScatter (data) {
-    // console.log(curParam);
     d3.selectAll("circle").remove();
 
     scatter_padding = 120;
@@ -140,9 +145,9 @@
     .duration(300)
     .call(scatter_yAxis);
 
-    // title
-    // .attr("x", scatter_width / 2)
-    // .attr("y", scatter_padding / 4);
+    title
+    .attr("x", (scatter_width-scatter_padding*2)/2+scatter_padding/2)
+    .attr("y", scatter_padding / 4);
 
     scatter_yTitle
     .attr("x", scatter_padding / 5)
@@ -266,22 +271,31 @@
 function plotAllDot(currSongs) {
 
   currSongs.forEach(function(d) {
+    // console.log(d);
     var tags = d['tags'];
     tags.forEach(function(tag) {
+
       // var innerClass = "datapoints." + tag;
       var genreID = tag;
       if (tag.includes('/')) {
         genreID = tag.substr(0, tag.indexOf('/'))
-    }
-    var classname = "circle" + genreID;
-      //create dot for each tag
+      }
+      var classname = "circle" + genreID;
+      var songID = d['artist'] + " - " + d['title'];
+        //create dot for each tag
       scatter_graph.append("circle")
-      .attr("class", classname)
-      .attr("cx", scatter_xScale(d.year))
-      .attr("cy", scatter_yScale(d.pos))
-      .attr("r", 2)
-      .style("fill", "black")
-      .attr("visibility", "hidden");
+        .attr("class", classname)
+        .attr("id", songID)
+        .attr("cx", scatter_xScale(d.year))
+        .attr("cy", scatter_yScale(d.pos))
+        .attr("r", 2)
+        .style("fill", "black")
+        .attr("visibility", "hidden")
+        .on("mousemove", mousemove);
+    });
   });
-});
+}
+
+function mousemove() {
+  d3.select("#maintitle").text(this.id);
 }
