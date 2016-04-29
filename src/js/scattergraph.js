@@ -179,6 +179,9 @@ function updateScatter (data) {
             .text(c['genre'])
             .attr("fill", "black");
 
+        // svg.selectAll("datapoints.blues")
+        //     .attr("color")
+
         // toggle colors of datapoints for active genres
 
     });
@@ -255,10 +258,12 @@ function plotAllDot(data) {
   var allSongs = _.flatten(_.map(data, function(a){return a.songs}));
   console.log(scatter_xScale);
 
-  allSongs.forEach(function (d) {
-    // var songGenre = d.
+
+    var innerClass = "datapoints" + d.genre;
+
+
     scatter_graph.append("circle")
-      .attr("class", "datapoints")
+      .attr("class", "datapoints.blues")
       .attr("cx", scatter_xScale(d.year))
       .attr("cy", scatter_yScale(d.pos))
       .attr("r", 2)
