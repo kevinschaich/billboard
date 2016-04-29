@@ -11,10 +11,13 @@
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.6.2/remarkable.js"></script>
 
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
     <link rel="stylesheet" href="bebas_neue/bebas_neue.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:500' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css"/>
 
 </head>
@@ -37,6 +40,18 @@
             <header>
                 <h1 id="title">Billboard Top 100 Songs</h1>
                 <h4 id="subtitle">66 years of lyrical data, visualized</h4>
+                <button class="ui-btn ui-btn-inline ui-btn-active" id="data-detail-toggle">EXPLORE OUR DATA</button>
+                <div id="data-detail">
+                    <div id="inject">
+                        <script>
+                            $('#inject').load("data-detail.md", function(d) {
+                                var md = new Remarkable();
+                                $('#inject').html(md.render(d));
+                            });
+                        </script>
+                    </div>
+                    <button class="ui-btn ui-btn-inline ui-btn-active" id="data-detail-close">CLOSE</button>
+                </div>
             </header>
             <div class="dropdown">
                 <button id="button" onclick="changeParam();" class="dropbtn ui-btn ui-btn-inline ui-btn-active">Sentiment &#9662;</button>

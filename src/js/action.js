@@ -41,6 +41,16 @@ $("#filter-toggle").click(function() {
     updateScatter(data);
 });
 
+// Handle data toggle button
+$("#data-detail-toggle").click(function() {
+    $("#data-detail").fadeToggle();
+});
+
+// Handle data toggle button
+$("#data-detail-close").click(function() {
+    $("#data-detail").fadeToggle();
+});
+
 // Handle year slider events
 $( "#year-slider" ).on( "slidestop", function( event, ui ) {
     animStart();

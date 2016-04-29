@@ -5,6 +5,35 @@
     height: 45px;
 }
 
+#data-detail {
+    display: none;
+}
+#data-detail h1,
+#data-detail h2,
+#data-detail h3,
+#data-detail h4,
+#data-detail h5,
+#data-detail h6,
+#data-detail p,
+#data-detail a,
+#data-detail pre,
+#data-detail a,
+#data-detail a:visited {
+    text-align: left;
+    color: #323232;
+}
+
+#data-detail p,
+#data-detail a,
+#data-detail a,
+#data-detail a:visited {
+    font-family: "Source Sans Pro";
+}
+#data-detail pre, #data-detail code {
+    font-family: "Source Code Pro";
+    font-weight: 500;
+}
+
 
 select option {
     background: green;
