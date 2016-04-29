@@ -56,6 +56,7 @@ $( "#year-slider" ).on( "slidestop", function( event, ui ) {
     animStart();
     updateGraph(data);
     updateScatter(data);
+    $("#num-years").html(parseInt(getSliderMax()) + 1 - parseInt(getSliderMin()));
 } );
 
 // Handle genre filter events
@@ -87,7 +88,6 @@ $(".genres  button.ui-btn.ui-btn-inline").click(function() {
 });
 
 window.onresize = function(event) {
-    console.log("resized");
     updateGraph(data);
     updateScatter(data);
 };
