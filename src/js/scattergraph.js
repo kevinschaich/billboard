@@ -27,8 +27,15 @@ var scatter_xTickFrequency;
 var scatter_yNumTicks;
 var scatter_height = window.innerHeight - 2 * scatter_margin;
 var scatter_width = window.innerWidth - 2 * scatter_margin;
+var dataByGenre = {}
 
 
+
+
+
+//{
+// pop: [ddff ]
+// }
 function scatterInit(data) {
     scatter_graph = d3.select("#scatter").append("svg");
 
@@ -58,15 +65,44 @@ function scatterInit(data) {
         .text("Year");
 
     /******************************
-     *          LEGEND            *
+     *          scatter_legend            *
      /******************************/
-    var legend = scatter_graph.append("g")
-        .attr("class", "legend")
-        .attr("transform", "translate("+(scatter_width-scatter_margin*3)+","  + scatter_margin+ ")");
+    var scatter_legend = scatter_graph.append("g")
+        .attr("class", "scatter_legend")
+        .attr("transform", "translate(" + (scatter_width - scatter_margin * 3) + "," + scatter_margin + ")");
+
+agg_genres.forEach(
+    function (g, i) {
+        var innerList =
+            _.filter( (_.flatten (data)), function (d) {
+                {
+                    return d.tags[0] === g; 
+                }
+
+            })
+
+        dataByGenre[g] = (innerList);
+    }
+
+
+    )
+
+    function plotAllDot() {
+        data.forEach(d, function () {
+
+                scatter_graph.append("circle").attr("cx", scatter_xScale(d.year))
+                    .attr("cy", scatter_yScale(d.pos))
+                    .attr("r", 10)
+                    .style("opacity", 0.3)
+            }
+        )
+    };
     updateScatter(data);
 }
 
-function updateScatter (data) {
+// { pop :[] , jazz : [] } 
+
+function updateScatter(data) {
     // console.log(curParam);
 
     scatter_padding = 120;
@@ -74,7 +110,7 @@ function updateScatter (data) {
     scatter_xTickFrequency = 5;
     scatter_yNumTicks = 20;
 
-    if( window.innerWidth < 768 ) {
+    if (window.innerWidth < 768) {
         scatter_margin = 5;
         scatter_xTickFrequency = 10;
     }
@@ -86,155 +122,54 @@ function updateScatter (data) {
     if (window.innerHeight < 550) {
         scatter_height = 550;
     }
-    scatter_graph.attr("width",scatter_width)
-        .attr("height",scatter_height);
+    scatter_graph.attr("width", scatter_width)
+        .attr("height", scatter_height);
 
-    scatter_agg_data = aggParamStats(curParam);
-
-    //filter scatter_agg_data to get rid of data points
-    //where that genre didn't exist in that year
-    var filteredAggData = scatter_agg_data;
-
-    filteredAggData.forEach(function(genreObj, i) {
-        genreObj.years = _.filter(genreObj.years, function(year) {
-            return year.max != -Infinity && year.min != Infinity });
-    })
-
-    var averages = _.chain(filteredAggData)
-        .pluck("years")
-        .flatten()
-        .pluck("avg")
-        .values();
-
-    // document.getElementById("stats").innerText += JSON.stringify(, null, 2);
-
-    scatter_xScale.domain(_.range(parseInt(getSliderMin()), parseInt(getSliderMax()) + 1))
-        .rangePoints([scatter_padding, scatter_width - scatter_padding*2]);
-    scatter_yScale.domain([averages.min(), averages.max()]).range([scatter_height - scatter_padding, scatter_padding / 2]);
+    var allData = data;
 
 
-    // Axes
-    scatter_xAxis.scale(scatter_xScale)
-        .tickValues(scatter_xScale.domain().filter(function(d,i) { return !(d % scatter_xTickFrequency); }));
-    scatter_yAxis.scale(scatter_yScale).ticks(scatter_yNumTicks);
 
-    scatter_xAxisLine
-        .attr("transform", "translate(0," + (scatter_height - scatter_padding / 1.5) + ")")
-        .attr("class", "axis")
-        .transition()
-        .duration(300)
-        .call(scatter_xAxis);
-
-    scatter_yAxisLine
-        .attr("transform", "translate(" + scatter_padding / 1.5 + ",0)")
-        .attr("class", "axis")
-        .transition()
-        .duration(300)
-        .call(scatter_yAxis);
-
-    // title
-    // .attr("x", scatter_width / 2)
-    // .attr("y", scatter_padding / 4);
-
-    scatter_yTitle
-        .text(curTitle)
-        .attr("x", scatter_padding / 5)
-        .attr("y", scatter_height / 2)
-        .attr("transform", "rotate(-" + 90 +
-            "," + scatter_padding / 5 + "," + scatter_height / 2 + ")");
-
-    scatter_xTitle
-        .attr("x", (scatter_width-scatter_padding*2)/2+scatter_padding/2)
-        .attr("y", scatter_height - (scatter_padding / 4));
-
-    var legend = d3.select(".legend");
-    legend.selectAll("rect").remove();
-    legend.selectAll("text").remove();
-
-    scatter_graph.selectAll("path.scatter_line").remove();
+    function plotDotsByGenre(glist , minYear,maxYear) {
 
 
-    _.each(filteredAggData, function(c, i) {
+        if (typeof(glist) !=undefined) {
 
-        //update legend according to active genres
-        var y = i*18
-        legend.append("rect")
-            .attr("x",0)
-            .attr("y",y)
-            .attr("width", 15)
-            .attr("height", 15)
-            .style("fill", colors[i]);
+            d3.selectAll("circle").remove();
 
-        legend.append("text")
-            .attr("x",20)
-            .attr("y",y+13)
-            .text(c['genre'])
-            .attr("fill", "black");
+        glist.forEach(g, i, function (g) {
 
-    });
+            var rawfilterByGenre = dataByGenre[g];
 
-    // scatter_graph.on("mousemove", function() {
-    //     scatter_graph.selectAll("circle.mousedot").remove();
-    //     scatter_graph.selectAll("scatter_line.mousescatter_line").remove();
-    //     scatter_graph.selectAll("rect.mouseback").remove();
-    //     scatter_graph.selectAll("text.mousetext").remove();
+            var filterByYeardata = _.filter(rawfilterByGenre, function (d){
+                return d.year >= minYear && d.year <= maxYear;
+            }
 
-    //     var ypos = scatter_yScale.invert(d3.mouse(this)[1]);
-    //     var xmouse = d3.mouse(this)[0];
+            )
 
-    //     var xRange = scatter_xScale.range();
-    //     var xDomain = scatter_xScale.domain();
-    //     var closest = xRange[0];
-    //     var minDist = Infinity;
-    //     _.each(xRange, function(n, i) {
-    //         var diff = Math.abs(n - xmouse);
-    //         if (diff < minDist) {
-    //             minDist = diff;
-    //             closest = xDomain[i];
-    //         }
-    //     });
+                filterByYeardata[i].forEach(
+                    dot, function (dot) {
+                        scatter_graph.append("circle").attr("cx", scatter_xScale(dot.year))
+                            .attr("cy", scatter_yScale(dot.pos))
+                            .attr("r", 10)
+                            .style("color", colors[i])
+                            .style("opacity", 0.3)
+                    }
+                )
 
-    //     var xpos = closest;
-    //     console.log({"xpos": xpos, "ypos": ypos});
+            }
+        )
+    }
 
-    //     var ymin = scatter_yScale.domain()[0];
-    //     var ymax = scatter_yScale.domain()[scatter_yScale.domain().length-1];
-    //     if (ypos >= ymin && ypos <= ymax) {
-    //         scatter_graph.append("circle")
-    //             .attr("cx", scatter_xScale(xpos))
-    //             .attr("cy", scatter_yScale(ypos))
-    //             .attr("r", 5)
-    //             .attr("class", "mousedot");
+    else scatterInit(data);
 
-    //         scatter_graph.append("scatter_line")
-    //             .attr("x1", scatter_xScale(xpos))
-    //             .attr("x2", scatter_xScale(xpos))
-    //             .attr("y1", scatter_yScale(ymin))
-    //             .attr("y2", scatter_yScale(ymax))
-    //             .attr("stroke", "black")
-    //             .attr("stroke-width", "2px")
-    //             .attr("class", "mousescatter_line");
 
-    //         var fourdig = d3.format(".2r");
+    }
 
-    //         scatter_graph.append("rect")
-    //             .attr("x", scatter_xScale(xpos) + 15)
-    //             .attr("y", scatter_yScale(ypos) - 35)
-    //             .attr("width", 85)
-    //             .attr("height", 20)
-    //             .attr("fill", "white")
-    //             .attr("class", "mouseback");
 
-    //         scatter_graph.append("text")
-    //             .attr("x", scatter_xScale(xpos) + 20)
-    //             .attr("y", scatter_yScale(ypos) - 20)
-    //             .text("(" + xpos + ", " + fourdig(ypos) + ")")
-    //             .attr("class", "mousetext");
-    //     }
-    // });
+    scatter_graph.select(".scatter_legend")
+        .attr("transform", "translate(" + (scatter_width - 180) + "," + 60 + ")");
 
-    scatter_graph.select(".legend")
-        .attr("transform", "translate("+(scatter_width-180)+","  + 60+ ")");
+    plotDotsByGenre(getActiveGenres(),getSliderMin(), getSliderMax() );
 
 
     animStop();
