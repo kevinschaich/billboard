@@ -74,7 +74,7 @@ function scatterInit(data) {
 
 function updateScatter (data) {
     // console.log(curParam);
-    d3.selectAll("circle.datapoints").remove();
+    d3.selectAll("circle").remove();
 
     scatter_padding = 120;
     scatter_margin = 60;
@@ -160,7 +160,10 @@ function updateScatter (data) {
     scatter_legend.selectAll("text").remove();
 
     // plot data
-    plotAllDot(data);
+    filteredByYear = filter(data, parseInt(getSliderMin()), parseInt(getSliderMax()));
+
+    // append dots
+    plotAllDot(filteredByYear);
 
     _.each(filteredAggData, function(c, i) {
 
@@ -179,12 +182,18 @@ function updateScatter (data) {
             .text(c['genre'])
             .attr("fill", "black");
 
-        // svg.selectAll("datapoints.blues")
-        //     .attr("color")
+        var genreID = c['genre'];
+        if (genreID.includes('/')) {
+          genreID = genreID.substr(0, genreID.indexOf('/'))
+        }
+        var innerClass = ".circle" + genreID;
+        d3.selectAll(innerClass)
+            .attr("visibility", "visible")
+            .style("fill", colors[i]);
 
         // toggle colors of datapoints for active genres
-
     });
+
 
     // scatter_graph.on("mousemove", function() {
     //     scatter_graph.selectAll("circle.mousedot").remove();
@@ -253,21 +262,27 @@ function updateScatter (data) {
     animStop();
 }
 
-function plotAllDot(data) {
-  console.log("HELLO");
-  var allSongs = _.flatten(_.map(data, function(a){return a.songs}));
-  console.log(scatter_xScale);
+// selectAll("datapoints.jazz")
 
+function plotAllDot(currSongs) {
 
-    var innerClass = "datapoints" + d.genre;
-
-
-    scatter_graph.append("circle")
-      .attr("class", "datapoints.blues")
-      .attr("cx", scatter_xScale(d.year))
-      .attr("cy", scatter_yScale(d.pos))
-      .attr("r", 2)
-      .style("fill", "black")
-      .style("opacity", 0.3)
+  currSongs.forEach(function(d) {
+    var tags = d['tags'];
+    tags.forEach(function(tag) {
+      // var innerClass = "datapoints." + tag;
+      var genreID = tag;
+      if (tag.includes('/')) {
+        genreID = tag.substr(0, tag.indexOf('/'))
+      }
+      var classname = "circle" + genreID;
+      //create dot for each tag
+      scatter_graph.append("circle")
+        .attr("class", classname)
+        .attr("cx", scatter_xScale(d.year))
+        .attr("cy", scatter_yScale(d.pos))
+        .attr("r", 2)
+        .style("fill", "black")
+        .attr("visibility", "hidden");
+    });
   });
 }
