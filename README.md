@@ -2,7 +2,7 @@
 
 Our project researched and visualized how lyrics and associated data of popular songs have evolved since 1950. We grabbed the top 100 songs on Billboard for each year, and used natural language processing to analyze a variety of metrics. Users can interactively choose a year/genre range they are interested in to get a closer look at subtleties.
 
-**A joint project between Juhee Lee, Yinan Wen, and [Kevin Schaich](http://kevinschaich.com)**
+**A joint project between Juhee Lee, Yinan Wen, and [Kevin Schaich](http://schaich.io)**
 
 # Data
 
