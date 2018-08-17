@@ -22,7 +22,7 @@ Please note that this data is not intended to be a full set, as we ran into some
 
 Using the [**MusicBrainz API**](https://beta.musicbrainz.org) as well as the Python interface [**Musicbrainzng**](https://github.com/alastair/python-musicbrainzngs), we scraped each song artist's associated genre tags. These tags are quite numerous and extensive, so we came up with a total of 15 '*aggregate genres*' based on their total occurrence rate in all our songs to represent the aggregate of our data and to keep our visualization clean. A minified sample of these aggregates can be found below:
 
-```python
+```
 aggregate_genres = [
 {"rock" = ["pop rock", "jazz-rock", "heartland rock", ...]},
 {"alternative/indie" = [...]},
@@ -46,7 +46,7 @@ aggregate_genres = [
 
 Using the [**Natural Language Toolkit (NLTK)**](http://www.nltk.org/) for Python, we used the [**VADER model**](http://comp.social.gatech.edu/papers/icwsm14.vader.hutto.pdf) for parsimonious rule-based sentiment analysis of each song's lyrics. Each song was run through a sentiment analyzer and output an object with data about its sentiment:
 
-```json
+```
 "sentiment": {
     "neg": [float],             # Negativity assoc. w/ lyrics. (between 0-1 inclusive, 1 being 100% negative).
     "neu": [float],             # Neutrality assoc. w/ lyrics. (between 0-1 inclusive, 1 being 100% neutral).
@@ -61,7 +61,7 @@ The `pos`, `neg`, and `neu` are the three interesting values. Each value represe
 
 Using the [**textstat**](https://github.com/shivam5992/textstat) package for Python, we calculated a number of aggregate readability metrics associated with each song's lyrics:
 
-```json
+```
 "num_words": [int],             # Number of words in lyrics.
 "num_lines": [int],             # Number of lines in lyrics.
 "num_syllables": [int],         # Number of syllables in lyrics.
@@ -81,7 +81,7 @@ For each song, we count the number of duplicate lines that appear in the lyrics.
 
 Our aggregate data JSON file includes all of the following metrics:
 
-```json
+```
 {
     "title": [string],              # Title of the song.       
     "artist": [string],             # Artist of the song.
@@ -110,7 +110,7 @@ Our aggregate data JSON file includes all of the following metrics:
 
 Another python script aggregates our data by year for easy filtering in real-time in JavaScript. Our output JSON file looks similar to the above song format with the following structure:
 
-```json
+```
 {
     {
         "year": 1950,
