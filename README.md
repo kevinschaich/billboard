@@ -131,3 +131,7 @@ Another python script aggregates our data by year for easy filtering in real-tim
 ```
 
 This structure is cleaned and minimized and the original lyrics are removed to keep our file size under 2MB for nearly 5000 songs. Using [underscore.js](http://underscorejs.org/), we are able to utilize functional programming in JavaScript to very quickly filter and sort through our data. Using the above JSON notation with year-oriented objects allows us to filter through nearly 5000 songs in real-time on the user side in fractions of a second.
+
+## License
+
+MIT © [Kevin Schaich](https://kevinschaich.io)
