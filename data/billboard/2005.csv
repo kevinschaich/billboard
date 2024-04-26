@@ -1,1 +1,101 @@
-Position ,Artist,Song Title1,Mariah Carey,We Belong Together2,Gwen Stefani,Hollaback Girl3,Mario,Let Me Love You4,Kelly Clarkson,Since U Been Gone5,Ciara feat. Missy Elliott,"1, 2 Step"6,Kanye West feat. Jamie Foxx,Gold Digger7,Green Day,Boulevard Of Broken Dreams8,50 Cent feat. Olivia,Candy Shop9,Pussycat Dolls feat. Busta Rhymes,Don't Cha10,Kelly Clarkson,Behind These Hazel Eyes11,50 Cent,Disco Inferno12,Lifehouse,You And Me13,Black Eyed Peas,Don't Phunk With My Heart14,Missy Elliott feat. Ciara and Fat Man Scoop,Lose Control15,Mariah Carey,Shake It Off16,Killers,Mr. Brightside17,50 Cent,Just A Lil Bit18,Rihanna,Pon de Replay19,Game feat. 50 Cent,How We Do20,Weezer,Beverly Hills21,Ciara feat. Ludacris,Oh22,Rob Thomas,Lonely No More23,Snoop Dogg feat. Pharrell,Drop It Like It's Hot24,Game feat. 50 Cent,Hate It Or Love It25,Lil Jon and The East Side Boyz feat. Usher and Ludacris,Lovers And Friends26,Destiny's Child feat. T.I. and Lil Wayne,Soldier27,Kelly Clarkson,Breakaway28,Will Smith,Switch29,Bow Wow feat. Omarion,Let Me Hold You30,Bow Wow feat. Ciara,Like You31,Gwen Stefani feat. Eve,Rich Girl32,Black Eyed Peas,My Humps33,Frankie J feat. Baby Bash,Obsession (No Es Amor)34,Usher,Caught Up35,D.H.T.,Listen To Your Heart36,Papa Roach,Scars37,Gorillaz,Feel Good Inc38,3 Doors Down,Let Me Go39,Green Day,Holiday40,Fall Out Boy,"Sugar, We're Goin' Down"41,Pretty Ricky,Grind With Me42,Chris Brown,Run It!43,Nickelback,Photograph44,Akon,Lonely45,Howie Day,Collide46,Green Day,Wake Me Up When September Ends47,Bobby Valentino,Slow Down48,Nelly feat. Tim McGraw,Over And Over49,Trillville feat. Cutty,Some Cut50,Fat Joe feat. Nelly,Get It Poppin'51,David Banner,Play52,Young Jeezy feat. Akon,Soul Survivor53,Ludacris feat. Bobby Valentino,Pimpin' All Over the World54,Usher And Alicia Keys,My Boo55,"Trick Daddy feat. Ludacris, Lil' Kim and Cee-Lo",Sugar (Gimme Some)56,Alicia Keys,Karma57,Coldplay,Speed Of Sound58,Gavin DeGraw,I Don't Want To Be59,Eminem,Mockingbird60,Shakira feat. Alejandro Sanz,La Tortura61,Maroon 5,She Will Be Loved62,Baby Bash feat. Akon,Baby I'm Back63,Ying Yang Twins,Wait (The Whisper Song)64,Backstreet Boys,Incomplete65,T.I.,Bring Em Out66,Destiny's Child,Cater 2 U67,Amerie,1 Thing68,Foo Fighters,Best Of You69,Mariah Carey,It's Like That70,Natalie,Goin' Crazy71,Carrie Underwood,Inside Your Heaven72,Kelly Clarkson,Because Of You73,Fantasia,Truth Is74,Pretty Ricky,Your Body75,Jesse McCartney,Beautiful Soul76,Gwen Stefani,Cool77,Ludacris,Get Back78,50 Cent feat. Mobb Deep,Outta Control (Remix)79,T.I.,U Don't Know Me80,Natasha Bedingfield,These Words81,Black Eyed Peas,Don't Lie82,Jennifer Lopez,Get Right83,John Mayer,Daughters84,Toby Keith,As Good As I Once Was85,Brooke Valentine feat. Lil Jon and Big Boi,Girlfight86,Destiny's Child,Lose My Breath87,John Legend,Ordinary People88,Sean Paul,We Be Burnin'89,Click Five,Just The Girl90,Ryan Cabrera,TRUE91,Omarion,O92,Mike Jones,Back Then93,Jay-Z/Linkin Park,Numb/Encore94,Ja Rule feat. R. Kelly and Ashanti,Wonderful95,T-Pain,I'm Sprung96,Gavin DeGraw,Chariot97,112 feat. Foxy Brown,U Already Know98,Faith Hill,Mississippi Girl99,Ludacris,Number One Spot100,Webbie feat. Bun B,Give Me That
+Position,Artist,Song Title
+1,Mariah Carey,We Belong Together
+2,Gwen Stefani,Hollaback Girl
+3,Mario,Let Me Love You
+4,Kelly Clarkson,Since U Been Gone
+5,Ciara feat. Missy Elliott,"1, 2 Step"
+6,Kanye West feat. Jamie Foxx,Gold Digger
+7,Green Day,Boulevard Of Broken Dreams
+8,50 Cent feat. Olivia,Candy Shop
+9,Pussycat Dolls feat. Busta Rhymes,Don't Cha
+10,Kelly Clarkson,Behind These Hazel Eyes
+11,50 Cent,Disco Inferno
+12,Lifehouse,You And Me
+13,Black Eyed Peas,Don't Phunk With My Heart
+14,Missy Elliott feat. Ciara and Fat Man Scoop,Lose Control
+15,Mariah Carey,Shake It Off
+16,Killers,Mr. Brightside
+17,50 Cent,Just A Lil Bit
+18,Rihanna,Pon de Replay
+19,Game feat. 50 Cent,How We Do
+20,Weezer,Beverly Hills
+21,Ciara feat. Ludacris,Oh
+22,Rob Thomas,Lonely No More
+23,Snoop Dogg feat. Pharrell,Drop It Like It's Hot
+24,Game feat. 50 Cent,Hate It Or Love It
+25,Lil Jon and The East Side Boyz feat. Usher and Ludacris,Lovers And Friends
+26,Destiny's Child feat. T.I. and Lil Wayne,Soldier
+27,Kelly Clarkson,Breakaway
+28,Will Smith,Switch
+29,Bow Wow feat. Omarion,Let Me Hold You
+30,Bow Wow feat. Ciara,Like You
+31,Gwen Stefani feat. Eve,Rich Girl
+32,Black Eyed Peas,My Humps
+33,Frankie J feat. Baby Bash,Obsession (No Es Amor)
+34,Usher,Caught Up
+35,D.H.T.,Listen To Your Heart
+36,Papa Roach,Scars
+37,Gorillaz,Feel Good Inc
+38,3 Doors Down,Let Me Go
+39,Green Day,Holiday
+40,Fall Out Boy,"Sugar, We're Goin' Down"
+41,Pretty Ricky,Grind With Me
+42,Chris Brown,Run It!
+43,Nickelback,Photograph
+44,Akon,Lonely
+45,Howie Day,Collide
+46,Green Day,Wake Me Up When September Ends
+47,Bobby Valentino,Slow Down
+48,Nelly feat. Tim McGraw,Over And Over
+49,Trillville feat. Cutty,Some Cut
+50,Fat Joe feat. Nelly,Get It Poppin'
+51,David Banner,Play
+52,Young Jeezy feat. Akon,Soul Survivor
+53,Ludacris feat. Bobby Valentino,Pimpin' All Over the World
+54,Usher And Alicia Keys,My Boo
+55,"Trick Daddy feat. Ludacris, Lil' Kim and Cee-Lo",Sugar (Gimme Some)
+56,Alicia Keys,Karma
+57,Coldplay,Speed Of Sound
+58,Gavin DeGraw,I Don't Want To Be
+59,Eminem,Mockingbird
+60,Shakira feat. Alejandro Sanz,La Tortura
+61,Maroon 5,She Will Be Loved
+62,Baby Bash feat. Akon,Baby I'm Back
+63,Ying Yang Twins,Wait (The Whisper Song)
+64,Backstreet Boys,Incomplete
+65,T.I.,Bring Em Out
+66,Destiny's Child,Cater 2 U
+67,Amerie,1 Thing
+68,Foo Fighters,Best Of You
+69,Mariah Carey,It's Like That
+70,Natalie,Goin' Crazy
+71,Carrie Underwood,Inside Your Heaven
+72,Kelly Clarkson,Because Of You
+73,Fantasia,Truth Is
+74,Pretty Ricky,Your Body
+75,Jesse McCartney,Beautiful Soul
+76,Gwen Stefani,Cool
+77,Ludacris,Get Back
+78,50 Cent feat. Mobb Deep,Outta Control (Remix)
+79,T.I.,U Don't Know Me
+80,Natasha Bedingfield,These Words
+81,Black Eyed Peas,Don't Lie
+82,Jennifer Lopez,Get Right
+83,John Mayer,Daughters
+84,Toby Keith,As Good As I Once Was
+85,Brooke Valentine feat. Lil Jon and Big Boi,Girlfight
+86,Destiny's Child,Lose My Breath
+87,John Legend,Ordinary People
+88,Sean Paul,We Be Burnin'
+89,Click Five,Just The Girl
+90,Ryan Cabrera,TRUE
+91,Omarion,O
+92,Mike Jones,Back Then
+93,Jay-Z/Linkin Park,Numb/Encore
+94,Ja Rule feat. R. Kelly and Ashanti,Wonderful
+95,T-Pain,I'm Sprung
+96,Gavin DeGraw,Chariot
+97,112 feat. Foxy Brown,U Already Know
+98,Faith Hill,Mississippi Girl
+99,Ludacris,Number One Spot
+100,Webbie feat. Bun B,Give Me That

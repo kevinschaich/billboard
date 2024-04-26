@@ -1,1 +1,101 @@
-Position ,Artist,Song Title1,Boyz II Men,End Of The Road2,Sir Mix-a-Lot,Baby Got Back3,Kris Kross,Jump4,Vanessa Williams,Save The Best For Last5,TLC,Baby-Baby-Baby6,Eric Clapton,Tears In Heaven7,En Vogue,My Lovin' (You're Never Gonna Get It)8,Red Hot Chili Peppers,Under The Bridge9,Color Me Badd,All 4 Love10,Jon Secada,Just Another Day11,Shanice,I Love Your Smile12,Mr. Big,To Be With You13,Right Said Fred,I'm Too Sexy14,Michael Jackson,Black Or White15,Billy Ray Cyrus,Achy Breaky Heart16,Mariah Carey,I'll Be There17,Guns N' Roses,November Rain18,Tom Cochrane,Life Is A Highway19,Michael Jackson,Remember The Time20,CeCe Peniston,Finally21,Madonna,This Used To Be My Playground22,Patty Smyth and Don Henley,Sometimes Love Just Ain't Enough23,Mariah Carey,Can't Let Go24,House Of Pain,Jump Around25,Prince and The N.P.G.,Diamonds And Pearls26,George Michael and Elton John,Don't Let The Sun Go Down On Me27,Atlantic Starr,Masterpiece28,Celine Dion,If You Asked Me To29,En Vogue,Giving Him Something He Can Feel30,Joe Public,Live And Learn31,Jodeci,Come and Talk To Me32,Nirvana,Smells Like Teen Spirit33,Bobby Brown,Humpin' Around34,Sophie B. Hawkins,Damn I Wish I Was Your Lover35,Teven Campbell,Tell Me What You Want Me To Do36,TLC,Ain't 2 Proud 2 Beg37,Boyz II Men,It's So Hard To Say Goodbye To Yesterday38,Technotronic,Move This39,Queen,Bohemian Rhapsody40,Arrested Development,Tennessee41,Luther Vandross and Janet Jackson,The Best Things In Life Are Free42,Mariah Carey,Make It Happen43,Elton John,The One44,P.M. Dawn,Set Adrift On Memory Bliss45,Shakespear's Sister,Stay46,Hammer,2 Legit 2 Quit47,K.W.S.,Please Don't Go48,Mint Condition,Breakin' My Heart (Pretty Brown Eyes)49,Cover Girls,Wishing On A Star50,Hi-Five,She's Playing Hard To Get51,P.M. Dawn,I'd Die Without You52,Amy Grant,Good For Me53,Toad The Wet Sprocket,All I Want54,Michael Bolton,When A Man Loves A Woman55,Genesis,I Can't Dance56,Richard Marx,Hazard57,U2,Mysterious Ways58,George Michael,Too Funky59,Heights,How Do You Talk To An Angel60,U2,One61,CeCe Peniston,Keep On Walkin'62,Genesis,Hold On My Heart63,Karyn White,The Way I Feel About You64,Calms Dion And Peabo Bryson,Beauty And The Beast65,Kris Kross,Warm It Up66,Michael Jackson,In The Closet67,Arrested Development,People Everyday68,Genesis,No Son Of Nine69,Marky Mark And The Funky Bunch,Wildside70,Bryan Adams,Do I Have To Say The Words?71,Cure,Friday I'm In Love72,Ugly Kid Joe,Everything About You73,Paula Abdul,Blowing Kisses In The Wind74,Bryan Adams,Thought I'd Died And Gone To Heaven75,Snap,Rhythm Is A Dancer76,Hammer,Addams Groove77,Michael Bolton,Missing You Now78,N2Deep,Back To The Hotel79,Kathy Troccoli,Everything Changes80,Def Leppard,Have You Ever Needed Somone So Bad81,Richard Marx,Take This Heart82,Firehouse,When I Look Into Your Eyes83,Jade,I Wanna Love You84,Boyz II Men,Uhh Ahh85,Mary J. Blige,Real Love86,KLF,Justified And Ancient87,Color Me Badd,Slow Motion88,TLC,What About Your Friends89,Color Me Badd,Thinkin' Back90,Charles and Eddie,Would I Lie To You?91,Amy Grant,That's What Love Is For92,Richard Marx,Keep Coming Back93,En Vogue,Free Your Mind94,Keith Sweat,Keep It Comin'95,Mr. Big,Just Take My Heart96,Amy Grant,I Will Remember You97,CeCe Peniston,We Got A Love Thang98,Def Leppard,Let's Get Rocked99,Das EFX,They Want EFX100,Bonnie Raitt,I Can't Make You Love Me
+Position,Artist,Song Title
+1,Boyz II Men,End Of The Road
+2,Sir Mix-a-Lot,Baby Got Back
+3,Kris Kross,Jump
+4,Vanessa Williams,Save The Best For Last
+5,TLC,Baby-Baby-Baby
+6,Eric Clapton,Tears In Heaven
+7,En Vogue,My Lovin' (You're Never Gonna Get It)
+8,Red Hot Chili Peppers,Under The Bridge
+9,Color Me Badd,All 4 Love
+10,Jon Secada,Just Another Day
+11,Shanice,I Love Your Smile
+12,Mr. Big,To Be With You
+13,Right Said Fred,I'm Too Sexy
+14,Michael Jackson,Black Or White
+15,Billy Ray Cyrus,Achy Breaky Heart
+16,Mariah Carey,I'll Be There
+17,Guns N' Roses,November Rain
+18,Tom Cochrane,Life Is A Highway
+19,Michael Jackson,Remember The Time
+20,CeCe Peniston,Finally
+21,Madonna,This Used To Be My Playground
+22,Patty Smyth and Don Henley,Sometimes Love Just Ain't Enough
+23,Mariah Carey,Can't Let Go
+24,House Of Pain,Jump Around
+25,Prince and The N.P.G.,Diamonds And Pearls
+26,George Michael and Elton John,Don't Let The Sun Go Down On Me
+27,Atlantic Starr,Masterpiece
+28,Celine Dion,If You Asked Me To
+29,En Vogue,Giving Him Something He Can Feel
+30,Joe Public,Live And Learn
+31,Jodeci,Come and Talk To Me
+32,Nirvana,Smells Like Teen Spirit
+33,Bobby Brown,Humpin' Around
+34,Sophie B. Hawkins,Damn I Wish I Was Your Lover
+35,Teven Campbell,Tell Me What You Want Me To Do
+36,TLC,Ain't 2 Proud 2 Beg
+37,Boyz II Men,It's So Hard To Say Goodbye To Yesterday
+38,Technotronic,Move This
+39,Queen,Bohemian Rhapsody
+40,Arrested Development,Tennessee
+41,Luther Vandross and Janet Jackson,The Best Things In Life Are Free
+42,Mariah Carey,Make It Happen
+43,Elton John,The One
+44,P.M. Dawn,Set Adrift On Memory Bliss
+45,Shakespear's Sister,Stay
+46,Hammer,2 Legit 2 Quit
+47,K.W.S.,Please Don't Go
+48,Mint Condition,Breakin' My Heart (Pretty Brown Eyes)
+49,Cover Girls,Wishing On A Star
+50,Hi-Five,She's Playing Hard To Get
+51,P.M. Dawn,I'd Die Without You
+52,Amy Grant,Good For Me
+53,Toad The Wet Sprocket,All I Want
+54,Michael Bolton,When A Man Loves A Woman
+55,Genesis,I Can't Dance
+56,Richard Marx,Hazard
+57,U2,Mysterious Ways
+58,George Michael,Too Funky
+59,Heights,How Do You Talk To An Angel
+60,U2,One
+61,CeCe Peniston,Keep On Walkin'
+62,Genesis,Hold On My Heart
+63,Karyn White,The Way I Feel About You
+64,Calms Dion And Peabo Bryson,Beauty And The Beast
+65,Kris Kross,Warm It Up
+66,Michael Jackson,In The Closet
+67,Arrested Development,People Everyday
+68,Genesis,No Son Of Nine
+69,Marky Mark And The Funky Bunch,Wildside
+70,Bryan Adams,Do I Have To Say The Words?
+71,Cure,Friday I'm In Love
+72,Ugly Kid Joe,Everything About You
+73,Paula Abdul,Blowing Kisses In The Wind
+74,Bryan Adams,Thought I'd Died And Gone To Heaven
+75,Snap,Rhythm Is A Dancer
+76,Hammer,Addams Groove
+77,Michael Bolton,Missing You Now
+78,N2Deep,Back To The Hotel
+79,Kathy Troccoli,Everything Changes
+80,Def Leppard,Have You Ever Needed Somone So Bad
+81,Richard Marx,Take This Heart
+82,Firehouse,When I Look Into Your Eyes
+83,Jade,I Wanna Love You
+84,Boyz II Men,Uhh Ahh
+85,Mary J. Blige,Real Love
+86,KLF,Justified And Ancient
+87,Color Me Badd,Slow Motion
+88,TLC,What About Your Friends
+89,Color Me Badd,Thinkin' Back
+90,Charles and Eddie,Would I Lie To You?
+91,Amy Grant,That's What Love Is For
+92,Richard Marx,Keep Coming Back
+93,En Vogue,Free Your Mind
+94,Keith Sweat,Keep It Comin'
+95,Mr. Big,Just Take My Heart
+96,Amy Grant,I Will Remember You
+97,CeCe Peniston,We Got A Love Thang
+98,Def Leppard,Let's Get Rocked
+99,Das EFX,They Want EFX
+100,Bonnie Raitt,I Can't Make You Love Me

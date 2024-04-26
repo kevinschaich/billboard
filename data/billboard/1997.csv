@@ -1,1 +1,101 @@
-Position ,Artist,Song Title1,Elton John,Candle In The Wind 1997 / Something About The Way You Look Tonight2,Jewel,Foolish Games / You Were Meant For Me3,Puff Daddy and Faith Evans,I'll Be Missing You4,Toni Braxton,Un-Break My Heart5,Puff Daddy,Can't Nobody Hold Me Down6,R. Kelly,I Believe I Can Fly7,En Vogue,Don't Let Go (Love)8,Mark Morrison,Return Of The Mack9,LeAnn Rimes,How Do I Live10,Spice Girls,Wannabe11,Backstreet Boys,Quit Playing Games (With My Heart)12,Hanson,MMMBop13,Monica,For You I Will14,Usher,You Make Me Wanna...15,Meredith Brooks,Bitch16,Keith Sweat,Nobody17,Third Eye Blind,Semi-Charmed Life18,Duncan Sheik,Barely Breathing19,Az Yet feat. Peter Cetera,Hard To Say I'm Sorry20,Notorious B.I.G.,Mo Money Mo Problems21,Verve Pipe,The Freshmen22,Savage Garden,I Want You23,BLACKstreet feat. Dr. Dre,No Diggity24,Rome,I Belong To You (Every Time I See Your Face)25,Notorious B.I.G.,Hypnotize26,Babyface,Every Time I Close My Eyes27,Dru Hill,In My Bed28,Spice Girls,Say You'll Be There29,Robyn,Do You Know (What It Takes)30,Boyz II Men,4 Seasons Of Loneliness31,Changing Faces,G.H.E.T.T.O.U.T.32,Mariah Carey,Honey33,Whitney Houston,I Believe In You And Me34,Freaknasty,Da' Dip35,Spice Girls,2 Become 136,Sister Hazel,All For You37,112,Cupid38,Paula Cole,Where Have All The Cowboys Gone?39,Shawn Colvin,Sunny Came Home40,Tim McGraw and Faith Hill,It's Your Love41,Gina G,Ooh Aah... Just A Little Bit42,Merril Bainbridge,Mouth43,Allure feat. 112,All Cried Out44,New Edition,I'm Still In Love With You45,98 Degrees,Invisible Man46,Lil' Kim,Not Tonight47,Bone Thugs-N-Harmony,Look Into My Eyes48,702,Get It Together49,Celine Dion,All By Myself50,Celine Dion,It's All Coming Back To Me Now51,Somethin' For The People,My Love Is The Shhh!52,No Mercy,Where Do You Go53,Barbra Streisand and Bryan Adams,I Finally Found Someone54,Foxy Brown feat. Jay-Z,I'll Be55,Sheryl Crow,If It Makes You Happy56,Dru Hill,Never Make A Promise57,Journey,When You Love A Woman58,Magoo And Timbaland,Up Jumps Da Boogie59,Toni Braxton,I Don't Want To / I Love Me Some Him60,Sheryl Crow,Everyday Is A Winding Road61,Mc Lyte,Cold Rock A Party62,Ginuwine,Pony63,Sarah McLachlan,Building A Mystery64,Donna Lewis,I Love You Always Forever65,White Town,Your Woman66,Coolio,C U When U Get There67,Eric Clapton,Change The World68,B-Rock and The Bizz,My Baby Daddy69,Chumbawamba,Tubthumping70,R. Kelly,Gotham City71,Az Yet,Last Night72,Various Artists,ESPN Presents The Jock Jam73,Heavy D,Big Daddy74,Total,What About Us75,Scarface,Smile76,Montell Jordan,What's On Tonight77,Bruce Springsteen,Secret Garden78,Aaliyah,The One I Gave My Heart To79,Seal,Fly Like An Eagle80,Lil' Kim,No Time81,Luscious Jackson,Naked Eye82,Los Del Rio,Macarena (Bayside Boys Mix)83,Erykah Badu,On and On84,Joe,Don't Wanna Be A Player85,Warren G,I Shot The Sheriff86,Brian McKnight feat. Mase,You Should Be Mine (Don't Waste Your Time)87,Madonna,Don't Cry For Me Argentina88,SWV,Someone89,Michael Bolton,Go The Distance90,Real McCoy,One More Time91,Next,Butta Love92,Mr. President,Coco Jamboo93,Keith Sweat,Twisted94,Aqua,Barbie Girl95,Cranberries,When You're Gone / Free To Decide96,DJ Kool,Let Me Clear My Throat97,Blackout Allstars,I Like It98,Toni Braxton,You're Makin' Me High / Let It Flow99,Madonna,You Must Love Me100,Ray J,Let It Go
+Position,Artist,Song Title
+1,Elton John,Candle In The Wind 1997 / Something About The Way You Look Tonight
+2,Jewel,Foolish Games / You Were Meant For Me
+3,Puff Daddy and Faith Evans,I'll Be Missing You
+4,Toni Braxton,Un-Break My Heart
+5,Puff Daddy,Can't Nobody Hold Me Down
+6,R. Kelly,I Believe I Can Fly
+7,En Vogue,Don't Let Go (Love)
+8,Mark Morrison,Return Of The Mack
+9,LeAnn Rimes,How Do I Live
+10,Spice Girls,Wannabe
+11,Backstreet Boys,Quit Playing Games (With My Heart)
+12,Hanson,MMMBop
+13,Monica,For You I Will
+14,Usher,You Make Me Wanna...
+15,Meredith Brooks,Bitch
+16,Keith Sweat,Nobody
+17,Third Eye Blind,Semi-Charmed Life
+18,Duncan Sheik,Barely Breathing
+19,Az Yet feat. Peter Cetera,Hard To Say I'm Sorry
+20,Notorious B.I.G.,Mo Money Mo Problems
+21,Verve Pipe,The Freshmen
+22,Savage Garden,I Want You
+23,BLACKstreet feat. Dr. Dre,No Diggity
+24,Rome,I Belong To You (Every Time I See Your Face)
+25,Notorious B.I.G.,Hypnotize
+26,Babyface,Every Time I Close My Eyes
+27,Dru Hill,In My Bed
+28,Spice Girls,Say You'll Be There
+29,Robyn,Do You Know (What It Takes)
+30,Boyz II Men,4 Seasons Of Loneliness
+31,Changing Faces,G.H.E.T.T.O.U.T.
+32,Mariah Carey,Honey
+33,Whitney Houston,I Believe In You And Me
+34,Freaknasty,Da' Dip
+35,Spice Girls,2 Become 1
+36,Sister Hazel,All For You
+37,112,Cupid
+38,Paula Cole,Where Have All The Cowboys Gone?
+39,Shawn Colvin,Sunny Came Home
+40,Tim McGraw and Faith Hill,It's Your Love
+41,Gina G,Ooh Aah... Just A Little Bit
+42,Merril Bainbridge,Mouth
+43,Allure feat. 112,All Cried Out
+44,New Edition,I'm Still In Love With You
+45,98 Degrees,Invisible Man
+46,Lil' Kim,Not Tonight
+47,Bone Thugs-N-Harmony,Look Into My Eyes
+48,702,Get It Together
+49,Celine Dion,All By Myself
+50,Celine Dion,It's All Coming Back To Me Now
+51,Somethin' For The People,My Love Is The Shhh!
+52,No Mercy,Where Do You Go
+53,Barbra Streisand and Bryan Adams,I Finally Found Someone
+54,Foxy Brown feat. Jay-Z,I'll Be
+55,Sheryl Crow,If It Makes You Happy
+56,Dru Hill,Never Make A Promise
+57,Journey,When You Love A Woman
+58,Magoo And Timbaland,Up Jumps Da Boogie
+59,Toni Braxton,I Don't Want To / I Love Me Some Him
+60,Sheryl Crow,Everyday Is A Winding Road
+61,Mc Lyte,Cold Rock A Party
+62,Ginuwine,Pony
+63,Sarah McLachlan,Building A Mystery
+64,Donna Lewis,I Love You Always Forever
+65,White Town,Your Woman
+66,Coolio,C U When U Get There
+67,Eric Clapton,Change The World
+68,B-Rock and The Bizz,My Baby Daddy
+69,Chumbawamba,Tubthumping
+70,R. Kelly,Gotham City
+71,Az Yet,Last Night
+72,Various Artists,ESPN Presents The Jock Jam
+73,Heavy D,Big Daddy
+74,Total,What About Us
+75,Scarface,Smile
+76,Montell Jordan,What's On Tonight
+77,Bruce Springsteen,Secret Garden
+78,Aaliyah,The One I Gave My Heart To
+79,Seal,Fly Like An Eagle
+80,Lil' Kim,No Time
+81,Luscious Jackson,Naked Eye
+82,Los Del Rio,Macarena (Bayside Boys Mix)
+83,Erykah Badu,On and On
+84,Joe,Don't Wanna Be A Player
+85,Warren G,I Shot The Sheriff
+86,Brian McKnight feat. Mase,You Should Be Mine (Don't Waste Your Time)
+87,Madonna,Don't Cry For Me Argentina
+88,SWV,Someone
+89,Michael Bolton,Go The Distance
+90,Real McCoy,One More Time
+91,Next,Butta Love
+92,Mr. President,Coco Jamboo
+93,Keith Sweat,Twisted
+94,Aqua,Barbie Girl
+95,Cranberries,When You're Gone / Free To Decide
+96,DJ Kool,Let Me Clear My Throat
+97,Blackout Allstars,I Like It
+98,Toni Braxton,You're Makin' Me High / Let It Flow
+99,Madonna,You Must Love Me
+100,Ray J,Let It Go

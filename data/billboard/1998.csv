@@ -1,1 +1,101 @@
-Position ,Artist,Song Title1,Next,Too Close2,Brandy and Monica,The Boy Is Mine3,Shania Twain,You're Still The One4,Savage Garden,Truly Madly Deeply5,LeAnn Rimes,How Do I Live6,Janet,Together Again7,K-Ci and JoJo,All My Life8,Elton John,Candle In The Wind 1997 / Something About The Way You Look Tonight9,Usher,Nice and Slow10,Paula Cole,I Don't Want To Wait11,Third Eye Blind,How's It Going To Be12,Destiny's Child,"No, No, No"13,Celine Dion,My Heart Will Go On14,Will Smith,Gettin' Jiggy Wit It15,Usher,You Make Me Wanna...16,Usher,My Way17,Mariah Carey,My All18,Monica,The First Night19,Puff Daddy and The Family,Been Around The World20,Sarah McLachlan,Adia21,Jennifer Paige,Crush22,Backstreet Boys,Everybody (Backstreet's Back)23,Aerosmith,I Don't Want To Miss A Thing24,Public Announcement,Body Bumpin (Yippie-Yi-Yo)25,Faith Hill,This Kiss26,Uncle Sam,I Don't Ever Want To See You Again27,Montell Jordan,Let's Ride28,Marcy Playground,Sex And Candy29,Robyn,Show Me Love30,Boyz II Men,A Song For Mama31,Mase,What You Want32,Madonna,Frozen33,Wyclef Jean,Gone Till November34,Lsg,My Body35,Chumbawamba,Tubthumping36,Lord Tariq and Peter Gunz,Deja Vu (Uptown Baby)37,'N Sync,I Want You Back38,Five,When The Lights Go Out39,Jon B.,They Don't Know40,Master P,Make Em' Say Uhh!41,"Nicole feat. Missy ""Misdemeanor"" Elliott and Mocha",Make It Hot42,All Saints,Never Ever43,Janet,I Get Lonely44,Mase,Feel So Good45,Voices Of Theory,Say It46,Billie Myers,Kiss The Rain47,Puff Daddy,Come With Me48,Sylk-E Fyne,Romeo And Juliet49,Mya and Sisqo,It's All About Me50,Hanson,I Will Come To You51,Barenaked Ladies,One Week52,K.P. and Envyi,Swing My Way53,Xscape,The Arms Of The One Who Loves You54,Somethin' For The People,My Love Is The Shhh!55,Tatyana Ali,Daydreamin'56,Dru Hill,We're Not Making Love No More57,Third Eye Blind,Semi-Charmed Life58,Lisa Loeb,I Do59,Mase,Lookin' At Me60,LeAnn Rimes,Looking Through Your Eyes61,Divine,Lately62,Backstreet Boys,Quit Playing Games (With My Heart)63,Next,I Still Love You64,Inoj,Time After Time65,Jimmy Ray,Are You Jimmy Ray?66,Ace Of Base,Cruel Summer67,Master P,I Got The Hook Up!68,Puff Daddy and The Family,Victory69,Spice Girls,Too Much70,Pras Feat. Ol' Dirty Bastard and Mya,Ghetto Supastar (That Is What You Are)71,Dru Hill feat. Redman,How Deep Is Your Love72,Kelly Price,Friend Of Mine73,Busta Rhymes,Turn It Up [Remix] / Fire It Up74,Edwin McCain,I'll Be75,Madonna,Ray Of Light76,Sister Hazel,All For You77,Monifah,Touch It78,Lox,"Money, Power and Respect"79,Verve,Bitter Sweet Symphony80,Busta Rhymes,Dangerous81,Spice Girls,Spice Up Your Life82,98 Degrees,Because Of You83,Loreena McKennitt,The Mummers' Dance84,Allure feat. 112,All Cried Out85,Big Punisher feat. Joe,Still Not A Player86,Aaliyah,The One I Gave My Heart To87,Jewel,Foolish Games / You Were Meant For Me88,Inoj,Love You Down89,2Pac,Do For Love90,Luke,Raise The Roof91,Nu Flavor,Heaven92,Jd,The Party Continues93,"Missy ""Misdemeanor"" Elliott feat. Da Brat",Sock It 2 Me94,Next,Butta Love95,Aretha Franklin,A Rose Is Still A Rose96,Boyz II Men,4 Seasons Of Loneliness97,LL Cool J,Father98,Gerald Levert,Thinkin' Bout It99,Deborah Cox,Nobody's Supposed To Be Here100,TQ,Westside
+Position,Artist,Song Title
+1,Next,Too Close
+2,Brandy and Monica,The Boy Is Mine
+3,Shania Twain,You're Still The One
+4,Savage Garden,Truly Madly Deeply
+5,LeAnn Rimes,How Do I Live
+6,Janet,Together Again
+7,K-Ci and JoJo,All My Life
+8,Elton John,Candle In The Wind 1997 / Something About The Way You Look Tonight
+9,Usher,Nice and Slow
+10,Paula Cole,I Don't Want To Wait
+11,Third Eye Blind,How's It Going To Be
+12,Destiny's Child,"No, No, No"
+13,Celine Dion,My Heart Will Go On
+14,Will Smith,Gettin' Jiggy Wit It
+15,Usher,You Make Me Wanna...
+16,Usher,My Way
+17,Mariah Carey,My All
+18,Monica,The First Night
+19,Puff Daddy and The Family,Been Around The World
+20,Sarah McLachlan,Adia
+21,Jennifer Paige,Crush
+22,Backstreet Boys,Everybody (Backstreet's Back)
+23,Aerosmith,I Don't Want To Miss A Thing
+24,Public Announcement,Body Bumpin (Yippie-Yi-Yo)
+25,Faith Hill,This Kiss
+26,Uncle Sam,I Don't Ever Want To See You Again
+27,Montell Jordan,Let's Ride
+28,Marcy Playground,Sex And Candy
+29,Robyn,Show Me Love
+30,Boyz II Men,A Song For Mama
+31,Mase,What You Want
+32,Madonna,Frozen
+33,Wyclef Jean,Gone Till November
+34,Lsg,My Body
+35,Chumbawamba,Tubthumping
+36,Lord Tariq and Peter Gunz,Deja Vu (Uptown Baby)
+37,'N Sync,I Want You Back
+38,Five,When The Lights Go Out
+39,Jon B.,They Don't Know
+40,Master P,Make Em' Say Uhh!
+41,"Nicole feat. Missy ""Misdemeanor"" Elliott and Mocha",Make It Hot
+42,All Saints,Never Ever
+43,Janet,I Get Lonely
+44,Mase,Feel So Good
+45,Voices Of Theory,Say It
+46,Billie Myers,Kiss The Rain
+47,Puff Daddy,Come With Me
+48,Sylk-E Fyne,Romeo And Juliet
+49,Mya and Sisqo,It's All About Me
+50,Hanson,I Will Come To You
+51,Barenaked Ladies,One Week
+52,K.P. and Envyi,Swing My Way
+53,Xscape,The Arms Of The One Who Loves You
+54,Somethin' For The People,My Love Is The Shhh!
+55,Tatyana Ali,Daydreamin'
+56,Dru Hill,We're Not Making Love No More
+57,Third Eye Blind,Semi-Charmed Life
+58,Lisa Loeb,I Do
+59,Mase,Lookin' At Me
+60,LeAnn Rimes,Looking Through Your Eyes
+61,Divine,Lately
+62,Backstreet Boys,Quit Playing Games (With My Heart)
+63,Next,I Still Love You
+64,Inoj,Time After Time
+65,Jimmy Ray,Are You Jimmy Ray?
+66,Ace Of Base,Cruel Summer
+67,Master P,I Got The Hook Up!
+68,Puff Daddy and The Family,Victory
+69,Spice Girls,Too Much
+70,Pras Feat. Ol' Dirty Bastard and Mya,Ghetto Supastar (That Is What You Are)
+71,Dru Hill feat. Redman,How Deep Is Your Love
+72,Kelly Price,Friend Of Mine
+73,Busta Rhymes,Turn It Up [Remix] / Fire It Up
+74,Edwin McCain,I'll Be
+75,Madonna,Ray Of Light
+76,Sister Hazel,All For You
+77,Monifah,Touch It
+78,Lox,"Money, Power and Respect"
+79,Verve,Bitter Sweet Symphony
+80,Busta Rhymes,Dangerous
+81,Spice Girls,Spice Up Your Life
+82,98 Degrees,Because Of You
+83,Loreena McKennitt,The Mummers' Dance
+84,Allure feat. 112,All Cried Out
+85,Big Punisher feat. Joe,Still Not A Player
+86,Aaliyah,The One I Gave My Heart To
+87,Jewel,Foolish Games / You Were Meant For Me
+88,Inoj,Love You Down
+89,2Pac,Do For Love
+90,Luke,Raise The Roof
+91,Nu Flavor,Heaven
+92,Jd,The Party Continues
+93,"Missy ""Misdemeanor"" Elliott feat. Da Brat",Sock It 2 Me
+94,Next,Butta Love
+95,Aretha Franklin,A Rose Is Still A Rose
+96,Boyz II Men,4 Seasons Of Loneliness
+97,LL Cool J,Father
+98,Gerald Levert,Thinkin' Bout It
+99,Deborah Cox,Nobody's Supposed To Be Here
+100,TQ,Westside

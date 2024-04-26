@@ -1,1 +1,101 @@
-Position ,Artist,Song Title1,Los Del Rio,Macarena (Bayside Boys Mix)2,Mariah Carey and Boyz II Men,One Sweet Day3,Celine Dion,Because You Loved Me4,Tony Rich Project,Nobody Knows5,Mariah Carey,Always Be My Baby6,Tracy Chapman,Give Me One Reason7,Bone Thugs-N-Harmony,Tha Crossroads8,Donna Lewis,I Love You Always Forever9,Toni Braxton,You're Makin' Me High / Let It Flow10,Keith Sweat,Twisted11,Quad City DJ's,C'mon N' Ride It (The Train)12,Everything But The Girl,Missing13,Alanis Morissette,Ironic14,Whitney Houston,Exhale (Shoop Shoop)15,Gin Blossoms,Follow You Down / Til I Hear It From You16,Brandy,Sittin' Up In My Room17,2Pac,How Do U Want It / California Love18,Celine Dion,It's All Coming Back To Me Now19,Eric Clapton,Change The World20,LL Cool J,Hey Lover21,LL Cool J,Loungin22,Jann Arden,Insensitive23,La Bouche,Be My Lover24,Goo Goo Dolls,Name25,Jewel,Who Will Save Your Soul26,No Mercy,Where Do You Go27,R. Kelly,I Can't Sleep Baby (If I)28,Dishwalla,Counting Blue Cars29,Alanis Morissette,You Learn / You Oughta Know30,Joan Osborne,One Of Us31,Natalie Merchant,Wonder32,Mary J. Blige,Not Gon' Cry33,Coolio,Gangsta's Paradise34,112 feat. The Notorious B.I.G.,Only You35,R. Kelly,Down Low (Nobody Has To Know)36,SWV,You're The One37,La Bouche,Sweet Dreams38,Monica,Before You Walk Out Of My Life / Like This And Like That39,Deep Blue Something,Breakfast At Tiffany's40,Coolio,"1, 2, 3, 4 (Sumpin' New)"41,Collective Soul,The World I Know42,BLACKstreet (feat. Dr. Dre),No Diggity43,3t,Anything44,Smashing Pumpkins,197945,TLC,Diggin' On You46,Monica,Why I Love You So Much / Ain't Nobody47,Total,Kissin' You48,Whitney Houston and Cece Winans,Count On Me49,Mariah Carey,Fantasy50,Hootie and The Blowfish,Time51,Madonna,You'll See52,Az Yet,Last Night53,Merril Bainbridge,Mouth54,Color Me Badd,"The Earth, The Sun, The Rain"55,Joe,All The Things (Your Man Won't Do)56,Oasis,Wonderwall57,Busta Rhymes,Woo-hah!! Got You All In Check / Everything Remains Raw58,Groove Theory,Tell Me59,Outkast,Elevators (Me and You)60,Blues Traveler,Hook61,LL Cool J,Doin It62,George Michael,Fastlove63,Case feat. Foxxy Brown,Touch Me Tease Me64,Kris Kross,Tonite's Tha Night65,Robert Miles,Children66,Adam Clayton and Larry Mullen,Theme From Mission: Impossible67,Bodeans,Closer To Free68,No Doubt,Just A Girl69,Aaliyah,If Your Girl Only Knew70,D'angelo,Lady71,John Mellencamp,Key West Intermezzo (I Saw You First)72,Ginuwine,Pony73,Keith Sweat,Nobody74,Hootie and The Blowfish,Old Man and Me (When I Get To Heaven)75,Sheryl Crow,If It Makes You Happy76,Sophie B. Hawkins,As I Lay Me Down77,Mc Lyte,"Keep On, Keepin' On"78,Natalie Merchant,Jealousy79,Melissa Etheridge,I Want To Come Over80,Deborah Cox,Who Do U Love81,Toni Braxton,Un-Break My Heart82,Amber,This Is Your Night83,R. Kelly,You Remind Me Of Something84,Janet Jackson,Runaway85,Planet Soul,Set U Free86,New Edition,Hit Me Off87,Total,No One Else88,Ghost Town Dj's,My Boo89,Junior M.A.F.I.A.,Get Money90,Maxi Priest feat. Shaggy,That Girl91,Do Or Die,Po Pimp92,Metallica,Until It Sleeps93,Crucial Conflict,Hay94,Ace Of Base,Beautiful Life95,Take That,Back For Good96,Pearl Jam,I Got Id / Long Road97,Faith Evans,Soon As I Get Home98,Los Del Rio,Macarena99,Hootie and The Blowfish,Only Wanna Be With You100,Seal,Don't Cry
+Position,Artist,Song Title
+1,Los Del Rio,Macarena (Bayside Boys Mix)
+2,Mariah Carey and Boyz II Men,One Sweet Day
+3,Celine Dion,Because You Loved Me
+4,Tony Rich Project,Nobody Knows
+5,Mariah Carey,Always Be My Baby
+6,Tracy Chapman,Give Me One Reason
+7,Bone Thugs-N-Harmony,Tha Crossroads
+8,Donna Lewis,I Love You Always Forever
+9,Toni Braxton,You're Makin' Me High / Let It Flow
+10,Keith Sweat,Twisted
+11,Quad City DJ's,C'mon N' Ride It (The Train)
+12,Everything But The Girl,Missing
+13,Alanis Morissette,Ironic
+14,Whitney Houston,Exhale (Shoop Shoop)
+15,Gin Blossoms,Follow You Down / Til I Hear It From You
+16,Brandy,Sittin' Up In My Room
+17,2Pac,How Do U Want It / California Love
+18,Celine Dion,It's All Coming Back To Me Now
+19,Eric Clapton,Change The World
+20,LL Cool J,Hey Lover
+21,LL Cool J,Loungin
+22,Jann Arden,Insensitive
+23,La Bouche,Be My Lover
+24,Goo Goo Dolls,Name
+25,Jewel,Who Will Save Your Soul
+26,No Mercy,Where Do You Go
+27,R. Kelly,I Can't Sleep Baby (If I)
+28,Dishwalla,Counting Blue Cars
+29,Alanis Morissette,You Learn / You Oughta Know
+30,Joan Osborne,One Of Us
+31,Natalie Merchant,Wonder
+32,Mary J. Blige,Not Gon' Cry
+33,Coolio,Gangsta's Paradise
+34,112 feat. The Notorious B.I.G.,Only You
+35,R. Kelly,Down Low (Nobody Has To Know)
+36,SWV,You're The One
+37,La Bouche,Sweet Dreams
+38,Monica,Before You Walk Out Of My Life / Like This And Like That
+39,Deep Blue Something,Breakfast At Tiffany's
+40,Coolio,"1, 2, 3, 4 (Sumpin' New)"
+41,Collective Soul,The World I Know
+42,BLACKstreet (feat. Dr. Dre),No Diggity
+43,3t,Anything
+44,Smashing Pumpkins,1979
+45,TLC,Diggin' On You
+46,Monica,Why I Love You So Much / Ain't Nobody
+47,Total,Kissin' You
+48,Whitney Houston and Cece Winans,Count On Me
+49,Mariah Carey,Fantasy
+50,Hootie and The Blowfish,Time
+51,Madonna,You'll See
+52,Az Yet,Last Night
+53,Merril Bainbridge,Mouth
+54,Color Me Badd,"The Earth, The Sun, The Rain"
+55,Joe,All The Things (Your Man Won't Do)
+56,Oasis,Wonderwall
+57,Busta Rhymes,Woo-hah!! Got You All In Check / Everything Remains Raw
+58,Groove Theory,Tell Me
+59,Outkast,Elevators (Me and You)
+60,Blues Traveler,Hook
+61,LL Cool J,Doin It
+62,George Michael,Fastlove
+63,Case feat. Foxxy Brown,Touch Me Tease Me
+64,Kris Kross,Tonite's Tha Night
+65,Robert Miles,Children
+66,Adam Clayton and Larry Mullen,Theme From Mission: Impossible
+67,Bodeans,Closer To Free
+68,No Doubt,Just A Girl
+69,Aaliyah,If Your Girl Only Knew
+70,D'angelo,Lady
+71,John Mellencamp,Key West Intermezzo (I Saw You First)
+72,Ginuwine,Pony
+73,Keith Sweat,Nobody
+74,Hootie and The Blowfish,Old Man and Me (When I Get To Heaven)
+75,Sheryl Crow,If It Makes You Happy
+76,Sophie B. Hawkins,As I Lay Me Down
+77,Mc Lyte,"Keep On, Keepin' On"
+78,Natalie Merchant,Jealousy
+79,Melissa Etheridge,I Want To Come Over
+80,Deborah Cox,Who Do U Love
+81,Toni Braxton,Un-Break My Heart
+82,Amber,This Is Your Night
+83,R. Kelly,You Remind Me Of Something
+84,Janet Jackson,Runaway
+85,Planet Soul,Set U Free
+86,New Edition,Hit Me Off
+87,Total,No One Else
+88,Ghost Town Dj's,My Boo
+89,Junior M.A.F.I.A.,Get Money
+90,Maxi Priest feat. Shaggy,That Girl
+91,Do Or Die,Po Pimp
+92,Metallica,Until It Sleeps
+93,Crucial Conflict,Hay
+94,Ace Of Base,Beautiful Life
+95,Take That,Back For Good
+96,Pearl Jam,I Got Id / Long Road
+97,Faith Evans,Soon As I Get Home
+98,Los Del Rio,Macarena
+99,Hootie and The Blowfish,Only Wanna Be With You
+100,Seal,Don't Cry

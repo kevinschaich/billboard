@@ -1,1 +1,101 @@
-Position ,Artist,Song Title1,Tony Orlando and Dawn,Tie A Yellow Ribbon Round The Ole Oak Tree2,Jim Croce,Bad Bad Leroy Brown3,Roberta Flack,Killing Me Softly With His Song4,Marvin Gaye,Let's Get It On5,Paul McCartney and Wings,My Love6,Kris Kristofferson,Why Me7,Elton John,Crocodile Rock8,Billy Preston,Will It Go Round In Circles9,Carly Simon,You're So Vain10,Diana Ross,Touch Me In The Morning11,Vicki Lawrence,The Night The Lights Went Out In Georgia12,Clint Holmes,Playground In My Mind13,Stories,Brother Louie14,Helen Reddy,Delta Dawn15,Billy Paul,Me And Mrs. Jones16,Edgar Winter Group,Frankenstein17,Dobie Gray,Drift Away18,Sweet,Little Willy19,Stevie Wonder,You Are The Sunshine Of My Life20,Cher,Half Breed21,Isley Bros.,That Lady22,Sylvia,Pillow Talk23,Grand Funk Railroad,We're An American Band24,Dr. John,"Right Place, Wrong Time"25,Skylark,Wildflower26,Stevie Wonder,Superstition27,Paul Simon,Loves Me Like A Rock28,Maureen McGovern,The Morning After29,John Denver,Rocky Mountain High30,Stealers Wheel,Stuck In The Middle With You31,Three Dog Night,Shambala32,O'Jays,Love Train33,Barry White,I'm Gonna Love You Just A Little More34,Tony Orlando and Dawn,"Say, Has Anybody Seen My Sweet Gypsy Rose"35,Eddie Kendricks,Keep On Truckin' (Pt. 1)36,King Harvest,Dancing In The Moonlight37,Anne Murray,Danny's Song38,"Bobby ""Boris"" Pickett and The Crypt Kickers",Monster Mash39,Bloodstone,Natural High40,Seals and Crofts,Diamond Girl41,Doobie Brothers,Long Train Running42,George Harrison,Give Me Love (Give Me Peace On Earth)43,Sly and The Family Stone,If You Want Me To Stay44,Jermaine Jackson,Daddy's Home45,Gladys Knight and The Pips,Neither One Of Us (Wants To Be The First To Say Goodbye)46,New York City,I'm Doing Fine Now47,Spinners,Could It Be I'm Falling In Love48,Elton John,Daniel49,Gladys Knight and The Pips,Midnight Train To Georgia50,Deep Purple,Smoke On The Water51,Dr. Hook and The Medicine Show,The Cover Of Rolling Stone52,Charlie Rich,Behind Closed Doors53,Loggins and Messina,Your Mama Don't Dance54,Chicago,Feelin' Stronger Every Day55,War,The Cisco Kid56,Wings,Live And Let Die57,Hurricane Smith,"Oh, Babe, What Would You Say?"58,Johnnie Taylor,I Believe In You59,Carpenters,Sing60,Four Tops,Ain't No Woman (Like The One I Got)61,Eric Weissberg and Steve Mandel,Dueling Banjos62,Stevie Wonder,Higher Ground63,Al Green,Here I Am (Come And Take Me)64,B.W. Stevenson,My Maria65,Curtis Mayfield,Superfly66,Gilbert O'Sullivan,Get Down67,Edward Bear,Last Song68,Steely Dan,Reelin' In The Years69,Focus,Hocus Pocus70,Carpenters,Yesterday Once More71,Bette Midler,Boogie Woogie Bugle Boy72,Gilbert O'Sullivan,Clair73,Steely Dan,Do It Again74,Paul Simon,Kodachrome75,Timmy Thomas,Why Can't We Live Together76,Tower Of Power,So Very Hard To Go77,Bette Midler,Do You Want To Dance?78,Johnny Rivers,Rockin' Pneumonia And The Boogie Woogie Flu79,Allman Brothers,Ramblin' Man80,Temptations,Masterpiece81,Helen Reddy,Peaceful82,Spinners,One Of A Kind (Love Affair)83,Donna Fargo,Funny Face84,Ohio Players,Funky Worm85,Rolling Stones,Angie86,Blue Ridge Rangers,Jambalaya (On The Bayou)87,Lobo,Don't Expect Me To Be Your Friend88,Stylistics,Break Up To Make Up89,Jud Strunk,Daisy A Day90,Deodato,Also Sprach Zarathustra (2001)91,Johnny Nash,Stir It Up92,Pink Floyd,Money93,War,Gypsy Man94,War,The World Is A Ghetto95,Pointer Sisters,Yes We Can Can96,Edgar Winter Group,Free Ride97,David Bowie,Space Oddity98,Albert Hammond,It Never Rains In Southern California99,Donny Osmond,The Twelfth Of Never100,Temptations,Papa Was A Rolling Stone
+Position,Artist,Song Title
+1,Tony Orlando and Dawn,Tie A Yellow Ribbon Round The Ole Oak Tree
+2,Jim Croce,Bad Bad Leroy Brown
+3,Roberta Flack,Killing Me Softly With His Song
+4,Marvin Gaye,Let's Get It On
+5,Paul McCartney and Wings,My Love
+6,Kris Kristofferson,Why Me
+7,Elton John,Crocodile Rock
+8,Billy Preston,Will It Go Round In Circles
+9,Carly Simon,You're So Vain
+10,Diana Ross,Touch Me In The Morning
+11,Vicki Lawrence,The Night The Lights Went Out In Georgia
+12,Clint Holmes,Playground In My Mind
+13,Stories,Brother Louie
+14,Helen Reddy,Delta Dawn
+15,Billy Paul,Me And Mrs. Jones
+16,Edgar Winter Group,Frankenstein
+17,Dobie Gray,Drift Away
+18,Sweet,Little Willy
+19,Stevie Wonder,You Are The Sunshine Of My Life
+20,Cher,Half Breed
+21,Isley Bros.,That Lady
+22,Sylvia,Pillow Talk
+23,Grand Funk Railroad,We're An American Band
+24,Dr. John,"Right Place, Wrong Time"
+25,Skylark,Wildflower
+26,Stevie Wonder,Superstition
+27,Paul Simon,Loves Me Like A Rock
+28,Maureen McGovern,The Morning After
+29,John Denver,Rocky Mountain High
+30,Stealers Wheel,Stuck In The Middle With You
+31,Three Dog Night,Shambala
+32,O'Jays,Love Train
+33,Barry White,I'm Gonna Love You Just A Little More
+34,Tony Orlando and Dawn,"Say, Has Anybody Seen My Sweet Gypsy Rose"
+35,Eddie Kendricks,Keep On Truckin' (Pt. 1)
+36,King Harvest,Dancing In The Moonlight
+37,Anne Murray,Danny's Song
+38,"Bobby ""Boris"" Pickett and The Crypt Kickers",Monster Mash
+39,Bloodstone,Natural High
+40,Seals and Crofts,Diamond Girl
+41,Doobie Brothers,Long Train Running
+42,George Harrison,Give Me Love (Give Me Peace On Earth)
+43,Sly and The Family Stone,If You Want Me To Stay
+44,Jermaine Jackson,Daddy's Home
+45,Gladys Knight and The Pips,Neither One Of Us (Wants To Be The First To Say Goodbye)
+46,New York City,I'm Doing Fine Now
+47,Spinners,Could It Be I'm Falling In Love
+48,Elton John,Daniel
+49,Gladys Knight and The Pips,Midnight Train To Georgia
+50,Deep Purple,Smoke On The Water
+51,Dr. Hook and The Medicine Show,The Cover Of Rolling Stone
+52,Charlie Rich,Behind Closed Doors
+53,Loggins and Messina,Your Mama Don't Dance
+54,Chicago,Feelin' Stronger Every Day
+55,War,The Cisco Kid
+56,Wings,Live And Let Die
+57,Hurricane Smith,"Oh, Babe, What Would You Say?"
+58,Johnnie Taylor,I Believe In You
+59,Carpenters,Sing
+60,Four Tops,Ain't No Woman (Like The One I Got)
+61,Eric Weissberg and Steve Mandel,Dueling Banjos
+62,Stevie Wonder,Higher Ground
+63,Al Green,Here I Am (Come And Take Me)
+64,B.W. Stevenson,My Maria
+65,Curtis Mayfield,Superfly
+66,Gilbert O'Sullivan,Get Down
+67,Edward Bear,Last Song
+68,Steely Dan,Reelin' In The Years
+69,Focus,Hocus Pocus
+70,Carpenters,Yesterday Once More
+71,Bette Midler,Boogie Woogie Bugle Boy
+72,Gilbert O'Sullivan,Clair
+73,Steely Dan,Do It Again
+74,Paul Simon,Kodachrome
+75,Timmy Thomas,Why Can't We Live Together
+76,Tower Of Power,So Very Hard To Go
+77,Bette Midler,Do You Want To Dance?
+78,Johnny Rivers,Rockin' Pneumonia And The Boogie Woogie Flu
+79,Allman Brothers,Ramblin' Man
+80,Temptations,Masterpiece
+81,Helen Reddy,Peaceful
+82,Spinners,One Of A Kind (Love Affair)
+83,Donna Fargo,Funny Face
+84,Ohio Players,Funky Worm
+85,Rolling Stones,Angie
+86,Blue Ridge Rangers,Jambalaya (On The Bayou)
+87,Lobo,Don't Expect Me To Be Your Friend
+88,Stylistics,Break Up To Make Up
+89,Jud Strunk,Daisy A Day
+90,Deodato,Also Sprach Zarathustra (2001)
+91,Johnny Nash,Stir It Up
+92,Pink Floyd,Money
+93,War,Gypsy Man
+94,War,The World Is A Ghetto
+95,Pointer Sisters,Yes We Can Can
+96,Edgar Winter Group,Free Ride
+97,David Bowie,Space Oddity
+98,Albert Hammond,It Never Rains In Southern California
+99,Donny Osmond,The Twelfth Of Never
+100,Temptations,Papa Was A Rolling Stone

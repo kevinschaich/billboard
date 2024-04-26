@@ -1,1 +1,101 @@
-Position ,Artist,Song Title1,Beatles,Hey Jude2,Paul Mauriat,Love Is Blue3,Bobby Goldsboro,Honey4,Otis Redding,(Sittin' On) The Dock Of The Bay5,Rascals,People Got To Be Free6,Cream,Sunshine Of Your Love7,Herb Alpert,This Guy's In Love With You8,Hugo Montenegro,"The Good, The Bad And The Ugly"9,Simon and Garfunkel,Mrs. Robinson10,Archie Bell and The Drells,Tighten Up11,Jeannie C. Riley,Harper Valley P.T.A.12,O.C. Smith,Little Green Apples13,Tommy James and The Shondells,"Mony, Mony"14,Doors,"Hello, I Love You"15,Gary Puckett and The Union Gap,Young Girl16,Box Tops,Cry Like A Baby17,Fifth Dimension,Stoned Soul Picnic18,Hugh Masekela,Grazing In The Grass19,Grass Roots,Midnight Confessions20,Sly and The Family Stone,Dance To The Music21,Cliff Nobles and Co.,The Horse22,Temptations,I Wish It Would Rain23,Delfonics,La-La Means I Love You24,Vogues,"Turn Around, Look At Me"25,John Fred and His Playboy Band,Judy In Disguise (With Glasses)26,Classics IV,Spooky27,Diana Ross and The Supremes,Love Child28,Merrilee Rush,Angel Of The Morning29,Georgie Fame,The Ballad Of Bonnie And Clyde30,Mary Hopkin,Those Were The Days31,Steppenwolf,Born To Be Wild32,Intruders,Cowboys To Girls33,1910 Fruitgum Company,Simon Says34,Gary Puckett and The Union Gap,Lady Willpower35,Rascals,A Beautiful Morning36,Sergio Mendes and Brasil '66,The Look Of Love37,Johnny Nash,Hold Me Tight38,Ohio Express,"Yummy, Yummy, Yummy"39,Crazy World Of Arthur Brown,Fire40,Troggs,Love Is All Around41,Gene and Debbe,Playboy42,Dionne Warwick,(Theme From) Valley Of The Dolls43,Mason Williams,Classical Gas44,Clarence Carter,Slip Away45,O'Kaysions,Girl Watcher46,Aretha Franklin,(Sweet Sweet Baby) Since You've Been Gone47,Lemon Pipers,Green Tambourine48,1910 Fruitgum Company,"1, 2, 3, Red Light"49,Friend and Lover,Reach Out Of The Darkness50,Rolling Stones,Jumpin' Jack Flash51,Richard Harris,MacArthur Park52,Jose Feliciano,Light My Fire53,People,I Love You54,Percy Sledge,Take Time To Know Her55,Status Quo,Pictures Of Matchstick Men56,Blue Cheer,Summertime Blues57,Marvin Gaye and Tammi Terrell,Ain't Nothing Like The Real Thing58,James Brown and The Famous Flames,I Got The Feelin'59,Bee Gees,I've Gotta Get A Message To You60,Beatles,Lady Madonna61,Donovan,Hurdy Gurdy Man62,Steppenwolf,Magic Carpet Ride63,Fireballs,Bottle Of Wine64,Dells,Stay In My Corner65,Willie Mitchell,Soul Serenade66,Tom Jones,Delilah67,Human Beinz,Nobody But Me68,Sam and Dave,I Thank You69,Sergio Mendes and Brasil '66,The Fool On The Hill70,Eric Burdon and The Animals,Sky Pilot71,Cowsills,Indian Lake72,Tommy Boyce and Bobby Hart,I Wonder What She's Doing Tonight73,Gary Puckett and The Union Gap,Over You74,Lettermen,Goin' Out Of My Head / Can't Take My Eyes Off You75,Stevie Wonder,Shoo-Bee-Doo-Be-Doo-Da-Day76,Irish Rovers,The Unicorn77,Vanilla Fudge,(You Keep Me) Hangin' On78,Beatles,Revolution79,Gary Puckett and The Union Gap,"Woman, Woman"80,Turtles,Elenore81,Cream,White Room82,Marvin Gaye and Tammi Terrell,You're All I Need To Get By83,Foundations,"Baby, Now That I've Found You"84,Sweet Inspirations,Sweet Inspiration85,Smokey Robinson and The Miracles,If You Can Want86,Mills Brothers,Cab Driver87,Chambers Brothers,Time Has Come Today88,Dionne Warwick,Do You Know The Way To San Jose89,Simon and Garfunkel,Scarborough Fair / Canticle90,James Brown and The Famous Flames,Say It Loud I'm Black And I'm Proud91,Manfred Mann,The Mighty Quinn92,Shorty Long,Here Comes The Judge93,Aretha Franklin,I Say A Little Prayer94,Aretha Franklin,Think95,Gary Lewis and The Playboys,Sealed With A Kiss96,Big Brother and The Holding Company,Piece Of My Heart97,Creedence Clearwater Revival,Suzie Q.98,American Breed,Bend Me Shape Me99,Jerry Butler,"Hey, Western Union Man"100,Jerry Butler,Never Give You Up
+Position,Artist,Song Title
+1,Beatles,Hey Jude
+2,Paul Mauriat,Love Is Blue
+3,Bobby Goldsboro,Honey
+4,Otis Redding,(Sittin' On) The Dock Of The Bay
+5,Rascals,People Got To Be Free
+6,Cream,Sunshine Of Your Love
+7,Herb Alpert,This Guy's In Love With You
+8,Hugo Montenegro,"The Good, The Bad And The Ugly"
+9,Simon and Garfunkel,Mrs. Robinson
+10,Archie Bell and The Drells,Tighten Up
+11,Jeannie C. Riley,Harper Valley P.T.A.
+12,O.C. Smith,Little Green Apples
+13,Tommy James and The Shondells,"Mony, Mony"
+14,Doors,"Hello, I Love You"
+15,Gary Puckett and The Union Gap,Young Girl
+16,Box Tops,Cry Like A Baby
+17,Fifth Dimension,Stoned Soul Picnic
+18,Hugh Masekela,Grazing In The Grass
+19,Grass Roots,Midnight Confessions
+20,Sly and The Family Stone,Dance To The Music
+21,Cliff Nobles and Co.,The Horse
+22,Temptations,I Wish It Would Rain
+23,Delfonics,La-La Means I Love You
+24,Vogues,"Turn Around, Look At Me"
+25,John Fred and His Playboy Band,Judy In Disguise (With Glasses)
+26,Classics IV,Spooky
+27,Diana Ross and The Supremes,Love Child
+28,Merrilee Rush,Angel Of The Morning
+29,Georgie Fame,The Ballad Of Bonnie And Clyde
+30,Mary Hopkin,Those Were The Days
+31,Steppenwolf,Born To Be Wild
+32,Intruders,Cowboys To Girls
+33,1910 Fruitgum Company,Simon Says
+34,Gary Puckett and The Union Gap,Lady Willpower
+35,Rascals,A Beautiful Morning
+36,Sergio Mendes and Brasil '66,The Look Of Love
+37,Johnny Nash,Hold Me Tight
+38,Ohio Express,"Yummy, Yummy, Yummy"
+39,Crazy World Of Arthur Brown,Fire
+40,Troggs,Love Is All Around
+41,Gene and Debbe,Playboy
+42,Dionne Warwick,(Theme From) Valley Of The Dolls
+43,Mason Williams,Classical Gas
+44,Clarence Carter,Slip Away
+45,O'Kaysions,Girl Watcher
+46,Aretha Franklin,(Sweet Sweet Baby) Since You've Been Gone
+47,Lemon Pipers,Green Tambourine
+48,1910 Fruitgum Company,"1, 2, 3, Red Light"
+49,Friend and Lover,Reach Out Of The Darkness
+50,Rolling Stones,Jumpin' Jack Flash
+51,Richard Harris,MacArthur Park
+52,Jose Feliciano,Light My Fire
+53,People,I Love You
+54,Percy Sledge,Take Time To Know Her
+55,Status Quo,Pictures Of Matchstick Men
+56,Blue Cheer,Summertime Blues
+57,Marvin Gaye and Tammi Terrell,Ain't Nothing Like The Real Thing
+58,James Brown and The Famous Flames,I Got The Feelin'
+59,Bee Gees,I've Gotta Get A Message To You
+60,Beatles,Lady Madonna
+61,Donovan,Hurdy Gurdy Man
+62,Steppenwolf,Magic Carpet Ride
+63,Fireballs,Bottle Of Wine
+64,Dells,Stay In My Corner
+65,Willie Mitchell,Soul Serenade
+66,Tom Jones,Delilah
+67,Human Beinz,Nobody But Me
+68,Sam and Dave,I Thank You
+69,Sergio Mendes and Brasil '66,The Fool On The Hill
+70,Eric Burdon and The Animals,Sky Pilot
+71,Cowsills,Indian Lake
+72,Tommy Boyce and Bobby Hart,I Wonder What She's Doing Tonight
+73,Gary Puckett and The Union Gap,Over You
+74,Lettermen,Goin' Out Of My Head / Can't Take My Eyes Off You
+75,Stevie Wonder,Shoo-Bee-Doo-Be-Doo-Da-Day
+76,Irish Rovers,The Unicorn
+77,Vanilla Fudge,(You Keep Me) Hangin' On
+78,Beatles,Revolution
+79,Gary Puckett and The Union Gap,"Woman, Woman"
+80,Turtles,Elenore
+81,Cream,White Room
+82,Marvin Gaye and Tammi Terrell,You're All I Need To Get By
+83,Foundations,"Baby, Now That I've Found You"
+84,Sweet Inspirations,Sweet Inspiration
+85,Smokey Robinson and The Miracles,If You Can Want
+86,Mills Brothers,Cab Driver
+87,Chambers Brothers,Time Has Come Today
+88,Dionne Warwick,Do You Know The Way To San Jose
+89,Simon and Garfunkel,Scarborough Fair / Canticle
+90,James Brown and The Famous Flames,Say It Loud I'm Black And I'm Proud
+91,Manfred Mann,The Mighty Quinn
+92,Shorty Long,Here Comes The Judge
+93,Aretha Franklin,I Say A Little Prayer
+94,Aretha Franklin,Think
+95,Gary Lewis and The Playboys,Sealed With A Kiss
+96,Big Brother and The Holding Company,Piece Of My Heart
+97,Creedence Clearwater Revival,Suzie Q.
+98,American Breed,Bend Me Shape Me
+99,Jerry Butler,"Hey, Western Union Man"
+100,Jerry Butler,Never Give You Up

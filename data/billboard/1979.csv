@@ -1,1 +1,101 @@
-Position ,Artist,Song Title1,Knack,My Sharona2,Donna Summer,Bad Girls3,Chic,Le Freak4,Rod Stewart,Da Ya Think I'm Sexy5,Peaches and Herb,Reunited6,Gloria Gaynor,I Will Survive7,Donna Summer,Hot Stuff8,Village People,Y.M.C.A.9,Anita Ward,Ring My Bell10,Robert John,Sad Eyes11,Bee Gees,Too Much Heaven12,Donna Summer,MacArthur Park13,Dr. Hook,When You're In Love With A Beautiful Woman14,David Naughton,Makin' It15,Pointer Sisters,Fire16,Bee Gees,Tragedy17,Olivia Newton-John,A Little More Love18,Blondie,Heart Of Glass19,Doobie Brothers,What A Fool Believes20,Chic,Good Times21,Barbra Streisand and Neil Diamond,You Don't Bring Me Flowers22,Amii Stewart,Knock On Wood23,Suzi Quatro and Chris Norman,Stumblin' In24,Maxine Nightingale,Lead Me On25,Jacksons,Shake Your Body26,Melissa Manchester,Don't Cry Out Loud27,Supertramp,The Logical Song28,Billy Joel,My Life29,Randy Vanwarmer,Just When I Needed You Most30,Raydio,You Can't Change That31,Peaches and Herb,Shake Your Groove Thing32,Dionne Warwick,I'll Never Love This Way Again33,Bee Gees,Love You Inside Out34,Cheap Trick,I Want You To Want Me35,Barbra Streisand,The Main Event (Fight)36,Elton John,Mama Can't Buy You Love37,Leif Garrett,I Was Made For Dancin'38,"Earth, Wind and Fire",After The Love Has Gone39,Donna Summer and Brooklyn Dreams,Heaven Knows40,Kenny Rogers,The Gambler41,Nicolette Larson,Lotta Love42,Little River Band,Lady43,Bonnie Pointer,Heaven Must Have Sent You44,Toto,Hold The Line45,Sister Sledge,He's The Greatest Dancer46,Dr. Hook,Sharing The Night Together47,Kenny Rogers,She Believes In Me48,Village People,In The Navy49,Frank Mills,Music Box Dancer50,Charlie Daniels Band,The Devil Went Down To Georgia51,John Stewart,Gold52,Wings,Goodnight Tonight53,Sister Sledge,We Are Family54,Bad Company,Rock 'N' Roll Fantasy55,Hot Chocolate,Every 1's A Winner56,Cher,Take Me Home57,"Earth, Wind and Fire",Boogie Wonderland58,Andy Gibb,(Our Love) Don't Throw It All Away59,Bobby Caldwell,What You Won't Do For Love60,Ace Frehley,New York Groove61,Dire Straits,Sultans Of Swing62,Chic,I Want Your Love63,Rickie Lee Jones,Chuck E's In Love64,Alicia Bridges,I Love The Night Life65,McFadden and Whitehead,Ain't No Stoppin' Us Now66,Little River Band,Lonesome Loser67,Styx,Renegade68,England Dan and John Ford Coley,Love Is The Answer69,Cheryl Lynn,Got To Be Real70,Patrick Hernandez,Born To Be Alive71,Electric Light Orchestra,Shine A Little Love72,Anne Murray,I Just Fall In Love Again73,Ian Matthews,Shake It74,Kiss,I Was Made For Lovin' You75,Gino Vannelli,I Just Wanna Stop76,G.Q.,Disco Nights77,Linda Ronstadt,Ooh Baby Baby78,"Earth, Wind and Fire",September79,Al Stewart,Time Passages80,Herb Alpert,Rise81,Electric Light Orchestra,Don't Bring Me Down82,Eric Clapton,Promises83,Roger Voudouris,Get Used To It84,Ambrosia,How Much I Feel85,Eddie Rabbitt,Suspicions86,Rex Smith,You Take My Breath Away87,Alice Cooper,How You Gonna See Me Now88,Foreigner,Double Vision89,Babys,Every Time I Think Of You90,Instant Funk,I Got My Mind Made Up91,Michael Jackson,Don't Stop 'Til You Get Enough92,Robert Palmer,Bad Case Of Lovin' You93,Barry Manilow,Somewhere In The Night94,Bob Seger and The Silver Bullet Band,We've Got Tonight95,Van Halen,Dance The Night Away96,Nigel Olsson,Dancing Shoes97,Diana Ross,The Boss98,Commodores,Sail On99,G.Q.,I Do Love You100,Firefall,Strange Way
+Position,Artist,Song Title
+1,Knack,My Sharona
+2,Donna Summer,Bad Girls
+3,Chic,Le Freak
+4,Rod Stewart,Da Ya Think I'm Sexy
+5,Peaches and Herb,Reunited
+6,Gloria Gaynor,I Will Survive
+7,Donna Summer,Hot Stuff
+8,Village People,Y.M.C.A.
+9,Anita Ward,Ring My Bell
+10,Robert John,Sad Eyes
+11,Bee Gees,Too Much Heaven
+12,Donna Summer,MacArthur Park
+13,Dr. Hook,When You're In Love With A Beautiful Woman
+14,David Naughton,Makin' It
+15,Pointer Sisters,Fire
+16,Bee Gees,Tragedy
+17,Olivia Newton-John,A Little More Love
+18,Blondie,Heart Of Glass
+19,Doobie Brothers,What A Fool Believes
+20,Chic,Good Times
+21,Barbra Streisand and Neil Diamond,You Don't Bring Me Flowers
+22,Amii Stewart,Knock On Wood
+23,Suzi Quatro and Chris Norman,Stumblin' In
+24,Maxine Nightingale,Lead Me On
+25,Jacksons,Shake Your Body
+26,Melissa Manchester,Don't Cry Out Loud
+27,Supertramp,The Logical Song
+28,Billy Joel,My Life
+29,Randy Vanwarmer,Just When I Needed You Most
+30,Raydio,You Can't Change That
+31,Peaches and Herb,Shake Your Groove Thing
+32,Dionne Warwick,I'll Never Love This Way Again
+33,Bee Gees,Love You Inside Out
+34,Cheap Trick,I Want You To Want Me
+35,Barbra Streisand,The Main Event (Fight)
+36,Elton John,Mama Can't Buy You Love
+37,Leif Garrett,I Was Made For Dancin'
+38,"Earth, Wind and Fire",After The Love Has Gone
+39,Donna Summer and Brooklyn Dreams,Heaven Knows
+40,Kenny Rogers,The Gambler
+41,Nicolette Larson,Lotta Love
+42,Little River Band,Lady
+43,Bonnie Pointer,Heaven Must Have Sent You
+44,Toto,Hold The Line
+45,Sister Sledge,He's The Greatest Dancer
+46,Dr. Hook,Sharing The Night Together
+47,Kenny Rogers,She Believes In Me
+48,Village People,In The Navy
+49,Frank Mills,Music Box Dancer
+50,Charlie Daniels Band,The Devil Went Down To Georgia
+51,John Stewart,Gold
+52,Wings,Goodnight Tonight
+53,Sister Sledge,We Are Family
+54,Bad Company,Rock 'N' Roll Fantasy
+55,Hot Chocolate,Every 1's A Winner
+56,Cher,Take Me Home
+57,"Earth, Wind and Fire",Boogie Wonderland
+58,Andy Gibb,(Our Love) Don't Throw It All Away
+59,Bobby Caldwell,What You Won't Do For Love
+60,Ace Frehley,New York Groove
+61,Dire Straits,Sultans Of Swing
+62,Chic,I Want Your Love
+63,Rickie Lee Jones,Chuck E's In Love
+64,Alicia Bridges,I Love The Night Life
+65,McFadden and Whitehead,Ain't No Stoppin' Us Now
+66,Little River Band,Lonesome Loser
+67,Styx,Renegade
+68,England Dan and John Ford Coley,Love Is The Answer
+69,Cheryl Lynn,Got To Be Real
+70,Patrick Hernandez,Born To Be Alive
+71,Electric Light Orchestra,Shine A Little Love
+72,Anne Murray,I Just Fall In Love Again
+73,Ian Matthews,Shake It
+74,Kiss,I Was Made For Lovin' You
+75,Gino Vannelli,I Just Wanna Stop
+76,G.Q.,Disco Nights
+77,Linda Ronstadt,Ooh Baby Baby
+78,"Earth, Wind and Fire",September
+79,Al Stewart,Time Passages
+80,Herb Alpert,Rise
+81,Electric Light Orchestra,Don't Bring Me Down
+82,Eric Clapton,Promises
+83,Roger Voudouris,Get Used To It
+84,Ambrosia,How Much I Feel
+85,Eddie Rabbitt,Suspicions
+86,Rex Smith,You Take My Breath Away
+87,Alice Cooper,How You Gonna See Me Now
+88,Foreigner,Double Vision
+89,Babys,Every Time I Think Of You
+90,Instant Funk,I Got My Mind Made Up
+91,Michael Jackson,Don't Stop 'Til You Get Enough
+92,Robert Palmer,Bad Case Of Lovin' You
+93,Barry Manilow,Somewhere In The Night
+94,Bob Seger and The Silver Bullet Band,We've Got Tonight
+95,Van Halen,Dance The Night Away
+96,Nigel Olsson,Dancing Shoes
+97,Diana Ross,The Boss
+98,Commodores,Sail On
+99,G.Q.,I Do Love You
+100,Firefall,Strange Way

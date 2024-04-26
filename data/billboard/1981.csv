@@ -1,1 +1,101 @@
-Position ,Artist,Song Title1,Kim Carnes,Bette Davis Eyes2,Diana Ross and Lionel Richie,Endless Love3,Kenny Rogers,Lady4,John Lennon,(Just Like) Starting Over5,Rick Springfield,Jessie's Girl6,Kool and The Gang,Celebration7,Daryl Hall and John Oates,Kiss On My List8,Eddie Rabbitt,I Love A Rainy Night9,Dolly Parton,9 To 510,REO Speedwagon,Keep On Loving You11,Joey Scarbury,"Theme From ""Greatest American Hero"" (Believe It Or Not)"12,Sheena Easton,Morning Train (Nine To Five)13,Smokey Robinson,Being With You14,Juice Newton,Queen Of Hearts15,Blondie,Rapture16,Ray Parker Jr. and Raydio,A Woman Needs Love17,Blondie,The Tide Is High18,Grover Washington Jr.,Just The Two Of Us19,Pointer Sisters,Slow Hand20,Climax Blues Band,I Love You21,John Lennon,Woman22,A Taste Of Honey,Sukiyaki23,ABBA,The Winner Takes It All24,Stars On 45,Medley25,Juice Newton,Angel Of The Morning26,Neil Diamond,Love On The Rocks27,Air Supply,Every Woman In The World28,Air Supply,The One That You Love29,Barbra Streisand and Barry Gibb,Guilty30,Styx,The Best Of Times31,Oak Ridge Boys,Elvira32,REO Speedwagon,Take It On The Run33,Ronnie Milsap,No Gettin' Over Me34,Gino Vannelli,Living Inside Myself35,Barbra Streisand,Woman In Love36,Manhattan Transfer,Boy From New York City37,Foreigner,Urgent38,Rod Stewart,Passion39,Commodores,Lady (You Bring Me Up)40,Don Mclean,Crying41,Marty Balin,Hearts42,Diana Ross,It's My Turn43,Daryl Hall and John Oates,You Make My Dreams44,Kenny Rogers,I Don't Need You45,Champaign,How 'Bout Us46,Pat Benatar,Hit Me With Your Best Shot47,Greg Kihn Band,The Breakup Song48,Alan Parsons Project,Time49,Bruce Springsteen,Hungry Heart50,Franke and The Knockouts,Sweetheart51,Terri Gibbs,Someone's Knockin'52,Leo Sayer,More Than I Can Say53,Tierra,Together54,Styx,Too Much Time On My Hands55,Dottie West,What Are We Doin' In Love56,Journey,Who's Crying Now57,Police,"De Do Do Do, De Da Da"58,Gary U.S. Bonds,This Little Girl59,Stevie Nicks With Tom Petty and The Heartbreakers,Stop Draggin' My Heart Around60,Delbert McClinton,Giving It Up For Your Love61,Cliff Richard,A Little In Love62,Neil Diamond,America63,John Cougar,Ain't Even Done With The Night64,Christopher Cross,Arthur's Theme65,Queen,Another One Bites The Dust66,Alan Parsons Project,Games People Play67,Eric Clapton,I Can't Stand It68,Steve Winwood,While You See A Chance69,Stevie Wonder,Master Blaster70,Neil Diamond,Hello Again71,Police,Don't Stand So Close To Me72,Steely Dan,Hey Nineteen73,Stevie Wonder,I Ain't Gonna Stand For It74,George Harrison,All Those Years Ago75,Eddie Rabbitt,Step By Step76,Billy Squier,The Stroke77,Alabama,Feels So Right78,Stanley Clarke and George Duke,Sweet Baby79,Dan Fogelberg,Same Old Lang Syne80,Pablo Cruise,Cool Love81,ELO,Hold On Tight82,John Schneider,It's Now Or Never83,Pat Benatar,Treat Me Right84,Santana,Winning85,Barbra Streisand and Barry Gibb,What Kind Of Fool86,John Lennon,Watching The Wheels87,Heart,Tell It Like It Is88,Ronnie Milsap,Smoky Mountain Rain89,Barry Manilow,I Made It Through The Rain90,Daryl Hall and John Oates,You've Lost That Lovin' Feelin'91,Olivia Newton-John and Cliff Richard,Suddenly92,Sheena Easton,For Your Eyes Only93,Beach Boys,The Beach Boys Medley94,Devo,Whip It95,Sheena Easton,Modern Girl96,Gary Wright,Really Wanna Know You97,Rosanne Cash,Seven Year Ache98,Diana Ross,I'm Coming Out99,Boz Scaggs,Miss Sun100,Andy Gibb,Time Is Time
+Position,Artist,Song Title
+1,Kim Carnes,Bette Davis Eyes
+2,Diana Ross and Lionel Richie,Endless Love
+3,Kenny Rogers,Lady
+4,John Lennon,(Just Like) Starting Over
+5,Rick Springfield,Jessie's Girl
+6,Kool and The Gang,Celebration
+7,Daryl Hall and John Oates,Kiss On My List
+8,Eddie Rabbitt,I Love A Rainy Night
+9,Dolly Parton,9 To 5
+10,REO Speedwagon,Keep On Loving You
+11,Joey Scarbury,"Theme From ""Greatest American Hero"" (Believe It Or Not)"
+12,Sheena Easton,Morning Train (Nine To Five)
+13,Smokey Robinson,Being With You
+14,Juice Newton,Queen Of Hearts
+15,Blondie,Rapture
+16,Ray Parker Jr. and Raydio,A Woman Needs Love
+17,Blondie,The Tide Is High
+18,Grover Washington Jr.,Just The Two Of Us
+19,Pointer Sisters,Slow Hand
+20,Climax Blues Band,I Love You
+21,John Lennon,Woman
+22,A Taste Of Honey,Sukiyaki
+23,ABBA,The Winner Takes It All
+24,Stars On 45,Medley
+25,Juice Newton,Angel Of The Morning
+26,Neil Diamond,Love On The Rocks
+27,Air Supply,Every Woman In The World
+28,Air Supply,The One That You Love
+29,Barbra Streisand and Barry Gibb,Guilty
+30,Styx,The Best Of Times
+31,Oak Ridge Boys,Elvira
+32,REO Speedwagon,Take It On The Run
+33,Ronnie Milsap,No Gettin' Over Me
+34,Gino Vannelli,Living Inside Myself
+35,Barbra Streisand,Woman In Love
+36,Manhattan Transfer,Boy From New York City
+37,Foreigner,Urgent
+38,Rod Stewart,Passion
+39,Commodores,Lady (You Bring Me Up)
+40,Don Mclean,Crying
+41,Marty Balin,Hearts
+42,Diana Ross,It's My Turn
+43,Daryl Hall and John Oates,You Make My Dreams
+44,Kenny Rogers,I Don't Need You
+45,Champaign,How 'Bout Us
+46,Pat Benatar,Hit Me With Your Best Shot
+47,Greg Kihn Band,The Breakup Song
+48,Alan Parsons Project,Time
+49,Bruce Springsteen,Hungry Heart
+50,Franke and The Knockouts,Sweetheart
+51,Terri Gibbs,Someone's Knockin'
+52,Leo Sayer,More Than I Can Say
+53,Tierra,Together
+54,Styx,Too Much Time On My Hands
+55,Dottie West,What Are We Doin' In Love
+56,Journey,Who's Crying Now
+57,Police,"De Do Do Do, De Da Da"
+58,Gary U.S. Bonds,This Little Girl
+59,Stevie Nicks With Tom Petty and The Heartbreakers,Stop Draggin' My Heart Around
+60,Delbert McClinton,Giving It Up For Your Love
+61,Cliff Richard,A Little In Love
+62,Neil Diamond,America
+63,John Cougar,Ain't Even Done With The Night
+64,Christopher Cross,Arthur's Theme
+65,Queen,Another One Bites The Dust
+66,Alan Parsons Project,Games People Play
+67,Eric Clapton,I Can't Stand It
+68,Steve Winwood,While You See A Chance
+69,Stevie Wonder,Master Blaster
+70,Neil Diamond,Hello Again
+71,Police,Don't Stand So Close To Me
+72,Steely Dan,Hey Nineteen
+73,Stevie Wonder,I Ain't Gonna Stand For It
+74,George Harrison,All Those Years Ago
+75,Eddie Rabbitt,Step By Step
+76,Billy Squier,The Stroke
+77,Alabama,Feels So Right
+78,Stanley Clarke and George Duke,Sweet Baby
+79,Dan Fogelberg,Same Old Lang Syne
+80,Pablo Cruise,Cool Love
+81,ELO,Hold On Tight
+82,John Schneider,It's Now Or Never
+83,Pat Benatar,Treat Me Right
+84,Santana,Winning
+85,Barbra Streisand and Barry Gibb,What Kind Of Fool
+86,John Lennon,Watching The Wheels
+87,Heart,Tell It Like It Is
+88,Ronnie Milsap,Smoky Mountain Rain
+89,Barry Manilow,I Made It Through The Rain
+90,Daryl Hall and John Oates,You've Lost That Lovin' Feelin'
+91,Olivia Newton-John and Cliff Richard,Suddenly
+92,Sheena Easton,For Your Eyes Only
+93,Beach Boys,The Beach Boys Medley
+94,Devo,Whip It
+95,Sheena Easton,Modern Girl
+96,Gary Wright,Really Wanna Know You
+97,Rosanne Cash,Seven Year Ache
+98,Diana Ross,I'm Coming Out
+99,Boz Scaggs,Miss Sun
+100,Andy Gibb,Time Is Time

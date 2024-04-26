@@ -1,1 +1,101 @@
-Position ,Artist,Song Title1,Daniel Powter,Bad Day2,Sean Paul,Temperature3,Nelly Furtado feat. Timbaland,Promiscuous4,James Blunt,You're Beautiful5,Shakira feat. Wyclef Jean,Hips Don't Lie6,Natasha Bedingfield,Unwritten7,Gnarls Barkley,Crazy8,Chamillionaire feat. Krayzie Bone,Ridin'9,Justin Timberlake,Sexyback10,Beyonce feat. Slim Thug,Check on It11,Mary J. Blige,Be Without You12,"Nelly feat. Paul Wall, Ali and Gipp",Grillz13,Fray,Over My Head (Cable Car)14,Cassie,Me and U15,Pussycat Dolls feat. Snoop Dogg,Buttons16,Chris Brown,Run It!17,Ne-Yo,So Sick18,Yung Joc,It's Goin' Down19,Rihanna,SOS20,Panic! At The Disco,I Write Sins not Tragedies21,All-American Rejects,Move Along22,Fergie,London Bridge23,Red Hot Chili Peppers,Dani California24,Lil Jon feat. E-40 and Sean Paul Of The YoungBloodZ,Snap Yo Fingers25,Dem Franchize Boyz feat. Lil Peanut and Charlay,"Lean Wit It, Rock Wit It"26,Rascal Flatts,What Hurts the Most27,Fray,How to Save a Life28,Rihanna,Unfaithful29,Snow Patrol,Chasing Cars30,Hinder,Lips of an Angel31,Cascada,Everytime We Touch32,Christina Aguilera,Ain't no Other Man33,Fall Out Boy,"Dance, Dance"34,Kanye West feat. Jamie Foxx,Gold Digger35,Ludacris feat. Pharrell,Money Maker36,Bubba Sparxxx feat. Ying Yang Twins and Mr. ColliPark,Ms. New Booty37,Sean Paul feat. Keyshia Cole,(When You Gonna) Give It Up To Me38,Nickelback,Photograph39,Kelly Clarkson,Because Of You40,Pussycat Dolls,Stickwitu41,T-Pain feat. Mike Jones,I'm N Luv (Wit a Stripper)42,Black Eyed Peas,My Humps43,Fort Minor feat. Holly Brook,Where'd You Go44,Chris Brown,Yo (Excuse Me Miss)45,Kelly Clarkson,Walk Away46,D4L,Laffy Taffy47,T.I.,What You Know48,All-American Rejects,Dirty Little Secret49,Nickelback,Savin' Me50,Mariah Carey,Don't Forget About Us51,Ne-Yo,Sexy Love52,E-40 feat. T-Pain and Kandi Girl,U and Dat53,Nickelback,Far Away54,Nick Lachey,What's Left of Me55,Field Mob feat. Ciara,So What56,Cherish feat. Sean Paul Of The YoungBloodZ,Do it to It57,KT Tunstall,Black Horse and the Cherry Tree58,Juelz Santana,There it Go! (The Whistle Song)59,Young Dro feat. T.I.,Shoulder Lean!60,Jamie Foxx feat. Ludacris,Unpredictable61,Justin Timberlake feat. T.I.,My Love62,Eminem feat. Nate Dogg,Shake That63,Chingy feat. Tyrese,Pullin' Me Back64,Kelis feat. Too $hort,Bossy65,Jibbs,Chain Hang Low66,Akon feat. Eminem,Smack That67,Ray J,One Wish68,Fall Out Boy,Sugar We're Goin' Down69,Chris Brown feat. Lil' Wayne,Gimme That70,Yung Joc feat. Brandy 'Ms. B.' Hambrick,I Know You See It71,Bon Jovi,Who Says you can't Go Home72,JoJo,Too Little Too Late73,Busta Rhymes,Touch It74,Daddy Yankee,Rompe75,Beyonce feat. Jay-Z,Deja Vu76,Rascal Flatts,Life is a Highway77,Evanescence,Call me When You're Sober78,Carrie Underwood,"Jesus, take the Wheel"79,Danity Kane,Show Stopper80,Ciara feat. Chamillionaire,Get Up81,Sean Paul,We be Burnin'82,Blue October,Hate Me83,Lifehouse,You And Me84,Pussycat Dolls feat. will.i.am,Beep85,"Dem Franchize Boyz feat. Jermaine Dupri, Da Brat and Bow Wow",I Think They Like Me86,Chris Brown,Say Goodbye87,John Mayer,Waiting on the World to Change88,Young Jeezy feat. Akon,Soul Survivor89,Black Eyed Peas,Pump It90,Eminem,When I'm Gone91,Madonna,Hung Up92,Three 6 Mafia feat. Young Buck and Eightball and MJG,Stay Fly93,Keyshia Cole,Love94,Ne-Yo,When You're Mad95,T.I.,Why You Wanna96,Pink,Stupid Girls97,Gorillaz,Feel Good Inc98,T-Pain,I'm Sprung99,Taylor Hicks,Do I Make you Proud100,Teddy Geiger,For You I Will (Condience)
+Position,Artist,Song Title
+1,Daniel Powter,Bad Day
+2,Sean Paul,Temperature
+3,Nelly Furtado feat. Timbaland,Promiscuous
+4,James Blunt,You're Beautiful
+5,Shakira feat. Wyclef Jean,Hips Don't Lie
+6,Natasha Bedingfield,Unwritten
+7,Gnarls Barkley,Crazy
+8,Chamillionaire feat. Krayzie Bone,Ridin'
+9,Justin Timberlake,Sexyback
+10,Beyonce feat. Slim Thug,Check on It
+11,Mary J. Blige,Be Without You
+12,"Nelly feat. Paul Wall, Ali and Gipp",Grillz
+13,Fray,Over My Head (Cable Car)
+14,Cassie,Me and U
+15,Pussycat Dolls feat. Snoop Dogg,Buttons
+16,Chris Brown,Run It!
+17,Ne-Yo,So Sick
+18,Yung Joc,It's Goin' Down
+19,Rihanna,SOS
+20,Panic! At The Disco,I Write Sins not Tragedies
+21,All-American Rejects,Move Along
+22,Fergie,London Bridge
+23,Red Hot Chili Peppers,Dani California
+24,Lil Jon feat. E-40 and Sean Paul Of The YoungBloodZ,Snap Yo Fingers
+25,Dem Franchize Boyz feat. Lil Peanut and Charlay,"Lean Wit It, Rock Wit It"
+26,Rascal Flatts,What Hurts the Most
+27,Fray,How to Save a Life
+28,Rihanna,Unfaithful
+29,Snow Patrol,Chasing Cars
+30,Hinder,Lips of an Angel
+31,Cascada,Everytime We Touch
+32,Christina Aguilera,Ain't no Other Man
+33,Fall Out Boy,"Dance, Dance"
+34,Kanye West feat. Jamie Foxx,Gold Digger
+35,Ludacris feat. Pharrell,Money Maker
+36,Bubba Sparxxx feat. Ying Yang Twins and Mr. ColliPark,Ms. New Booty
+37,Sean Paul feat. Keyshia Cole,(When You Gonna) Give It Up To Me
+38,Nickelback,Photograph
+39,Kelly Clarkson,Because Of You
+40,Pussycat Dolls,Stickwitu
+41,T-Pain feat. Mike Jones,I'm N Luv (Wit a Stripper)
+42,Black Eyed Peas,My Humps
+43,Fort Minor feat. Holly Brook,Where'd You Go
+44,Chris Brown,Yo (Excuse Me Miss)
+45,Kelly Clarkson,Walk Away
+46,D4L,Laffy Taffy
+47,T.I.,What You Know
+48,All-American Rejects,Dirty Little Secret
+49,Nickelback,Savin' Me
+50,Mariah Carey,Don't Forget About Us
+51,Ne-Yo,Sexy Love
+52,E-40 feat. T-Pain and Kandi Girl,U and Dat
+53,Nickelback,Far Away
+54,Nick Lachey,What's Left of Me
+55,Field Mob feat. Ciara,So What
+56,Cherish feat. Sean Paul Of The YoungBloodZ,Do it to It
+57,KT Tunstall,Black Horse and the Cherry Tree
+58,Juelz Santana,There it Go! (The Whistle Song)
+59,Young Dro feat. T.I.,Shoulder Lean!
+60,Jamie Foxx feat. Ludacris,Unpredictable
+61,Justin Timberlake feat. T.I.,My Love
+62,Eminem feat. Nate Dogg,Shake That
+63,Chingy feat. Tyrese,Pullin' Me Back
+64,Kelis feat. Too $hort,Bossy
+65,Jibbs,Chain Hang Low
+66,Akon feat. Eminem,Smack That
+67,Ray J,One Wish
+68,Fall Out Boy,Sugar We're Goin' Down
+69,Chris Brown feat. Lil' Wayne,Gimme That
+70,Yung Joc feat. Brandy 'Ms. B.' Hambrick,I Know You See It
+71,Bon Jovi,Who Says you can't Go Home
+72,JoJo,Too Little Too Late
+73,Busta Rhymes,Touch It
+74,Daddy Yankee,Rompe
+75,Beyonce feat. Jay-Z,Deja Vu
+76,Rascal Flatts,Life is a Highway
+77,Evanescence,Call me When You're Sober
+78,Carrie Underwood,"Jesus, take the Wheel"
+79,Danity Kane,Show Stopper
+80,Ciara feat. Chamillionaire,Get Up
+81,Sean Paul,We be Burnin'
+82,Blue October,Hate Me
+83,Lifehouse,You And Me
+84,Pussycat Dolls feat. will.i.am,Beep
+85,"Dem Franchize Boyz feat. Jermaine Dupri, Da Brat and Bow Wow",I Think They Like Me
+86,Chris Brown,Say Goodbye
+87,John Mayer,Waiting on the World to Change
+88,Young Jeezy feat. Akon,Soul Survivor
+89,Black Eyed Peas,Pump It
+90,Eminem,When I'm Gone
+91,Madonna,Hung Up
+92,Three 6 Mafia feat. Young Buck and Eightball and MJG,Stay Fly
+93,Keyshia Cole,Love
+94,Ne-Yo,When You're Mad
+95,T.I.,Why You Wanna
+96,Pink,Stupid Girls
+97,Gorillaz,Feel Good Inc
+98,T-Pain,I'm Sprung
+99,Taylor Hicks,Do I Make you Proud
+100,Teddy Geiger,For You I Will (Condience)

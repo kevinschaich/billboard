@@ -1,1 +1,101 @@
-Position ,Artist,Song Title1,Coolio,Gangsta's Paradise2,TLC,Waterfalls3,TLC,Creep4,Seal,Kiss From A Rose5,Boyz II Men,On Bended Knee6,Real McCoy,Another Night7,Mariah Carey,Fantasy8,Madonna,Take A Bow9,Monica,Don't Take It Personal (Just One Of Dem Days)10,Montell Jordan,This Is How We Do It11,Dionne Farris,I Know12,Boyz II Men,Water Runs Dry13,Adina Howard,Freak Like Me14,Blues Traveler,Run-Around15,All-4-One,I Can Love You Like That16,Bryan Adams,Have You Ever Really Loved A Woman?17,Bon Jovi,Always18,Shaggy,Boombastic / In The Summertime19,Nicki French,Total Eclipse Of The Heart20,Des'ree,You Gotta Be21,Michael Jackson,You Are Not Alone22,Hootie and The Blowfish,Hold My Hand23,Notorious B.I.G.,One More Chance-Stay With Me24,Ini Kamoze,Here Comes The Hotstepper25,Soul For Real,Candy Rain26,Hootie and The Blowfish,Let Her Cry27,Blessid Union Of Souls,I Believe28,TLC,Red Light Special29,Janet Jackson,Runaway30,Sheryl Crow,Strong Enough31,Vanessa Williams,Colors Of The Wind32,Jon B.,Someone To Love33,Hootie and The Blowfish,Only Wanna Be With You34,Brownstone,If You Love Me35,Martin Page,In The House Of Stone And Light36,Luniz,I Got 5 On It37,Brandy,Baby38,Real McCoy,Run Away39,Sophie B. Hawkins,As I Lay Me Down40,Mokenstef,He's Mine41,Collective Soul,December42,Method Man-Mary J. Blige,I'll Be There For You-You're All I Need To Get By43,Diana King,Shy Guy44,Melissa Etheridge,I'm The Only One45,Soul For Real,Every Little Thing I Do46,BLACKstreet,Before I Let You Go47,Notorious B.I.G.,Big Poppa / Warning48,4 P.M.,Sukiyaki49,Brandy,I Wanna Be Down50,Boyz II Men,I'll Make Love To You51,2Pac,Dear Mama / Old School52,Jamie Walters,Hold On53,Dr. Dre,Keep Their Heads Ringin'54,Corona,The Rhythm Of The Night55,Del Amitri,Roll To Me56,Michael Jackson and Janet Jackson,Scream / Childhood57,Jodeci,Freek'n You58,Skee-lo,I Wish59,Elton John,Believe60,Natalie Merchant,Carnival61,Tom Petty,You Don't Know How It Feels62,Take That,Back For Good63,69 Boyz,Tootsee Roll64,Janet Jackson,You Want This / 70's Love Groove65,Groove Theory,Tell Me66,Total,Can't You See67,Sheryl Crow,All I Wanna Do68,Subway,This Lil' Game We Play69,Real McCoy,Come And Get Your Love70,Bon Jovi,This Ain't A Love Song71,Madonna,Secret72,Junior M.A.F.I.A.,Player's Anthem73,Naughty By Nature,Feel Me Flow74,Jade,Every Day Of The Week75,Vanessa Williams,The Sweetest Days76,20 Fingers feat. Gillette,Short Dick Man77,Brandy,Brokenhearted78,Annie Lennox,"No More ""I Love You's"""79,Faith Evans,You Used To Love Me80,Immature,Constantly81,U2,"Hold Me, Thrill Me, Kiss Me, Kill Me"82,Crystal Waters,100% Pure Love83,Raphael Saadiq,Ask Of You84,Az,Sugar Hill85,Better Than Ezra,Good86,D'angelo,Brown Sugar87,Gloria Estefan,Turn The Beat Around88,After 7,'Til You Do Me Right89,Bone Thugs-N-Harmony,1st Of Tha Month90,Melissa Etheridge,Like The Way I Do-If I Wanted To91,Firehouse,I Live My Life For You92,Stevie B,Dream About You-Funky Melody93,Rednex,Cotton Eye Joe94,Boyz II Men,Thank You95,Pretenders,I'll Stand By You96,N II U,I Miss You97,Da Brat,Give It 2 You98,Brandy,Best Friend99,Soul Asylum,Misery100,Van Halen,Can't Stop Lovin' You
+Position,Artist,Song Title
+1,Coolio,Gangsta's Paradise
+2,TLC,Waterfalls
+3,TLC,Creep
+4,Seal,Kiss From A Rose
+5,Boyz II Men,On Bended Knee
+6,Real McCoy,Another Night
+7,Mariah Carey,Fantasy
+8,Madonna,Take A Bow
+9,Monica,Don't Take It Personal (Just One Of Dem Days)
+10,Montell Jordan,This Is How We Do It
+11,Dionne Farris,I Know
+12,Boyz II Men,Water Runs Dry
+13,Adina Howard,Freak Like Me
+14,Blues Traveler,Run-Around
+15,All-4-One,I Can Love You Like That
+16,Bryan Adams,Have You Ever Really Loved A Woman?
+17,Bon Jovi,Always
+18,Shaggy,Boombastic / In The Summertime
+19,Nicki French,Total Eclipse Of The Heart
+20,Des'ree,You Gotta Be
+21,Michael Jackson,You Are Not Alone
+22,Hootie and The Blowfish,Hold My Hand
+23,Notorious B.I.G.,One More Chance-Stay With Me
+24,Ini Kamoze,Here Comes The Hotstepper
+25,Soul For Real,Candy Rain
+26,Hootie and The Blowfish,Let Her Cry
+27,Blessid Union Of Souls,I Believe
+28,TLC,Red Light Special
+29,Janet Jackson,Runaway
+30,Sheryl Crow,Strong Enough
+31,Vanessa Williams,Colors Of The Wind
+32,Jon B.,Someone To Love
+33,Hootie and The Blowfish,Only Wanna Be With You
+34,Brownstone,If You Love Me
+35,Martin Page,In The House Of Stone And Light
+36,Luniz,I Got 5 On It
+37,Brandy,Baby
+38,Real McCoy,Run Away
+39,Sophie B. Hawkins,As I Lay Me Down
+40,Mokenstef,He's Mine
+41,Collective Soul,December
+42,Method Man-Mary J. Blige,I'll Be There For You-You're All I Need To Get By
+43,Diana King,Shy Guy
+44,Melissa Etheridge,I'm The Only One
+45,Soul For Real,Every Little Thing I Do
+46,BLACKstreet,Before I Let You Go
+47,Notorious B.I.G.,Big Poppa / Warning
+48,4 P.M.,Sukiyaki
+49,Brandy,I Wanna Be Down
+50,Boyz II Men,I'll Make Love To You
+51,2Pac,Dear Mama / Old School
+52,Jamie Walters,Hold On
+53,Dr. Dre,Keep Their Heads Ringin'
+54,Corona,The Rhythm Of The Night
+55,Del Amitri,Roll To Me
+56,Michael Jackson and Janet Jackson,Scream / Childhood
+57,Jodeci,Freek'n You
+58,Skee-lo,I Wish
+59,Elton John,Believe
+60,Natalie Merchant,Carnival
+61,Tom Petty,You Don't Know How It Feels
+62,Take That,Back For Good
+63,69 Boyz,Tootsee Roll
+64,Janet Jackson,You Want This / 70's Love Groove
+65,Groove Theory,Tell Me
+66,Total,Can't You See
+67,Sheryl Crow,All I Wanna Do
+68,Subway,This Lil' Game We Play
+69,Real McCoy,Come And Get Your Love
+70,Bon Jovi,This Ain't A Love Song
+71,Madonna,Secret
+72,Junior M.A.F.I.A.,Player's Anthem
+73,Naughty By Nature,Feel Me Flow
+74,Jade,Every Day Of The Week
+75,Vanessa Williams,The Sweetest Days
+76,20 Fingers feat. Gillette,Short Dick Man
+77,Brandy,Brokenhearted
+78,Annie Lennox,"No More ""I Love You's"""
+79,Faith Evans,You Used To Love Me
+80,Immature,Constantly
+81,U2,"Hold Me, Thrill Me, Kiss Me, Kill Me"
+82,Crystal Waters,100% Pure Love
+83,Raphael Saadiq,Ask Of You
+84,Az,Sugar Hill
+85,Better Than Ezra,Good
+86,D'angelo,Brown Sugar
+87,Gloria Estefan,Turn The Beat Around
+88,After 7,'Til You Do Me Right
+89,Bone Thugs-N-Harmony,1st Of Tha Month
+90,Melissa Etheridge,Like The Way I Do-If I Wanted To
+91,Firehouse,I Live My Life For You
+92,Stevie B,Dream About You-Funky Melody
+93,Rednex,Cotton Eye Joe
+94,Boyz II Men,Thank You
+95,Pretenders,I'll Stand By You
+96,N II U,I Miss You
+97,Da Brat,Give It 2 You
+98,Brandy,Best Friend
+99,Soul Asylum,Misery
+100,Van Halen,Can't Stop Lovin' You

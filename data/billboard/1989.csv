@@ -1,1 +1,101 @@
-Position ,Artist,Song Title1,Chicago,Look Away2,Bobby Brown,My Prerogative3,Poison,Every Rose Has Its Thorn4,Paula Abdul,Straight Up5,Janet Jackson,Miss You Much6,Paula Abdul,Cold Hearted7,Bette Midler,Wind Beneath My Wings8,Milli Vanilli,Girl You Know It's True9,Will To Power,"Baby, I Love Your Way-Freebird"10,Anita Baker,Giving You The Best That I Got11,Richard Marx,Right Here Waiting12,Boy Meets Girl,Waiting For A Star To Fall13,Debbie Gibson,Lost In Your Eyes14,Gloria Estefan,Don't Wanna Lose You15,Warrant,Heaven16,Milli Vanilli,Girl I'm Gonna Miss You17,Roxette,The Look18,Fine Young Cannibals,She Drives Me Crazy19,Bobby Brown,On Our Own20,Phil Collins,Two Hearts21,Milli Vanilli,Blame It On The Rain22,Roxette,Listen To Your Heart23,Bon Jovi,I'll Be There For You24,Simply Red,If You Don't Know Be By Now25,Madonna,Like A Prayer26,New Kids On The Block,I'll Be Loving You (Forever)27,Breathe,How Can I Fall?28,Milli Vanilli,Baby Don't Forget My Number29,Martika,Toy Soliders30,Paula Abdul,Forever Your Girl31,Mike and The Mechanics,The Living Years32,Bangles,Eternal Flame33,Tone Loc,Wild Thing34,Bad English,When I See You Smile35,Cher,If I Could Turn Back Time36,Neneh Cherry,Buffalo Stance37,Sheriff,When I'm With You38,Taylor Dayne,Don't Rush Me39,Bon Jovi,Born To Be My Baby40,Fine Young Cannibals,Good Thing41,Sheena Easton,The Lover In Me42,Young M.C.,Bust A Move43,Great White,"Once Bitten, Twice Shy"44,Prince,Batdance45,Michael Damian,Rock On46,Jody Watley,Real Love47,B-52's,Love Shack48,Bobby Brown,Every Little Step49,New Kids On The Block,Hangin' Tough50,Rod Stewart,My Heart Can't Tell You No51,Love and Rockets,So Alive52,New Kids On The Block,You Got It (The Right Stuff)53,Def Leppard,Armageddon It54,Richard Marx,Satisfied55,Madonna,Express Yourself56,Dino,I Like It57,Donny Osmond,Soldier Of Love58,Tears For Fears,Sowing The Seeds Of Love59,Madonna,Cherish60,White Lion,When The Children Cry61,Skid Row,18 And Life62,Duran Duran,I Don't Want Your Love63,.38 Special,Second Chances64,Karyn White,The Way You Love Me65,Tone Loc,Funky Cold Medina66,Bangles,In Your Room67,Natalie Cole,Miss You Like Crazy68,Cure,Love Song69,Karyn White,Secret Rendesvous70,Jeff Healey Band,Angel Eyes71,Guns N' Roses,Patience72,Eddie Money,Walk On Water73,New Kids On The Block,Cover Girl74,Guns N' Roses,Welcome To The Jungle75,Surface,Shower Me With Your Love76,R.E.M.,Stand77,Lita Ford,Close My Eyes Forever78,Tiffany,All This Time79,Cher and Peter Cetera,After All80,Bobby Brown,Roni81,Aerosmith,Love In An Elevator82,Bon Jovi,Lay Your Hands On Me83,When In Rome,This Promise84,Edie Brickell and The New Bohemians,What I Am85,Boys Club,I Remember Holding You86,Guns N' Roses,Paradise City87,Samantha Fox,Iwanna Have Some Fun88,Rick Astley,She Wants To Dance With Me89,Vanessa Williams,Dreamin'90,Babyface,It's No Crime91,Alice Cooper,Poison92,Donna Summer,This Time I Know It's For Real93,Michael Jackson,Smooth Criminal94,Deon Estus,Heavan Help Me95,Bobby Brown,Rock Wit'cha96,Sa-fire,Thinking Of You97,Expose,What You Don't Know98,Ann Wilson and Robin Zander,Surrender To Me99,Don Henley,The End Of The Innocence100,Soul II Soul,Keep On Movin'
+Position,Artist,Song Title
+1,Chicago,Look Away
+2,Bobby Brown,My Prerogative
+3,Poison,Every Rose Has Its Thorn
+4,Paula Abdul,Straight Up
+5,Janet Jackson,Miss You Much
+6,Paula Abdul,Cold Hearted
+7,Bette Midler,Wind Beneath My Wings
+8,Milli Vanilli,Girl You Know It's True
+9,Will To Power,"Baby, I Love Your Way-Freebird"
+10,Anita Baker,Giving You The Best That I Got
+11,Richard Marx,Right Here Waiting
+12,Boy Meets Girl,Waiting For A Star To Fall
+13,Debbie Gibson,Lost In Your Eyes
+14,Gloria Estefan,Don't Wanna Lose You
+15,Warrant,Heaven
+16,Milli Vanilli,Girl I'm Gonna Miss You
+17,Roxette,The Look
+18,Fine Young Cannibals,She Drives Me Crazy
+19,Bobby Brown,On Our Own
+20,Phil Collins,Two Hearts
+21,Milli Vanilli,Blame It On The Rain
+22,Roxette,Listen To Your Heart
+23,Bon Jovi,I'll Be There For You
+24,Simply Red,If You Don't Know Be By Now
+25,Madonna,Like A Prayer
+26,New Kids On The Block,I'll Be Loving You (Forever)
+27,Breathe,How Can I Fall?
+28,Milli Vanilli,Baby Don't Forget My Number
+29,Martika,Toy Soliders
+30,Paula Abdul,Forever Your Girl
+31,Mike and The Mechanics,The Living Years
+32,Bangles,Eternal Flame
+33,Tone Loc,Wild Thing
+34,Bad English,When I See You Smile
+35,Cher,If I Could Turn Back Time
+36,Neneh Cherry,Buffalo Stance
+37,Sheriff,When I'm With You
+38,Taylor Dayne,Don't Rush Me
+39,Bon Jovi,Born To Be My Baby
+40,Fine Young Cannibals,Good Thing
+41,Sheena Easton,The Lover In Me
+42,Young M.C.,Bust A Move
+43,Great White,"Once Bitten, Twice Shy"
+44,Prince,Batdance
+45,Michael Damian,Rock On
+46,Jody Watley,Real Love
+47,B-52's,Love Shack
+48,Bobby Brown,Every Little Step
+49,New Kids On The Block,Hangin' Tough
+50,Rod Stewart,My Heart Can't Tell You No
+51,Love and Rockets,So Alive
+52,New Kids On The Block,You Got It (The Right Stuff)
+53,Def Leppard,Armageddon It
+54,Richard Marx,Satisfied
+55,Madonna,Express Yourself
+56,Dino,I Like It
+57,Donny Osmond,Soldier Of Love
+58,Tears For Fears,Sowing The Seeds Of Love
+59,Madonna,Cherish
+60,White Lion,When The Children Cry
+61,Skid Row,18 And Life
+62,Duran Duran,I Don't Want Your Love
+63,.38 Special,Second Chances
+64,Karyn White,The Way You Love Me
+65,Tone Loc,Funky Cold Medina
+66,Bangles,In Your Room
+67,Natalie Cole,Miss You Like Crazy
+68,Cure,Love Song
+69,Karyn White,Secret Rendesvous
+70,Jeff Healey Band,Angel Eyes
+71,Guns N' Roses,Patience
+72,Eddie Money,Walk On Water
+73,New Kids On The Block,Cover Girl
+74,Guns N' Roses,Welcome To The Jungle
+75,Surface,Shower Me With Your Love
+76,R.E.M.,Stand
+77,Lita Ford,Close My Eyes Forever
+78,Tiffany,All This Time
+79,Cher and Peter Cetera,After All
+80,Bobby Brown,Roni
+81,Aerosmith,Love In An Elevator
+82,Bon Jovi,Lay Your Hands On Me
+83,When In Rome,This Promise
+84,Edie Brickell and The New Bohemians,What I Am
+85,Boys Club,I Remember Holding You
+86,Guns N' Roses,Paradise City
+87,Samantha Fox,Iwanna Have Some Fun
+88,Rick Astley,She Wants To Dance With Me
+89,Vanessa Williams,Dreamin'
+90,Babyface,It's No Crime
+91,Alice Cooper,Poison
+92,Donna Summer,This Time I Know It's For Real
+93,Michael Jackson,Smooth Criminal
+94,Deon Estus,Heavan Help Me
+95,Bobby Brown,Rock Wit'cha
+96,Sa-fire,Thinking Of You
+97,Expose,What You Don't Know
+98,Ann Wilson and Robin Zander,Surrender To Me
+99,Don Henley,The End Of The Innocence
+100,Soul II Soul,Keep On Movin'

@@ -1,1 +1,101 @@
-Position ,Artist,Song Title1,Roberta Flack,The First Time Ever I Saw Your Face2,Gilbert O'Sullivan,Alone Again (Naturally)3,Don McLean,American Pie4,Nilsson,Without You5,Sammy Davis Jr.,Candy Man6,Joe Tex,I Gotcha7,Bill Withers,Lean On Me8,Mac Davis,Baby Don't Get Hooked On Me9,Melanie,Brand New Key10,Wayne Newton,Daddy Don't You Walk So Fast11,Al Green,Let's Stay Together12,Looking Glass,Brandy (You're A Fine Girl)13,Chi-Lites,Oh Girl14,Gallery,Nice To Be With You15,Chuck Berry,My Ding-A-Ling16,Luther Ingram,If Loving You Is Wrong I Don't Want To Be Right17,Neil Young,Heart Of Gold18,Stylistics,"Betcha By Golly, Wow"19,Staple Singers,I'll Take You There20,Michael Jackson,Ben21,Robert John,The Lion Sleeps Tonight22,Billy Preston,Outa-Space23,War,Slippin' Into Darkness24,Hollies,Long Cool Woman (In A Black Dress)25,Mouth and MacNeal,How Do You Do26,Neil Diamond,Song Sung Blue27,America,A Horse With No Name28,Hot Butter,Popcorn29,Main Ingredient,Everybody Plays The Fool30,Climax,Precious And Few31,5th Dimension,Last Night I Didn't Get To Sleep At All32,Moody Blues,Nights In White Satin33,Raspberries,Go All The Way34,Cornelius Brothers and Sister Rose,Too Late To Turn Back Now35,O'Jays,Back Stabbers36,Osmonds,Down By The Lazy River37,Jonathan Edwards,Sunshine38,Mel and Tim,Starting All Over Again39,Badfinger,Day Atter Day40,Elton John,Rocket Man41,Michael Jackson,Rockin' Robin42,Daniel Boone,Beautiful Sunday43,Dennis Coffey and The Detroit Guitar Band,Scorpio44,Cat Stevens,Morning Has Broken45,Arlo Guthrie,The City Of New Orleans46,Rick Nelson,Garden Party47,Johnny Nash,I Can See Clearly Now48,Elvis Presley,Burning Love49,Betty Wright,Clean Up Woman50,Argent,Hold Your Head Up51,Chakachas,Jungle Fever52,Bread,Everything I Own53,Dramatics,In The Rain54,Al Green,Look What You Done For Me55,Donna Fargo,The Happiest Girl In The Whole U.S.A.56,T. Rex,Bang A Gong (Get It On)57,Paul Simon,Mother And Child Reunion58,Roberta Flack and Donny Hathaway,Where Is The Love59,Al Green,I'm Still In Love With You60,Derek and The Dominos,Layla61,Aretha Franklin,Day Dreaming62,Cher,The Way Of Love63,Three Dog Night,Black And White64,Dr. Hook and The Medicine Show,Sylvia's Mother65,Carpenters,Hurting Each Other66,Nilsson,Coconut67,Donny Osmond,Puppy Love68,Jim Croce,You Don't Mess Around With Jim69,Commander Cody and His Lost Planet Airmen,Hot Rod Lincoln70,Sonny and Cher,A Cowboy's Work Is Never Done71,Apollo 100,Joy72,Carly Simon,Anticipation73,Three Dog Night,Never Been To Spain74,Charlie Pride,Kiss An Angel Good Morning75,Alice Cooper,School's Out76,Chicago,Saturday In The Park77,Joe Simon,Drowning In The Sea Of Love78,Bill Withers,Use Me79,Sly and The Family Stone,Family Affair80,Jimmy Castor Bunch,Troglodyte81,Redbone,The Witch Queen Of New Orleans82,Curtis Mayfield,Freddie's Dead83,Joe Simon,Power Of Love84,Jerry Butler and Brenda Lee Eager,Ain't Understanding Mellow85,Harry Chapin,Taxi86,Beverly Bremers,Don't Say You Don't Rememeer87,Bobby Vinton,Sealed With A Kiss88,Todd Rundgren,I Saw The Light89,Sailcat,Motorcycle Mama90,Godspell,Day By Day91,Yes,Roundabout92,Jackson Browne,Doctor My Eyes93,New Seekers,I'd Like To Teach The World To Sing94,Don Mclean,Vincent / Castles In The Air95,Detroit Emeralds,Baby Let Me Take You (In My Arms)96,Rick Springfield,Speak To The Sky97,Hillside Singers,I'd Like To Teach The World To Sing98,Love Unlimited,Walking In The Rain With The One I Love99,James Brown,"Good Foot, Pt. 1"100,Isley Bros.,Pop That Thang
+Position,Artist,Song Title
+1,Roberta Flack,The First Time Ever I Saw Your Face
+2,Gilbert O'Sullivan,Alone Again (Naturally)
+3,Don McLean,American Pie
+4,Nilsson,Without You
+5,Sammy Davis Jr.,Candy Man
+6,Joe Tex,I Gotcha
+7,Bill Withers,Lean On Me
+8,Mac Davis,Baby Don't Get Hooked On Me
+9,Melanie,Brand New Key
+10,Wayne Newton,Daddy Don't You Walk So Fast
+11,Al Green,Let's Stay Together
+12,Looking Glass,Brandy (You're A Fine Girl)
+13,Chi-Lites,Oh Girl
+14,Gallery,Nice To Be With You
+15,Chuck Berry,My Ding-A-Ling
+16,Luther Ingram,If Loving You Is Wrong I Don't Want To Be Right
+17,Neil Young,Heart Of Gold
+18,Stylistics,"Betcha By Golly, Wow"
+19,Staple Singers,I'll Take You There
+20,Michael Jackson,Ben
+21,Robert John,The Lion Sleeps Tonight
+22,Billy Preston,Outa-Space
+23,War,Slippin' Into Darkness
+24,Hollies,Long Cool Woman (In A Black Dress)
+25,Mouth and MacNeal,How Do You Do
+26,Neil Diamond,Song Sung Blue
+27,America,A Horse With No Name
+28,Hot Butter,Popcorn
+29,Main Ingredient,Everybody Plays The Fool
+30,Climax,Precious And Few
+31,5th Dimension,Last Night I Didn't Get To Sleep At All
+32,Moody Blues,Nights In White Satin
+33,Raspberries,Go All The Way
+34,Cornelius Brothers and Sister Rose,Too Late To Turn Back Now
+35,O'Jays,Back Stabbers
+36,Osmonds,Down By The Lazy River
+37,Jonathan Edwards,Sunshine
+38,Mel and Tim,Starting All Over Again
+39,Badfinger,Day Atter Day
+40,Elton John,Rocket Man
+41,Michael Jackson,Rockin' Robin
+42,Daniel Boone,Beautiful Sunday
+43,Dennis Coffey and The Detroit Guitar Band,Scorpio
+44,Cat Stevens,Morning Has Broken
+45,Arlo Guthrie,The City Of New Orleans
+46,Rick Nelson,Garden Party
+47,Johnny Nash,I Can See Clearly Now
+48,Elvis Presley,Burning Love
+49,Betty Wright,Clean Up Woman
+50,Argent,Hold Your Head Up
+51,Chakachas,Jungle Fever
+52,Bread,Everything I Own
+53,Dramatics,In The Rain
+54,Al Green,Look What You Done For Me
+55,Donna Fargo,The Happiest Girl In The Whole U.S.A.
+56,T. Rex,Bang A Gong (Get It On)
+57,Paul Simon,Mother And Child Reunion
+58,Roberta Flack and Donny Hathaway,Where Is The Love
+59,Al Green,I'm Still In Love With You
+60,Derek and The Dominos,Layla
+61,Aretha Franklin,Day Dreaming
+62,Cher,The Way Of Love
+63,Three Dog Night,Black And White
+64,Dr. Hook and The Medicine Show,Sylvia's Mother
+65,Carpenters,Hurting Each Other
+66,Nilsson,Coconut
+67,Donny Osmond,Puppy Love
+68,Jim Croce,You Don't Mess Around With Jim
+69,Commander Cody and His Lost Planet Airmen,Hot Rod Lincoln
+70,Sonny and Cher,A Cowboy's Work Is Never Done
+71,Apollo 100,Joy
+72,Carly Simon,Anticipation
+73,Three Dog Night,Never Been To Spain
+74,Charlie Pride,Kiss An Angel Good Morning
+75,Alice Cooper,School's Out
+76,Chicago,Saturday In The Park
+77,Joe Simon,Drowning In The Sea Of Love
+78,Bill Withers,Use Me
+79,Sly and The Family Stone,Family Affair
+80,Jimmy Castor Bunch,Troglodyte
+81,Redbone,The Witch Queen Of New Orleans
+82,Curtis Mayfield,Freddie's Dead
+83,Joe Simon,Power Of Love
+84,Jerry Butler and Brenda Lee Eager,Ain't Understanding Mellow
+85,Harry Chapin,Taxi
+86,Beverly Bremers,Don't Say You Don't Rememeer
+87,Bobby Vinton,Sealed With A Kiss
+88,Todd Rundgren,I Saw The Light
+89,Sailcat,Motorcycle Mama
+90,Godspell,Day By Day
+91,Yes,Roundabout
+92,Jackson Browne,Doctor My Eyes
+93,New Seekers,I'd Like To Teach The World To Sing
+94,Don Mclean,Vincent / Castles In The Air
+95,Detroit Emeralds,Baby Let Me Take You (In My Arms)
+96,Rick Springfield,Speak To The Sky
+97,Hillside Singers,I'd Like To Teach The World To Sing
+98,Love Unlimited,Walking In The Rain With The One I Love
+99,James Brown,"Good Foot, Pt. 1"
+100,Isley Bros.,Pop That Thang

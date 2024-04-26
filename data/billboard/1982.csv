@@ -1,1 +1,101 @@
-Position ,Artist,Song Title1,Olivia Newton-John,Physical2,Survivor,Eye Of The Tiger3,Joan Jett and The Blackhearts,I Love Rock N' Roll4,Paul McCartney and Stevie Wonder,Ebony And Ivory5,J. Geils Band,Centerfold6,Human League,Don't You Want Me7,John Cougar,Jack And Diane8,John Cougar,Hurts So Good9,Steve Miller Band,Abracadabra10,Chicago,Hard To Say I'm Sorry11,Soft Cell,Tainted Love12,Vangelis,Chariots Of Fire13,Quarterflash,Harden My Heart14,Toto,Rosanna15,Daryl Hall and John Oates,I Can't Go For That16,Tommy Tutone,867-5309 (Jenny)17,Bertie Higgins,Key Largo18,Melissa Manchester,You Should Hear How She Talks About You19,Foreigner,Waiting For A Girl Like You20,Rick Springfield,Don't Talk To Strangers21,Juice Newton,The Sweetest Thing22,Willie Nelson,Always On My Mind23,Cars,Shake It Up24,Dazz Band,Let It Whip25,Go-Go's,We Got The Beat26,Ray Parker Jr.,The Other Woman27,George Benson,Turn Your Love Around28,Air Supply,Sweet Dreams29,Motels,Only The Lonely30,Men At Work,Who Can It Be Now?31,Fleetwood Mac,Hold Me32,Alan Parsons Project,Eye In The Sky33,"Earth, Wind and Fire",Let's Groove34,Journey,Open Arms35,Dan Fogelberg,Leader Of The Band36,Stevie Nicks and Don Henley,Leather And Lace37,Air Supply,Even The Nights Are Better38,Charlene,I've Never Been To Me39,Paul Davis,'65 Love Affair40,Asia,Heat Of The Moment41,Little River Band,Take It Easy On Me42,Buckner and Garcia,Pac-Man Fever43,Stevie Wonder,That Girl44,Daryl Hall and John Oates,Private Eyes45,Lindsey Buckingham,Trouble46,Roberta Flack,Making Love47,Juice Newton,Love's Been A Little Bit Hard On Me48,Rod Stewart,Young Turks49,J. Geils Band,Freeze-Frame50,REO Speedwagon,Keep The Fire Burnin'51,Huey Lewis and The News,Do You Believe In Love52,Paul Davis,Cool Night53,38 Special,Caught Up In You54,Diana Ross,Why Do Fools Fall In Love?55,Alabama,Love In The First Degree56,Royal Philharmonic Orchestra,Hooked On Classics57,"Crosby, Stills and Nash",Wasted On The Way58,Eddie Money,Think I'm In Love59,Donna Summer,Love Is In Control60,Karla Bonoff,Personally61,Quincy Jones,Owe Hundred Ways62,Elton John,Blue Eyes63,Go-Go's,Our Lips Are Sealed64,Sheena Easton,You Could Have Been Wih Me65,America,You Can Do Magic66,Daryl Hall and John Oates,Did It In A Minute67,A Flock Of Seagulls,I Ran68,Jackson Browne,Somebody's Baby69,Commodores,Oh No70,Paul McCartney,Take It Away71,Deneice Williams,It's Gonna Take A Miracle72,Kenny Rogers,Love Will Turn You Around73,Journey,Don't Stop Believin'74,Barbra Streisand,Comin' In And Out Of Your Life75,Laura Branigan,Gloria76,Elton John,Empty Garden77,Neil Diamond,Yesterday's Songs78,Joan Jett and The Blackhearts,Crimson And Clover79,Police,Every Little Thing She Does Is Magic80,Air Supply,Here I Am81,Michael McDonald,I Keep Forgettin'82,Kool and The Gang,Get Down On It83,Ronnie Milsap,Any Day Now84,Olivia Newton-John,Make A Move On Me85,Kool and The Gang,Take My Heart86,Diana Ross,Mirror Mirror87,Go-Go's,Vacation88,Van Halen,(Oh) Pretty Woman89,Pointer Sisters,Should I Do It90,Billy Idol,Hot In The City91,Kim Wilde,Kids In America92,Little River Band,Man On Your Mind93,Michael Murphy,What's Forever For94,Rolling Stones,Waiting On A Friend95,Stevie Wonder,Do I Do96,Loverboy,Working For The Weekend97,Greg Guidry,Goin' Down98,Christopher Cross,Arthur's Theme99,Kenny Rogers,Through The Years100,Stevie Nicks,Edge Of Seventeen
+Position,Artist,Song Title
+1,Olivia Newton-John,Physical
+2,Survivor,Eye Of The Tiger
+3,Joan Jett and The Blackhearts,I Love Rock N' Roll
+4,Paul McCartney and Stevie Wonder,Ebony And Ivory
+5,J. Geils Band,Centerfold
+6,Human League,Don't You Want Me
+7,John Cougar,Jack And Diane
+8,John Cougar,Hurts So Good
+9,Steve Miller Band,Abracadabra
+10,Chicago,Hard To Say I'm Sorry
+11,Soft Cell,Tainted Love
+12,Vangelis,Chariots Of Fire
+13,Quarterflash,Harden My Heart
+14,Toto,Rosanna
+15,Daryl Hall and John Oates,I Can't Go For That
+16,Tommy Tutone,867-5309 (Jenny)
+17,Bertie Higgins,Key Largo
+18,Melissa Manchester,You Should Hear How She Talks About You
+19,Foreigner,Waiting For A Girl Like You
+20,Rick Springfield,Don't Talk To Strangers
+21,Juice Newton,The Sweetest Thing
+22,Willie Nelson,Always On My Mind
+23,Cars,Shake It Up
+24,Dazz Band,Let It Whip
+25,Go-Go's,We Got The Beat
+26,Ray Parker Jr.,The Other Woman
+27,George Benson,Turn Your Love Around
+28,Air Supply,Sweet Dreams
+29,Motels,Only The Lonely
+30,Men At Work,Who Can It Be Now?
+31,Fleetwood Mac,Hold Me
+32,Alan Parsons Project,Eye In The Sky
+33,"Earth, Wind and Fire",Let's Groove
+34,Journey,Open Arms
+35,Dan Fogelberg,Leader Of The Band
+36,Stevie Nicks and Don Henley,Leather And Lace
+37,Air Supply,Even The Nights Are Better
+38,Charlene,I've Never Been To Me
+39,Paul Davis,'65 Love Affair
+40,Asia,Heat Of The Moment
+41,Little River Band,Take It Easy On Me
+42,Buckner and Garcia,Pac-Man Fever
+43,Stevie Wonder,That Girl
+44,Daryl Hall and John Oates,Private Eyes
+45,Lindsey Buckingham,Trouble
+46,Roberta Flack,Making Love
+47,Juice Newton,Love's Been A Little Bit Hard On Me
+48,Rod Stewart,Young Turks
+49,J. Geils Band,Freeze-Frame
+50,REO Speedwagon,Keep The Fire Burnin'
+51,Huey Lewis and The News,Do You Believe In Love
+52,Paul Davis,Cool Night
+53,38 Special,Caught Up In You
+54,Diana Ross,Why Do Fools Fall In Love?
+55,Alabama,Love In The First Degree
+56,Royal Philharmonic Orchestra,Hooked On Classics
+57,"Crosby, Stills and Nash",Wasted On The Way
+58,Eddie Money,Think I'm In Love
+59,Donna Summer,Love Is In Control
+60,Karla Bonoff,Personally
+61,Quincy Jones,Owe Hundred Ways
+62,Elton John,Blue Eyes
+63,Go-Go's,Our Lips Are Sealed
+64,Sheena Easton,You Could Have Been Wih Me
+65,America,You Can Do Magic
+66,Daryl Hall and John Oates,Did It In A Minute
+67,A Flock Of Seagulls,I Ran
+68,Jackson Browne,Somebody's Baby
+69,Commodores,Oh No
+70,Paul McCartney,Take It Away
+71,Deneice Williams,It's Gonna Take A Miracle
+72,Kenny Rogers,Love Will Turn You Around
+73,Journey,Don't Stop Believin'
+74,Barbra Streisand,Comin' In And Out Of Your Life
+75,Laura Branigan,Gloria
+76,Elton John,Empty Garden
+77,Neil Diamond,Yesterday's Songs
+78,Joan Jett and The Blackhearts,Crimson And Clover
+79,Police,Every Little Thing She Does Is Magic
+80,Air Supply,Here I Am
+81,Michael McDonald,I Keep Forgettin'
+82,Kool and The Gang,Get Down On It
+83,Ronnie Milsap,Any Day Now
+84,Olivia Newton-John,Make A Move On Me
+85,Kool and The Gang,Take My Heart
+86,Diana Ross,Mirror Mirror
+87,Go-Go's,Vacation
+88,Van Halen,(Oh) Pretty Woman
+89,Pointer Sisters,Should I Do It
+90,Billy Idol,Hot In The City
+91,Kim Wilde,Kids In America
+92,Little River Band,Man On Your Mind
+93,Michael Murphy,What's Forever For
+94,Rolling Stones,Waiting On A Friend
+95,Stevie Wonder,Do I Do
+96,Loverboy,Working For The Weekend
+97,Greg Guidry,Goin' Down
+98,Christopher Cross,Arthur's Theme
+99,Kenny Rogers,Through The Years
+100,Stevie Nicks,Edge Of Seventeen

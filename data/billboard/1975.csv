@@ -1,1 +1,101 @@
-Position ,Artist,Song Title1,Captain and Tennille,Love Will Keep Us Together2,Glen Campbell,Rhinestone Cowboy3,Elton John,Philadelphia Freedom4,Freddy Fender,Before The Next Teardrop Falls5,Frankie Valli,My Eyes Adored You6,"Earth, Wind and Fire",Shining Star7,David Bowie,Fame8,Neil Sedaka,Laughter In The Rain9,Eagles,One Of These Nights10,John Denver,Thank God I'm A Country Boy11,Bee Gees,Jive Talkin'12,Eagles,Best Of My Love13,Minnie Riperton,Lovin' You14,Carl Douglas,Kung Fu Fighting15,Doobie Brothers,Black Water16,Sweet,Ballroom Blitz17,B.J. Thomas,(Hey Wont You Play) Another Somebody Done Somebody Wrong Song18,Tony Orlando and Dawn,He Don't Love You (Like I Love You)19,Janis Ian,At Seventeen20,Average White Band,Pick Up The Pieces21,Van McCoy and The Soul City Symphony,The Hustle22,Labelle,Lady Marmalade23,War,Why Can't We Be Friends?24,Major Harris,Love Won't Let Me Wait25,Stevie Wonder,Boogie On Reggae Woman26,Freddy Fender,Wasted Days And Wasted Nights27,Isley Brothers,"Fight The Power, Pt. 1"28,Helen Reddy,Angie Baby29,Ozark Mountain Daredevil,Jackie Blue30,Ohio Players,Fire31,Pilot,Magic32,Carpenters,Please Mr. Postman33,America,Sister Golden Hair34,Elton John,Lucy In The Sky With Diamonds35,Barry Manilow,Mandy36,Olivia Newton-John,Have You Never Been Mellow37,Barry Manilow,Could It Be Magic38,Harry Chapin,Cat's In The Cradle39,Michael Murphy,Wildfire40,Jessi Colter,I'm Not Lisa41,Wings,Listen To What The Man Said42,10cc,I'm Not In Love43,Billy Swan,I Can Help44,"Hamilton, Joe Frank and Reynolds",Fallin' In Love45,Morris Albert,Feelings46,Sammy Johns,Chevy Van47,Linda Ronstadt,When Will I Be Loved48,Barry White,"You're The First, The Last, My Everything"49,Olivia Newton-John,Please Mr Please50,Linda Ronstadt,You're No Good51,Bazuka,Dynomite52,Blackbyrds,Walking In Rhythm53,Gladys Knight and The Pips,The Way We Were / Try To Remember54,Melissa Manchester,Midnight Blue55,Sugarloaf,"Don't Call Us, We'll Call You"56,Phoebe Snow,Poetry Man57,Ace,How Long58,B.T. Express,Express59,"Earth, Wind and Fire",That's The Way Of The World60,Styx,Lady61,Grand Funk,Bad Time62,Alice Cooper,Only Women Bleed63,Carol Douglas,Doctor's Orders64,K.C. and The Sunshine Band,Get Down Tonight65,Joe Cocker,You Are So Beautiful / It's A Sin When You Love Somebody66,Paul Anka and Odia Coates,One Man Woman-One Woman Man67,Bad Company,Feel Like Makin' Love68,James Taylor,How Sweet It Is (To Be Loved by You)69,Orleans,Dance With Me70,Average White Band,Cut The Cake71,Gloria Gaynor,Never Can Say Goodbye72,Paul Anka,I Don't Like To Sleep Alone73,Donny and Marie Osmond,Morning Side Of The Mountain74,Grand Funk,Some Kind Of Wonderful75,Three Degrees,When Will I See You Again76,Joe Simon,"Get Down, Get Down (Get On The Floor)"77,John Denver,I'm Sorry / Calypso78,Queen,Killer Queen79,Eddie Kendricks,Shoeshine Boy80,B.T. Express,Do It (Til You're Satisfied)81,Electric Light Orchestra,Can't Get It Out Of My Head82,Al Green,Sha-La-La (Make Me Happy)83,America,Lonely People84,Rufus,You Got The Love85,Mike Post,The Rockford Files86,Tavares,It Only Takes A Minute87,Ringo Starr,No No Song / Snookeroo88,Paul McCartney and Wings,Junior's Farm / Sally G89,Jethro Tull,Bungle In The Jungle90,Leo Sayer,Long Tall Glasses (I Can Dance)91,Elton John,Someone Saved My Life Tonight92,Ray Stevens,Misty93,Neil Sedaka,Bad Blood94,Carpenters,Only Yesterday95,Dwight Twilley Band,I'm On Fire96,Ringo Starr,Only You97,Amazing Rhythm Aces,Third Rate Romance98,Bachman-Turner Overdrive,You Aint Seen Nothin' Yet / Free Wheelin'99,Frankie Valli,Swearin' To God100,Disco Tex and The Sex-O-lettes,Get Dancin'
+Position,Artist,Song Title
+1,Captain and Tennille,Love Will Keep Us Together
+2,Glen Campbell,Rhinestone Cowboy
+3,Elton John,Philadelphia Freedom
+4,Freddy Fender,Before The Next Teardrop Falls
+5,Frankie Valli,My Eyes Adored You
+6,"Earth, Wind and Fire",Shining Star
+7,David Bowie,Fame
+8,Neil Sedaka,Laughter In The Rain
+9,Eagles,One Of These Nights
+10,John Denver,Thank God I'm A Country Boy
+11,Bee Gees,Jive Talkin'
+12,Eagles,Best Of My Love
+13,Minnie Riperton,Lovin' You
+14,Carl Douglas,Kung Fu Fighting
+15,Doobie Brothers,Black Water
+16,Sweet,Ballroom Blitz
+17,B.J. Thomas,(Hey Wont You Play) Another Somebody Done Somebody Wrong Song
+18,Tony Orlando and Dawn,He Don't Love You (Like I Love You)
+19,Janis Ian,At Seventeen
+20,Average White Band,Pick Up The Pieces
+21,Van McCoy and The Soul City Symphony,The Hustle
+22,Labelle,Lady Marmalade
+23,War,Why Can't We Be Friends?
+24,Major Harris,Love Won't Let Me Wait
+25,Stevie Wonder,Boogie On Reggae Woman
+26,Freddy Fender,Wasted Days And Wasted Nights
+27,Isley Brothers,"Fight The Power, Pt. 1"
+28,Helen Reddy,Angie Baby
+29,Ozark Mountain Daredevil,Jackie Blue
+30,Ohio Players,Fire
+31,Pilot,Magic
+32,Carpenters,Please Mr. Postman
+33,America,Sister Golden Hair
+34,Elton John,Lucy In The Sky With Diamonds
+35,Barry Manilow,Mandy
+36,Olivia Newton-John,Have You Never Been Mellow
+37,Barry Manilow,Could It Be Magic
+38,Harry Chapin,Cat's In The Cradle
+39,Michael Murphy,Wildfire
+40,Jessi Colter,I'm Not Lisa
+41,Wings,Listen To What The Man Said
+42,10cc,I'm Not In Love
+43,Billy Swan,I Can Help
+44,"Hamilton, Joe Frank and Reynolds",Fallin' In Love
+45,Morris Albert,Feelings
+46,Sammy Johns,Chevy Van
+47,Linda Ronstadt,When Will I Be Loved
+48,Barry White,"You're The First, The Last, My Everything"
+49,Olivia Newton-John,Please Mr Please
+50,Linda Ronstadt,You're No Good
+51,Bazuka,Dynomite
+52,Blackbyrds,Walking In Rhythm
+53,Gladys Knight and The Pips,The Way We Were / Try To Remember
+54,Melissa Manchester,Midnight Blue
+55,Sugarloaf,"Don't Call Us, We'll Call You"
+56,Phoebe Snow,Poetry Man
+57,Ace,How Long
+58,B.T. Express,Express
+59,"Earth, Wind and Fire",That's The Way Of The World
+60,Styx,Lady
+61,Grand Funk,Bad Time
+62,Alice Cooper,Only Women Bleed
+63,Carol Douglas,Doctor's Orders
+64,K.C. and The Sunshine Band,Get Down Tonight
+65,Joe Cocker,You Are So Beautiful / It's A Sin When You Love Somebody
+66,Paul Anka and Odia Coates,One Man Woman-One Woman Man
+67,Bad Company,Feel Like Makin' Love
+68,James Taylor,How Sweet It Is (To Be Loved by You)
+69,Orleans,Dance With Me
+70,Average White Band,Cut The Cake
+71,Gloria Gaynor,Never Can Say Goodbye
+72,Paul Anka,I Don't Like To Sleep Alone
+73,Donny and Marie Osmond,Morning Side Of The Mountain
+74,Grand Funk,Some Kind Of Wonderful
+75,Three Degrees,When Will I See You Again
+76,Joe Simon,"Get Down, Get Down (Get On The Floor)"
+77,John Denver,I'm Sorry / Calypso
+78,Queen,Killer Queen
+79,Eddie Kendricks,Shoeshine Boy
+80,B.T. Express,Do It (Til You're Satisfied)
+81,Electric Light Orchestra,Can't Get It Out Of My Head
+82,Al Green,Sha-La-La (Make Me Happy)
+83,America,Lonely People
+84,Rufus,You Got The Love
+85,Mike Post,The Rockford Files
+86,Tavares,It Only Takes A Minute
+87,Ringo Starr,No No Song / Snookeroo
+88,Paul McCartney and Wings,Junior's Farm / Sally G
+89,Jethro Tull,Bungle In The Jungle
+90,Leo Sayer,Long Tall Glasses (I Can Dance)
+91,Elton John,Someone Saved My Life Tonight
+92,Ray Stevens,Misty
+93,Neil Sedaka,Bad Blood
+94,Carpenters,Only Yesterday
+95,Dwight Twilley Band,I'm On Fire
+96,Ringo Starr,Only You
+97,Amazing Rhythm Aces,Third Rate Romance
+98,Bachman-Turner Overdrive,You Aint Seen Nothin' Yet / Free Wheelin'
+99,Frankie Valli,Swearin' To God
+100,Disco Tex and The Sex-O-lettes,Get Dancin'

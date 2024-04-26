@@ -1,1 +1,101 @@
-Position ,Artist,Song Title1,Ace Of Base,The Sign2,All-4-One,I Swear3,Boyz II Men,I'll Make Love To You4,Celine Dion,The Power Of Love5,Mariah Carey,Hero6,Lisa Loeb and Nine Stories,Stay (I Missed You)7,Toni Braxton,Breathe Again8,"Bryan Adams, Rod Stewart and Sting",All For Love9,Ace Of Base,All That She Wants10,Ace Of Base,Don't Turn Around11,R. Kelly,Bump N' Grind12,Janet Jackson,Again13,Madonna,I'll Remember14,Salt-N-Pepa,Whatta Man15,John Mellencamp and Me'shell Ndegeocello,Wild Night16,Mariah Carey,Without You / Never Forget You17,Toni Braxton,You Mean The World To Me18,Elton John,Can You Feel The Love Tonight19,Artist Formerly Known As Prince,The Most Beautiful Girl In The World20,Coolio,Fantastic Voyage21,Big Mountain,Baby I Love Your Way22,Warren G and Nate Dogg,Regulate23,Jon Secada,If You Go24,Aaliyah,Back and Forth25,Richard Marx,Now And Forever26,Babyface,When Can I See You27,Bryan Adams,Please Forgive Me28,All-4-One,So Much In Love29,Salt-N-Pepa,Shoop30,Janet Jackson,"Any Time, Any Place / And On And On"31,Collective Soul,Shine32,Michael Bolton,Said I Loved You...But I Lied33,Enigma,Return To Innocence34,Sheryl Crow,All I Wanna Do35,Crash Test Dummies,Mmm Mmm Mmm Mmm36,Tevin Campbell,Can We Talk37,Da Brat,Funkdafied38,Meat Loaf,I'd Do Anything For Love (But I Won't Do That)39,Drs,Gangsta Lean40,"10,000 Maniacs",Because The Night41,US3,Cantaloop42,Tag Team,Whoomp! (There It Is)43,Melissa Etheridge,Come To My Window44,Changing Faces,Stroke You Up45,Tevin Campbell,I'm Ready46,Crystal Waters,100% Pure Love47,Mariah Carey,Anytime You Need A Friend48,Janet Jackson,Because Of Love49,Cranberries,Linger50,Beck,Loser51,Gin Blossoms,Found Out About You52,Snoop Doggy Dogg,Gin And Juice53,Immature,Never Lie54,Bruce Springsteen,Streets Of Philadelphia55,Domino,Getto Jam56,Luther Vandross and Mariah Carey,Endless Love57,Aaron Hall,I Miss You58,Xscape,Understanding59,Warren G,This D.J.60,Jodeci,Cry For You61,2Pac,Keep Ya Head Up62,Snoop Doggy Dogg,Who Am I (What's My Name?)63,Real McCoy,Another Night64,R. Kelly,Your Body's Callin'65,69 Boyz,Tootsee Roll66,Jimmy Cliff,I Can See Clearly Now67,Babyface,Never Keeping Secrets68,Aerosmith,Crazy69,Xscape,Just Kickin' It70,Aaliyah,At Your Best (You Are Love)71,Meat Loaf,Rock And Roll Dreams Come Through72,Aerosmith,Amazing73,Erasure,Always74,Zhane,Groove Thang75,Gabrielle,Dreams76,Culture Beat,Mr. Vain77,Tom Petty and The Heartbreakers,Mary Jane's Last Dance78,SWV,Anything79,Joshua Kadison,Beautiful In My Eyes80,Eternal,Stay81,Craig Mack,Flava In Ya Ear82,Queen Latifah,U.N.I.T.Y.83,Seal,Prayer For The Dying84,Madonna,Secret85,Ini Kamoze,Here Comes The Hotstepper86,Phil Collins,Everyday87,Tim McGraw,Don't Take The Girl88,Heavy D and The Boyz,Got Me Waiting89,Four Seasons,"December 1963 (Oh, What A Night)"90,Tim McGraw,Indian Outlaw91,Bon Jovi,Always92,Melissa Etheridge,I'm The Only One93,Ahmad,Back In The Day94,Bonnie Raitt,Love Sneakin' Up On You95,General Public,I'll Take You There96,Tevin Campbell,Always In My Heart97,Haddaway,What Is Love98,Babyface,And Our Feelings99,Ice Cube,Bop Gun (One Nation)100,Brandy,I Wanna Be Down
+Position,Artist,Song Title
+1,Ace Of Base,The Sign
+2,All-4-One,I Swear
+3,Boyz II Men,I'll Make Love To You
+4,Celine Dion,The Power Of Love
+5,Mariah Carey,Hero
+6,Lisa Loeb and Nine Stories,Stay (I Missed You)
+7,Toni Braxton,Breathe Again
+8,"Bryan Adams, Rod Stewart and Sting",All For Love
+9,Ace Of Base,All That She Wants
+10,Ace Of Base,Don't Turn Around
+11,R. Kelly,Bump N' Grind
+12,Janet Jackson,Again
+13,Madonna,I'll Remember
+14,Salt-N-Pepa,Whatta Man
+15,John Mellencamp and Me'shell Ndegeocello,Wild Night
+16,Mariah Carey,Without You / Never Forget You
+17,Toni Braxton,You Mean The World To Me
+18,Elton John,Can You Feel The Love Tonight
+19,Artist Formerly Known As Prince,The Most Beautiful Girl In The World
+20,Coolio,Fantastic Voyage
+21,Big Mountain,Baby I Love Your Way
+22,Warren G and Nate Dogg,Regulate
+23,Jon Secada,If You Go
+24,Aaliyah,Back and Forth
+25,Richard Marx,Now And Forever
+26,Babyface,When Can I See You
+27,Bryan Adams,Please Forgive Me
+28,All-4-One,So Much In Love
+29,Salt-N-Pepa,Shoop
+30,Janet Jackson,"Any Time, Any Place / And On And On"
+31,Collective Soul,Shine
+32,Michael Bolton,Said I Loved You...But I Lied
+33,Enigma,Return To Innocence
+34,Sheryl Crow,All I Wanna Do
+35,Crash Test Dummies,Mmm Mmm Mmm Mmm
+36,Tevin Campbell,Can We Talk
+37,Da Brat,Funkdafied
+38,Meat Loaf,I'd Do Anything For Love (But I Won't Do That)
+39,Drs,Gangsta Lean
+40,"10,000 Maniacs",Because The Night
+41,US3,Cantaloop
+42,Tag Team,Whoomp! (There It Is)
+43,Melissa Etheridge,Come To My Window
+44,Changing Faces,Stroke You Up
+45,Tevin Campbell,I'm Ready
+46,Crystal Waters,100% Pure Love
+47,Mariah Carey,Anytime You Need A Friend
+48,Janet Jackson,Because Of Love
+49,Cranberries,Linger
+50,Beck,Loser
+51,Gin Blossoms,Found Out About You
+52,Snoop Doggy Dogg,Gin And Juice
+53,Immature,Never Lie
+54,Bruce Springsteen,Streets Of Philadelphia
+55,Domino,Getto Jam
+56,Luther Vandross and Mariah Carey,Endless Love
+57,Aaron Hall,I Miss You
+58,Xscape,Understanding
+59,Warren G,This D.J.
+60,Jodeci,Cry For You
+61,2Pac,Keep Ya Head Up
+62,Snoop Doggy Dogg,Who Am I (What's My Name?)
+63,Real McCoy,Another Night
+64,R. Kelly,Your Body's Callin'
+65,69 Boyz,Tootsee Roll
+66,Jimmy Cliff,I Can See Clearly Now
+67,Babyface,Never Keeping Secrets
+68,Aerosmith,Crazy
+69,Xscape,Just Kickin' It
+70,Aaliyah,At Your Best (You Are Love)
+71,Meat Loaf,Rock And Roll Dreams Come Through
+72,Aerosmith,Amazing
+73,Erasure,Always
+74,Zhane,Groove Thang
+75,Gabrielle,Dreams
+76,Culture Beat,Mr. Vain
+77,Tom Petty and The Heartbreakers,Mary Jane's Last Dance
+78,SWV,Anything
+79,Joshua Kadison,Beautiful In My Eyes
+80,Eternal,Stay
+81,Craig Mack,Flava In Ya Ear
+82,Queen Latifah,U.N.I.T.Y.
+83,Seal,Prayer For The Dying
+84,Madonna,Secret
+85,Ini Kamoze,Here Comes The Hotstepper
+86,Phil Collins,Everyday
+87,Tim McGraw,Don't Take The Girl
+88,Heavy D and The Boyz,Got Me Waiting
+89,Four Seasons,"December 1963 (Oh, What A Night)"
+90,Tim McGraw,Indian Outlaw
+91,Bon Jovi,Always
+92,Melissa Etheridge,I'm The Only One
+93,Ahmad,Back In The Day
+94,Bonnie Raitt,Love Sneakin' Up On You
+95,General Public,I'll Take You There
+96,Tevin Campbell,Always In My Heart
+97,Haddaway,What Is Love
+98,Babyface,And Our Feelings
+99,Ice Cube,Bop Gun (One Nation)
+100,Brandy,I Wanna Be Down

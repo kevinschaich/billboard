@@ -1,1 +1,101 @@
-Position ,Artist,Song Title1,Prince,When Doves Cry2,Tina Turner,What's Love Got To Do With It3,Paul McCartney and Michael Jackson,Say Say Say4,Kenny Loggins,Footloose5,Phil Collins,Against All Odds (Take A Look At Me Now)6,Van Halen,Jump7,Lionel Richie,Hello8,Yes,Owner Of A Lonely Heart9,Ray Parker Jr.,Ghostbusters10,Culture Club,Karma Chameleon11,John Waite,Missing You12,Lionel Richie,All Night Long (All Night)13,Deniece Williams,Let's Hear It For The Boy14,Bruce Springsteen,Dancing In The Dark15,Cyndi Lauper,Girls Just Want To Have Fun16,Duran Duran,The Reflex17,Cyndi Lauper,Time After Time18,Pointer Sisters,Jump (For My Love)19,Romantics,Talking In Your Sleep20,Laura Branigan,Self Control21,Prince and The Revolution,Let's Go Crazy22,Daryl Hall and John Oates,Say It Isn't So23,Thompson Twins,Hold Me Now24,Kool and The Gang,Joanna25,Stevie Wonder,I Just Called To Say I Love You26,Rockwell,Somebody's Watching Me27,Matthew Wilder,Break My Stride28,Nena,99 Luftballons29,Dan Hartman,I Can Dream About You30,Sheila E.,The Glamorous Life31,Steve Perry,Oh Sherrie32,Lionel Richie,Stuck On You33,Elton John,I Guess That's Why They Call It The Blues34,Cyndi Lauper,She Bop35,Madonna,Borderline36,Corey Hart,Sunglasses At Night37,Billy Idol,Eyes Without A Face38,Eurythmics,Here Comes The Rain Again39,Billy Joel,Uptown Girl40,Night Ranger,Sister Christian41,Cars,Drive42,Olivia Newton-John,Twist Of Fate43,Duran Duran,Union Of The Snake44,Huey Lewis and The News,The Heart Of Rock 'N' Roll45,Chicago,Hard Habit To Break46,Scandal,The Warrior47,Peabo Bryson,If Ever You're In My Arms Again48,Pointer Sisters,Automatic49,Shannon,Let The Music Play50,Julio Iglesias and Willie Nelson,To All The Girls I've Loved Before51,Billy Ocean,Caribbean Queen52,Genesis,That's All53,Lionel Richie,Running With The Night54,Elton John,Sad Songs (Say So Much)55,Huey Lewis and The News,I Want A New Drug56,Kenny Rogers and Dolly Parton,Islands In The Stream57,Pat Benatar,Love Is A Battlefield58,Rod Stewart,Infatuation59,Mike Reno and Ann Wilson,Almost Paradise60,ZZ Top,Legs61,Jacksons,State Of Shock62,Rick Springfield,Love Somebody63,Culture Club,Miss Me Blind64,Huey Lewis and The News,If This Is It65,Cars,You Might Think66,Madonna,Lucky Star67,Bruce Springsteen,Cover Me68,Quiet Riot,Cum On Feel The Noize69,Irene Cara,Breakdance70,Daryl Hall and John Oates,Adult Education71,Tracy Ullman,They Don't Know72,Billy Joel,An Innocent Man73,Bananarama,Cruel Summer74,Wang Chung,Dance Hall Days75,K.C.,Give It Up76,Pointer Sisters,I'm So Excited77,Ray Parker Jr.,I Still Can't Get Over Loving You78,Michael Jackson,Thriller79,Madonna,Holiday80,Ollie And Jerry,Breakin'... There's No Stopping Us81,John Lennon,Nobody Told Me82,Culture Club,Church Of The Poison Mind83,Christopher Cross,Think Of Laura84,Debarge,Time Will Reveal85,Police,Wrapped Around Your Finger86,John Cougar Mellencamp,Pink Houses87,Ratt,Round And Round88,Go-Go's,Head Over Heels89,Billy Joel,The Longest Time90,Kool and The Gang,Tonight91,Christine McVie,Got A Hold On Me92,Shalamar,Dancing In The Sheets93,Rolling Stones,Undercover Of The Night94,John Cafferty and The Beaver Brown Band,On The Dark Side95,Duran Duran,New Moon On Monday96,Peter Schilling,Major Tom (Coming Home)97,Cars,Magic98,Night Ranger,When You Close Your Eyes99,Billy Squier,Rock Me Tonite100,James Ingram and Michael McDonald,Yah Mo B There
+Position,Artist,Song Title
+1,Prince,When Doves Cry
+2,Tina Turner,What's Love Got To Do With It
+3,Paul McCartney and Michael Jackson,Say Say Say
+4,Kenny Loggins,Footloose
+5,Phil Collins,Against All Odds (Take A Look At Me Now)
+6,Van Halen,Jump
+7,Lionel Richie,Hello
+8,Yes,Owner Of A Lonely Heart
+9,Ray Parker Jr.,Ghostbusters
+10,Culture Club,Karma Chameleon
+11,John Waite,Missing You
+12,Lionel Richie,All Night Long (All Night)
+13,Deniece Williams,Let's Hear It For The Boy
+14,Bruce Springsteen,Dancing In The Dark
+15,Cyndi Lauper,Girls Just Want To Have Fun
+16,Duran Duran,The Reflex
+17,Cyndi Lauper,Time After Time
+18,Pointer Sisters,Jump (For My Love)
+19,Romantics,Talking In Your Sleep
+20,Laura Branigan,Self Control
+21,Prince and The Revolution,Let's Go Crazy
+22,Daryl Hall and John Oates,Say It Isn't So
+23,Thompson Twins,Hold Me Now
+24,Kool and The Gang,Joanna
+25,Stevie Wonder,I Just Called To Say I Love You
+26,Rockwell,Somebody's Watching Me
+27,Matthew Wilder,Break My Stride
+28,Nena,99 Luftballons
+29,Dan Hartman,I Can Dream About You
+30,Sheila E.,The Glamorous Life
+31,Steve Perry,Oh Sherrie
+32,Lionel Richie,Stuck On You
+33,Elton John,I Guess That's Why They Call It The Blues
+34,Cyndi Lauper,She Bop
+35,Madonna,Borderline
+36,Corey Hart,Sunglasses At Night
+37,Billy Idol,Eyes Without A Face
+38,Eurythmics,Here Comes The Rain Again
+39,Billy Joel,Uptown Girl
+40,Night Ranger,Sister Christian
+41,Cars,Drive
+42,Olivia Newton-John,Twist Of Fate
+43,Duran Duran,Union Of The Snake
+44,Huey Lewis and The News,The Heart Of Rock 'N' Roll
+45,Chicago,Hard Habit To Break
+46,Scandal,The Warrior
+47,Peabo Bryson,If Ever You're In My Arms Again
+48,Pointer Sisters,Automatic
+49,Shannon,Let The Music Play
+50,Julio Iglesias and Willie Nelson,To All The Girls I've Loved Before
+51,Billy Ocean,Caribbean Queen
+52,Genesis,That's All
+53,Lionel Richie,Running With The Night
+54,Elton John,Sad Songs (Say So Much)
+55,Huey Lewis and The News,I Want A New Drug
+56,Kenny Rogers and Dolly Parton,Islands In The Stream
+57,Pat Benatar,Love Is A Battlefield
+58,Rod Stewart,Infatuation
+59,Mike Reno and Ann Wilson,Almost Paradise
+60,ZZ Top,Legs
+61,Jacksons,State Of Shock
+62,Rick Springfield,Love Somebody
+63,Culture Club,Miss Me Blind
+64,Huey Lewis and The News,If This Is It
+65,Cars,You Might Think
+66,Madonna,Lucky Star
+67,Bruce Springsteen,Cover Me
+68,Quiet Riot,Cum On Feel The Noize
+69,Irene Cara,Breakdance
+70,Daryl Hall and John Oates,Adult Education
+71,Tracy Ullman,They Don't Know
+72,Billy Joel,An Innocent Man
+73,Bananarama,Cruel Summer
+74,Wang Chung,Dance Hall Days
+75,K.C.,Give It Up
+76,Pointer Sisters,I'm So Excited
+77,Ray Parker Jr.,I Still Can't Get Over Loving You
+78,Michael Jackson,Thriller
+79,Madonna,Holiday
+80,Ollie And Jerry,Breakin'... There's No Stopping Us
+81,John Lennon,Nobody Told Me
+82,Culture Club,Church Of The Poison Mind
+83,Christopher Cross,Think Of Laura
+84,Debarge,Time Will Reveal
+85,Police,Wrapped Around Your Finger
+86,John Cougar Mellencamp,Pink Houses
+87,Ratt,Round And Round
+88,Go-Go's,Head Over Heels
+89,Billy Joel,The Longest Time
+90,Kool and The Gang,Tonight
+91,Christine McVie,Got A Hold On Me
+92,Shalamar,Dancing In The Sheets
+93,Rolling Stones,Undercover Of The Night
+94,John Cafferty and The Beaver Brown Band,On The Dark Side
+95,Duran Duran,New Moon On Monday
+96,Peter Schilling,Major Tom (Coming Home)
+97,Cars,Magic
+98,Night Ranger,When You Close Your Eyes
+99,Billy Squier,Rock Me Tonite
+100,James Ingram and Michael McDonald,Yah Mo B There

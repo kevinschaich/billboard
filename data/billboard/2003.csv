@@ -1,1 +1,101 @@
-Position ,Artist,Song Title1,50 Cent,In Da Club2,R. Kelly,Ignition3,Sean Paul,Get Busy4,Beyonce feat. Jay-Z,Crazy In Love5,3 Doors Down,When I'm Gone6,matchbox twenty,Unwell7,Chingy,Right Thurr8,Aaliyah,Miss You9,Kid Rock feat. Sheryl Crow,Picture10,Evanescence feat. Paul McCoy,Bring Me To Life11,Lil Jon and The East Side Boyz feat. Ying Yang Twins,Get Low12,Beyonce feat. Sean Paul,Baby Boy13,"Nelly, P. Diddy and Murphy Lee",Shake Ya Tailfeather14,50 Cent feat. Nate Dogg,21 Questions15,Jennifer Lopez feat. LL Cool J,All I Have16,Christina Aguilera,Beautiful17,Busta Rhymes and Mariah Carey feat. The Flipmode Squad,I Know What You Want18,Avril Lavigne,I'm With You19,Uncle Kracker feat. Dobie Gray,Drift Away20,Lil' Kim feat. 50 Cent,Magic Stick21,50 Cent,P.I.M.P.22,B2K and P. Diddy,"Bump, Bump, Bump"23,Fabolous feat. Tamia,Into You24,Fabolous feat. Mike Shorey and Lil' Mo,Can't Let You Go25,Ja Rule feat. Ashanti,Mesmerize26,Black Eyed Peas,Where Is The Love?27,Santana feat. Michelle Branch,The Game Of Love28,Eminem,Lose Yourself29,Ashanti,Rock Wit U (Awww Baby)30,Justin Timberlake,Cry Me A River31,Tyrese,How You Gonna Act Like That32,Justin Timberlake,Rock Your Body33,Wayne Wonder,No Letting Go34,Pharrell feat. Jay-Z,Frontin'35,Dixie Chicks,Landslide36,"Missy ""Misdemeanor"" Elliott",Work It37,Jay-Z feat. Beyonce Knowles,'03 Bonnie And Clyde38,Nivea feat. Brian and Brandon Casey,Don't Mess With My Man39,Monica,So Gone40,"Nelly feat. Kyjuan, Ali and Murphy Lee",Air Force Ones41,Lumidee,"Never Leave You - Uh Ooh, Uh Oooh!"42,Snoop Dogg feat. Pharrell and Uncle Charlie Wilson,Beautiful43,"Missy ""Misdemeanor"" Elliott feat. Ludacris",Gossip Folks44,Kelly Clarkson,Miss Independent45,Train,Calling All Angels46,YoungBloodZ feat. Lil Jon,Damn!47,Clay Aiken,This Is The Night48,John Mayer,Your Body Is A Wonderland49,Trapt,Headstrong50,Ginuwine,In Those Jeans51,Ludacris feat. Shawnna,Stand Up52,Jason Mraz,The Remedy (I Won't Worry)53,Santana feat. Alex Band Or Chad Kroeger,Why Don't You And I54,Jay-Z,Excuse Me Miss55,Jennifer Lopez feat. Styles and Jadakiss,Jenny from the Block56,Michelle Branch,Are You Happy Now?57,Shania Twain,Forever And For Always58,Nas,I Can59,No Doubt feat. Lady Saw,Underneath It All60,Daniel Bedingfield,If You're Not The One61,R. Kelly,Thoia Thoing62,3 Doors Down,Here Without You63,50 Cent,Wanksta64,Mya,My Love is Like... Wo65,Alan Jackson and Jimmy Buffett,It's Five O'Clock Somewhere66,Sean Paul,Like Glue67,Christina Aguilera feat. Lil' Kim,Can't Hold Us Down68,Lonestar,My Front Porch Looking In69,Amanda Perez,Angel70,Puddle Of Mudd,She Hates Me71,Frankie J,Don't Wanna Try72,Lil' Kim feat. Mr. Cheeks,The Jump Off73,Jewel,Intuition74,Ginuwine feat. Baby,Hell Yeah75,Toby Keith feat. Willie Nelson,Beer For My Horses76,Chingy feat. Ludacris and Snoop Dogg,Holidae In77,Baby Bash feat. Frankie J,Suga Suga78,Erykah Badu feat. Common,Love Of My Life (An Ode To Hip Hop)79,Christina Aguilera,Fighter80,2Pac,Thugz Mansion81,Coldplay,Clocks82,Jaheim,Put that Woman First83,Ashanti,Rain on Me84,Mark Wills,19 Somethin'85,Young Gunz,"Can't Stop, Won't Stop"86,Brooks and Dunn,Red Dirt Road87,Dierks Bentley,What Was I Thinkin'88,Ruben Studdard,Flying Without Wings89,Eminem,Sing For The Moment90,Darryl Worley,Have You Forgotten?91,Kenny Chesney,"No Shoes, No Shirt, No Problems"92,Aaliyah,Come Over93,Field Mob,Sick Of Being Lonely94,R. Kelly,Step In The Name Of Love95,Thalia feat. Fat Joe,I Want You96,Audioslave,Like A Stone97,Norah Jones,Don't Know Why98,Eminem,Superman99,Tim McGraw,Real Good Man100,Floetry,Say Yes
+Position,Artist,Song Title
+1,50 Cent,In Da Club
+2,R. Kelly,Ignition
+3,Sean Paul,Get Busy
+4,Beyonce feat. Jay-Z,Crazy In Love
+5,3 Doors Down,When I'm Gone
+6,matchbox twenty,Unwell
+7,Chingy,Right Thurr
+8,Aaliyah,Miss You
+9,Kid Rock feat. Sheryl Crow,Picture
+10,Evanescence feat. Paul McCoy,Bring Me To Life
+11,Lil Jon and The East Side Boyz feat. Ying Yang Twins,Get Low
+12,Beyonce feat. Sean Paul,Baby Boy
+13,"Nelly, P. Diddy and Murphy Lee",Shake Ya Tailfeather
+14,50 Cent feat. Nate Dogg,21 Questions
+15,Jennifer Lopez feat. LL Cool J,All I Have
+16,Christina Aguilera,Beautiful
+17,Busta Rhymes and Mariah Carey feat. The Flipmode Squad,I Know What You Want
+18,Avril Lavigne,I'm With You
+19,Uncle Kracker feat. Dobie Gray,Drift Away
+20,Lil' Kim feat. 50 Cent,Magic Stick
+21,50 Cent,P.I.M.P.
+22,B2K and P. Diddy,"Bump, Bump, Bump"
+23,Fabolous feat. Tamia,Into You
+24,Fabolous feat. Mike Shorey and Lil' Mo,Can't Let You Go
+25,Ja Rule feat. Ashanti,Mesmerize
+26,Black Eyed Peas,Where Is The Love?
+27,Santana feat. Michelle Branch,The Game Of Love
+28,Eminem,Lose Yourself
+29,Ashanti,Rock Wit U (Awww Baby)
+30,Justin Timberlake,Cry Me A River
+31,Tyrese,How You Gonna Act Like That
+32,Justin Timberlake,Rock Your Body
+33,Wayne Wonder,No Letting Go
+34,Pharrell feat. Jay-Z,Frontin'
+35,Dixie Chicks,Landslide
+36,"Missy ""Misdemeanor"" Elliott",Work It
+37,Jay-Z feat. Beyonce Knowles,'03 Bonnie And Clyde
+38,Nivea feat. Brian and Brandon Casey,Don't Mess With My Man
+39,Monica,So Gone
+40,"Nelly feat. Kyjuan, Ali and Murphy Lee",Air Force Ones
+41,Lumidee,"Never Leave You - Uh Ooh, Uh Oooh!"
+42,Snoop Dogg feat. Pharrell and Uncle Charlie Wilson,Beautiful
+43,"Missy ""Misdemeanor"" Elliott feat. Ludacris",Gossip Folks
+44,Kelly Clarkson,Miss Independent
+45,Train,Calling All Angels
+46,YoungBloodZ feat. Lil Jon,Damn!
+47,Clay Aiken,This Is The Night
+48,John Mayer,Your Body Is A Wonderland
+49,Trapt,Headstrong
+50,Ginuwine,In Those Jeans
+51,Ludacris feat. Shawnna,Stand Up
+52,Jason Mraz,The Remedy (I Won't Worry)
+53,Santana feat. Alex Band Or Chad Kroeger,Why Don't You And I
+54,Jay-Z,Excuse Me Miss
+55,Jennifer Lopez feat. Styles and Jadakiss,Jenny from the Block
+56,Michelle Branch,Are You Happy Now?
+57,Shania Twain,Forever And For Always
+58,Nas,I Can
+59,No Doubt feat. Lady Saw,Underneath It All
+60,Daniel Bedingfield,If You're Not The One
+61,R. Kelly,Thoia Thoing
+62,3 Doors Down,Here Without You
+63,50 Cent,Wanksta
+64,Mya,My Love is Like... Wo
+65,Alan Jackson and Jimmy Buffett,It's Five O'Clock Somewhere
+66,Sean Paul,Like Glue
+67,Christina Aguilera feat. Lil' Kim,Can't Hold Us Down
+68,Lonestar,My Front Porch Looking In
+69,Amanda Perez,Angel
+70,Puddle Of Mudd,She Hates Me
+71,Frankie J,Don't Wanna Try
+72,Lil' Kim feat. Mr. Cheeks,The Jump Off
+73,Jewel,Intuition
+74,Ginuwine feat. Baby,Hell Yeah
+75,Toby Keith feat. Willie Nelson,Beer For My Horses
+76,Chingy feat. Ludacris and Snoop Dogg,Holidae In
+77,Baby Bash feat. Frankie J,Suga Suga
+78,Erykah Badu feat. Common,Love Of My Life (An Ode To Hip Hop)
+79,Christina Aguilera,Fighter
+80,2Pac,Thugz Mansion
+81,Coldplay,Clocks
+82,Jaheim,Put that Woman First
+83,Ashanti,Rain on Me
+84,Mark Wills,19 Somethin'
+85,Young Gunz,"Can't Stop, Won't Stop"
+86,Brooks and Dunn,Red Dirt Road
+87,Dierks Bentley,What Was I Thinkin'
+88,Ruben Studdard,Flying Without Wings
+89,Eminem,Sing For The Moment
+90,Darryl Worley,Have You Forgotten?
+91,Kenny Chesney,"No Shoes, No Shirt, No Problems"
+92,Aaliyah,Come Over
+93,Field Mob,Sick Of Being Lonely
+94,R. Kelly,Step In The Name Of Love
+95,Thalia feat. Fat Joe,I Want You
+96,Audioslave,Like A Stone
+97,Norah Jones,Don't Know Why
+98,Eminem,Superman
+99,Tim McGraw,Real Good Man
+100,Floetry,Say Yes
